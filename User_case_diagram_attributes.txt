@@ -1,0 +1,92 @@
+Date : 23.07.2022
+
+ User Case Diagram 
+======================
+Role of each Module
+
+
+Actors :
+
+	Shop Owner
+	User/ Customer
+		New User
+		Registered Customer
+	Delivery Partner
+========================================================
+
+
+1) Shop Owner	
+	login
+	Manage Inventory
+		Add New T - Shirt Details
+		Check Quantity T - Shirt
+		Update Details
+		Delete T-Shirt details
+	View Orders 
+		Update Orders Status
+		View order history
+
+	Accounting/ Billing
+		Invoice creation
+		Bill Payment to Delivery partner
+		
+	Shipment ( Delivery Partner Communication )
+		View numbers of Orders given to delivery partner
+		
+----------------------------------------------------------------------------------------------------
+
+
+2)User :
+	New User
+		Register
+
+	
+	
+	View T-Shirt
+		Filter 
+		Specific search
+
+	Customised T-Shirt
+		Add Inputs
+		Edit Inputs
+		
+	Manage Cart
+		Add T-Shirt
+		Remove T-Shirt
+		View T-Shirt Catalog
+		
+	Registered User
+		Login
+			Reset Password
+		Manage Account Details
+			Change  Address
+			Change Mobile / Email
+			
+		View T-Shirt		
+		Customised T-Shirt
+		Manage Cart
+		Order Processing
+			Payment
+				COD
+				Online Payment
+			Check order status
+			Order Cancellation
+		Feedback
+			Review
+			Rating
+			Voting / Like to Trend
+			
+------------------------------------------------------------------------------------------------
+3) Delivery Partner : 
+		Login
+		View Order
+		Update Shipment Status
+		
+
+
+
+
+
+
+
+
