@@ -1,9 +1,16 @@
+import React from "react";
+import Tshirt_Details from "./Tshirt_Details";
+// import Orderhistory from "./Orderhistory";
+// import Create from "./CreateDesign";
+// import ShippingDetails from "./ShippingDetails";
+// import Report from "./Report";
 
 import Profile from "./Component/ProfilePage";
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import Button from 'react-bootstrap/Button';
 //import { Button } from 'react-bootstrap';
 //import '../scss/custom.scss';
+// import Payment from "./Payment";
 
 import CreateDesign from "./Component/CreateDesign";
 import MyOrder from "./Component/OrderDetails";
@@ -26,6 +33,14 @@ function App() {
 
    
   );
+  //  <Payment>  </Payment>
+//  <Report>  </Report>
+  //  <ShippingDetails>  </ShippingDetails>
+//  <Create>  </Create>
+ //<Orderhistory>  </Orderhistory> 
+ // <Tshirt_Details></Tshirt_Details>
+
+  
 }
 
 export default App;
