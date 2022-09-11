@@ -1,3 +1,4 @@
+
 package com.Trendy_T.Entity;
 
 import javax.persistence.Entity;
@@ -57,8 +58,4 @@ public class Address {
 		this.city = city;
 		this.pincode = pincode;
 	}
-	
-	
-	
-
 }
