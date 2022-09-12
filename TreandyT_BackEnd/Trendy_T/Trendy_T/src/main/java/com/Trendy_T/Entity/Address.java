@@ -58,4 +58,18 @@ public class Address {
 		this.city = city;
 		this.pincode = pincode;
 	}
+
+	public Address(String address_line, String street, String city, String pincode) {
+		super();
+		this.address_line = address_line;
+		this.street = street;
+		this.city = city;
+		this.pincode = pincode;
+	}
+	
+	
+	
+	
+
+
 }
