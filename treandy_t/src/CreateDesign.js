@@ -2,16 +2,12 @@ import React from "react";
 import './D2.css'
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import dtshirt from './th3.jpg'
+import dtshirt from './th2.jpg'
 import dtshirt2 from './th2.jpg'
 import './image1.css'
 import './image2.css'
 export default function Create()
 {
-
-
-
-
 
 
     return(
@@ -50,9 +46,7 @@ export default function Create()
 
 
   <div class="form-row">
-  
-
-    
+      
     <div class="form-group col-md-4">
       <label for="inputState">Text-Back</label>
       <select id="inputState" class="form-control">
