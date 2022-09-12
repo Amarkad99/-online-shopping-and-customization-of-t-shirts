@@ -1,52 +1,27 @@
-package com.Trendy_T.Entity;
-
-import java.util.List;
+package com.Trendy_T.pojo;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="user_tbl")
-public class User {
+import com.Trendy_T.Entity.Address;
+
+public class UserInfo {
 	
-	@Id
-	@GeneratedValue
-	private int user_id;
 	
 	private String first_name;
 	private String last_name;
 	private String gender;
 	private String email_id;
 	private long mobile_number;
-	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="address_id")
-	private Address address_id;
 	private String security_question;
 	private String security_answer;
 	private String password;
-	
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	@ManyToMany
-private List<Review> review; 
-	public int getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
-	}
+	private String address_line;
+	private String street;
+	private String city;
+	private String pincode;
 	public String getFirst_name() {
 		return first_name;
 	}
@@ -77,12 +52,6 @@ private List<Review> review;
 	public void setMobile_number(long mobile_number) {
 		this.mobile_number = mobile_number;
 	}
-	public Address getAddress_id() {
-		return address_id;
-	}
-	public void setAddress_id(Address address_id) {
-		this.address_id = address_id;
-	}
 	public String getSecurity_question() {
 		return security_question;
 	}
@@ -95,39 +64,58 @@ private List<Review> review;
 	public void setSecurity_answer(String security_answer) {
 		this.security_answer = security_answer;
 	}
-	public User() {
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getAddress_line() {
+		return address_line;
+	}
+	public void setAddress_line(String address_line) {
+		this.address_line = address_line;
+	}
+	public String getStreet() {
+		return street;
+	}
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getPincode() {
+		return pincode;
+	}
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
+	public UserInfo() {
 		super();
 	}
-	public User(int user_id, String first_name, String last_name, String gender, String email_id, long mobile_number,
-			Address address_id, String security_question, String security_answer,String password) {
+	public UserInfo(String first_name, String last_name, String gender, String email_id, long mobile_number,
+			String security_question, String security_answer, String password, String address_line, String street,
+			String city, String pincode) {
 		super();
-		this.user_id = user_id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.gender = gender;
 		this.email_id = email_id;
 		this.mobile_number = mobile_number;
-		this.address_id = address_id;
 		this.security_question = security_question;
 		this.security_answer = security_answer;
-		this.password=password;
-	}
-	public User( String first_name, String last_name, String gender, String email_id, long mobile_number,
-			String security_question, String security_answer,String password) {
-		
-		this.first_name = first_name;
-		this.last_name = last_name;
-		this.gender = gender;
-		this.email_id = email_id;
-		this.mobile_number = mobile_number;
-		this.security_question = security_question;
-		this.security_answer = security_answer;
-		this.password=password;
+		this.password = password;
+		this.address_line = address_line;
+		this.street = street;
+		this.city = city;
+		this.pincode = pincode;
 	}
 	
 	
 	
 	
-	
-
 }
