@@ -37,7 +37,13 @@ export default function Profile()
        setFname(result.first_name);
        setMobileNo(result.mobile_number);
        setId(result.user_id);
-        
+       setLname(result.last_name);
+       setGender(result.gender);
+       setEmail(result.email_id);
+       setAddress(result.addressline)
+       setStreet(result.street);
+       setCity(result.city);
+       setPincode(result.pincode);
     }
     
 
@@ -90,7 +96,10 @@ export default function Profile()
 
         function Update(event)
         {
-                
+            let users={fname:fname,lname:lname,gender:gender,email:email,mobileno:mobileno,address:address,street:street,city:city,pincode:pincode}
+            console.log("user=",users)
+           
+            UserServices.updateProfile(users)    
 
 
         }
