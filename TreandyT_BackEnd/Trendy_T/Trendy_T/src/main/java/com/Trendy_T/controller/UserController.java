@@ -4,6 +4,7 @@ package com.Trendy_T.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,7 @@ import com.Trendy_T.repositories.UserRepository;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin
 public class UserController {
 	
 	@Autowired
@@ -36,7 +38,7 @@ public class UserController {
 	{
 			Address add=new Address(u.getAddress_line(), u.getStreet(), u.getCity(), u.getPincode());
 			adrrepo.save(add);	
-			User us=new User( u.getFirst_name(), u.getFirst_name(),u.getGender(), u.getEmail_id(),u.getMobile_number(),u.getSecurity_question(),u.getSecurity_answer(), u.getPassword());
+			User us=new User( u.getFirst_name(), u.getLast_name(),u.getGender(), u.getEmail_id(),u.getMobile_number(),u.getSecurity_question(),u.getSecurity_answer(), u.getPassword());
 			us.setAddress_id(add);
 			urepo.save(us);
 			return us;	
