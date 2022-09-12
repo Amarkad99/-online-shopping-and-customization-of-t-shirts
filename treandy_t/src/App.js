@@ -21,7 +21,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ButtonDesign from "./Component/ButtonDesign";
 import MyOrder from "./Component/OrderDetails";
 import Redymade from "./Component/Redymade";
-import DeliveryDetails from "./Component/DeliveryDetails";
+//import DeliveryDetails from "./Component/DeliveryDetails";
 import Home from "./Component/Home";
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
     <BrowserRouter>
               <Routes>
                   <Route path="/" element={<Home></Home>}  /> 
-                  <Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>
+                  {/*<Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>*/}
                   <Route path="profile" element={<Profile></Profile>} />
                   <Route path="order/details" element={<MyOrder></MyOrder>} />
                   <Route path="create/design" element={<Create></Create>} />
