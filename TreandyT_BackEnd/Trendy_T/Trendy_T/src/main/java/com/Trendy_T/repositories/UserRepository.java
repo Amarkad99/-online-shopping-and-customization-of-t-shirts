@@ -1,4 +1,4 @@
-package com.Trendy_T.dao;
+package com.Trendy_T.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
