@@ -1,4 +1,4 @@
-import ByPrice from "./ByPrice";
+
 
 
 
@@ -11,7 +11,7 @@ export default function RedymadeNavbar()
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href={<ByPrice></ByPrice>} role="tab" aria-controls="profile" aria-selected="false">Cart</a>
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#" role="tab" aria-controls="profile" aria-selected="false">Cart</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Price</a>
