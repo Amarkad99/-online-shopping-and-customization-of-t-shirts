@@ -24,7 +24,7 @@ public class User {
 	private String first_name;
 	private String last_name;
 	private String gender;
-	private String email_id;
+	private String email;
 	private long mobile_number;
 	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="address_id")
@@ -65,11 +65,11 @@ private List<Review> review;
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getEmail_id() {
-		return email_id;
+	public String getEmail() {
+		return email;
 	}
 	public void setEmail_id(String email_id) {
-		this.email_id = email_id;
+		this.email = email_id;
 	}
 	public long getMobile_number() {
 		return mobile_number;
@@ -105,7 +105,7 @@ private List<Review> review;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.gender = gender;
-		this.email_id = email_id;
+		this.email= email_id;
 		this.mobile_number = mobile_number;
 		this.address_id = address_id;
 		this.security_question = security_question;
@@ -118,7 +118,7 @@ private List<Review> review;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.gender = gender;
-		this.email_id = email_id;
+		this.email = email_id;
 		this.mobile_number = mobile_number;
 		this.security_question = security_question;
 		this.security_answer = security_answer;

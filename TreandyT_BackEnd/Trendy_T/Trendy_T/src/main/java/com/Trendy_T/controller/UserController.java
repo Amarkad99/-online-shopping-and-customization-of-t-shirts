@@ -36,10 +36,24 @@ public class UserController {
 	{
 			Address add=new Address(u.getAddress_line(), u.getStreet(), u.getCity(), u.getPincode());
 			adrrepo.save(add);	
-			User us=new User( u.getFirst_name(), u.getFirst_name(),u.getGender(), u.getEmail_id(),u.getMobile_number(),u.getSecurity_question(),u.getSecurity_answer(), u.getPassword());
+			User us=new User( u.getFirst_name(), u.getLast_name(),u.getGender(), u.getEmail_id(),u.getMobile_number(),u.getSecurity_question(),u.getSecurity_answer(), u.getPassword());
 			us.setAddress_id(add);
 			urepo.save(us);
 			return us;	
 	}
+	@RequestMapping(method = RequestMethod.PUT ,value = "/edit")
+	public User editUser(@RequestBody UserInfo us)
+	{
+		
+		User u=(User)urepo.findByEmail(us.getEmail_id());
+		u.setFirst_name(us.getFirst_name());
+		u.setLast_name(us.getLast_name());
+		u.setGender(u.getGender());
+		u.setMobile_number(us.getMobile_number());
+		urepo.save(u);
+		return u;
+		
+	}
+		
 }
 
