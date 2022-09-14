@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './CSS_OwnerDash.css';
+import '../CssClass/CSS_OwnerDash.css';
 import NavBarOwner from './NavBarOwner';
 
 export default function OwnerDashBoard()

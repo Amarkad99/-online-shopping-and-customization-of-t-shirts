@@ -1,13 +1,13 @@
 import React from 'react'
 
 import NavBarCart from './NavBarProductDash';
-import './CSS_ProductDash.css'
+import '../CssClass/CSS_ProductDash.css'
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Table from 'react-bootstrap/Table';
-import ModalBox from './ModalBox'
+//import ModalBox from './ModalBox'
 
-export default function ShoppingCart()
+export default function ProductDashboard()
 {
     return(
         <div>

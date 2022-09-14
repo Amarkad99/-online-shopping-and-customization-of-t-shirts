@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import box from "../CssClass/Box.css";
 import Button from 'react-bootstrap/Button';
-import Logo from './logo.png';
+import Logo from '../Images/logo.png';
 import NavBar from "./NavBar";
 
 
@@ -99,7 +99,7 @@ export default function Profile()
             let users={fname:fname,lname:lname,gender:gender,email:email,mobileno:mobileno,address:address,street:street,city:city,pincode:pincode}
             console.log("user=",users)
            
-            UserServices.updateProfile(users)    
+               
 
 
         }

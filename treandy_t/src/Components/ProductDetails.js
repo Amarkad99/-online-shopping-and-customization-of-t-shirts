@@ -1,13 +1,13 @@
 import React from 'react'
 import NavBarProductDetail from './NavBarProductDetail'
-import './CSS_ProductDetails.css'
+import '../CssClass/CSS_ProductDetails.css'
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Table from 'react-bootstrap/Table';
-import Full from './t1.JPG'
-import Tshirt from './tshirt1.gif'
+import Full from '../Images/yello.png'
+import Tshirt from '../Images/blue.png'
 
-export default function ProductDetail()
+export default function ProductDetails()
 {
     return(
         <div>

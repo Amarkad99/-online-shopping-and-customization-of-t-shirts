@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBarCart from './NavBarCart'
-import Cart from './cart5.gif'
-import './CSS_ShoppingCart.css'
+import Cart from '../Images/cart5.gif'
+import '../CssClass/CSS_ShoppingCart.css'
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Table from 'react-bootstrap/Table';

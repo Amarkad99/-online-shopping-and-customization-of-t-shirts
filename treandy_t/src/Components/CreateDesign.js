@@ -1,12 +1,12 @@
 import React from "react";
-import './D2.css'
+import '../CssClass/D2.css'
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import dtshirt from './th2.jpg'
-import dtshirt2 from './th2.jpg'
-import './image1.css'
-import './image2.css'
-export default function Create()
+import dtshirt from '../Images/th2.jpg'
+import dtshirt2 from '../Images/th2.jpg'
+import '../CssClass/image1.css'
+import '../CssClass/image2.css'
+export default function CreateDesign()
 {
 
 

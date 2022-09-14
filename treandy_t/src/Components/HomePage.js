@@ -1,21 +1,23 @@
 import React from 'react'
-import './CSS_HomePage.css'
-import Shirt from './tshirt1.gif'
-import SolidShirt from './3dTshirt.jpg'
-import SleeveShirt from './fullSleeve.gif'
-import HeartShirt from './heartTshirt.gif'
-import NavBarHomePage from './NavBarHomePage'
+import '../CssClass/CSS_HomePage.css'
+import Shirt from '../Images/heartTshirt.gif'
+import SolidShirt from '../Images/3dTshirt.jpg'
+import SleeveShirt from '../Images/fullSleeve.gif'
+import HeartShirt from '../Images/heartTshirt.gif'
+import NavBarHomePage from '../Components/NavBarHomePage'
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HomeCorse from './HomeCorse'
+//import HomeCorse from './HomeCorse'
+import '../CssClass/BgImage.css';
 
 export default function Tru()
 {
     return(
-        <div  >
+        <div className='BgImage' >
             <NavBarHomePage></NavBarHomePage>
-            <HomeCorse></HomeCorse>
- {/**           <div align="left" className='leftButtons'>
+            
+ {/** <HomeCorse></HomeCorse>
+  *           <div align="left" className='leftButtons'>
                 <button className='btn'id="homeButton">Home</button>
                 <button className='btn'id="menuButton">Menu</button> 
             </div>
