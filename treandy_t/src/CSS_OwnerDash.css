@@ -1,0 +1,86 @@
+.allDiv
+{
+    background-color: aqua;
+    color:darkmagenta;
+    border-color: darkviolet;
+    border-style: double;
+    border-radius: 1cm;
+}
+
+.topLeft
+{
+    margin: 0;
+    position: absolute;
+    top:02%;
+    left: 05%;
+}
+.topRight
+{
+    /*text-align-last: right;*/
+    margin: 0;
+    position: absolute;
+    top: 05%;
+    right: 05%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.title
+{
+    color:yellow;
+    background-color: hotpink;
+    border-style: dotted;
+    border-radius:1cm;
+    border-color:blueviolet;
+
+    margin: 0;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.button1
+{
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.button2
+{
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+.button3
+{
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+.button4
+{
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+
