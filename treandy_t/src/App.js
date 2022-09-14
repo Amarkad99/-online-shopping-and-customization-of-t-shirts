@@ -32,7 +32,7 @@ import Redymade from "./Component/Redymade";
 import DeliveryDetails from "./Component/DeliveryDetails";
 import Home from "./Component/Home";
 import Login from "./Login";
-import store from "./sore/reducer";
+import store from "./store/reducer";
 import { Provider } from 'react-redux';
 import Registration2 from "./Registration2";
 */

@@ -12,6 +12,7 @@ import '../CssClass/BgImage.css';
 
 export default function Tru()
 {
+    const uname = useSelector((state)=>{return state.Emailid});
     return(
         <div className='BgImage' >
             <NavBarHomePage></NavBarHomePage>
@@ -29,7 +30,7 @@ export default function Tru()
             </div>
 */} 
            <h2 className='title'><b><i>TRENDY-T</i></b></h2> 
-
+           <h2>welcome {} </h2>
            <div  className='center_left'> 
                    
                     <Button href="">Customised T-Shirts</Button>{''}

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Trendy_T.Entity.Address;
 import com.Trendy_T.Entity.User;
+import com.Trendy_T.pojo.Massage;
 import com.Trendy_T.pojo.UserInfo;
 import com.Trendy_T.repositories.AddressRepository;
 import com.Trendy_T.repositories.UserRepository;
@@ -34,14 +35,23 @@ public class UserController {
 		return urepo.findAll();
 	}
 	@RequestMapping(method = RequestMethod.POST ,value = "/register")	
-	public User addUser(@RequestBody UserInfo u)
-	{
+	public Massage addUser(@RequestBody UserInfo u)
+	{ 
+		
+		User a=(User)urepo.findByEmail(u.getEmail_id());
+
+		if(a == null) 
+		{
 			Address add=new Address(u.getAddress_line(), u.getStreet(), u.getCity(), u.getPincode());
 			adrrepo.save(add);	
 			User us=new User( u.getFirst_name(), u.getLast_name(),u.getGender(), u.getEmail_id(),u.getMobile_number(),u.getSecurity_question(),u.getSecurity_answer(), u.getPassword());
 			us.setAddress_id(add);
 			urepo.save(us);
-			return us;	
+			return new Massage ("succsess");	
+		}
+		else
+			return new Massage ("aldredy register");
+			
 	}
 	@RequestMapping(method = RequestMethod.PUT ,value = "/edit")
 	public User editUser(@RequestBody UserInfo us)
