@@ -1,6 +1,9 @@
 package com.Trendy_T.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +15,7 @@ import com.Trendy_T.repositories.UserRepository;
 
 @RestController
 @RequestMapping("/Login")
+@CrossOrigin
 public class LoginController {
 	
 	@Autowired

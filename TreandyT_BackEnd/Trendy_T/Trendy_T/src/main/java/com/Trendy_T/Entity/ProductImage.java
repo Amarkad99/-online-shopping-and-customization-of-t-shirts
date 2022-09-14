@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -14,18 +15,17 @@ import javax.persistence.Table;
 @Table(name="product_image_tbl")
 public class ProductImage implements Serializable {
 	@Id
-	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="product_id")
-	private Product product_id;
+	@GeneratedValue
+	private int productimage_id;
 	private byte[] image_front;
 	private byte[] image_back;
 	private byte[] image_left;
 	private byte[] image_right;
-	public Product getProduct_id() {
-		return product_id;
+	public int getProduct_id() {
+		return productimage_id;
 	}
-	public void setProduct_id(Product product_id) {
-		this.product_id = product_id;
+	public void setProduct_id(int product_id) {
+		this.productimage_id = product_id;
 	}
 	public byte[] getImage_front() {
 		return image_front;
@@ -54,16 +54,27 @@ public class ProductImage implements Serializable {
 	public ProductImage() {
 		super();
 	}
-	public ProductImage(Product product_id, byte[] image_front, byte[] image_back, byte[] image_left,
+	public ProductImage(int product_id, byte[] image_front, byte[] image_back, byte[] image_left,
 			byte[] image_right) {
 		super();
-		this.product_id = product_id;
+		this.productimage_id = product_id;
+		this.image_front = image_front;
+		this.image_back = image_back;
+		this.image_left = image_left;
+		this.image_right = image_right;
+	}
+	public ProductImage( byte[] image_front, byte[] image_back, byte[] image_left,
+			byte[] image_right) {
+		super();
+		
 		this.image_front = image_front;
 		this.image_back = image_back;
 		this.image_left = image_left;
 		this.image_right = image_right;
 	}
 	
+	
+
 	
 
 }

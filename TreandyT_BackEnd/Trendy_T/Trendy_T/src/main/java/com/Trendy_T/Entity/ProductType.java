@@ -15,21 +15,20 @@ import javax.persistence.Table;
 public class ProductType implements Serializable{
 	
 	@Id
-	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="product_id")
-	private Product product_id;
+	@GeneratedValue
+	private int producttype_id;
 	private String color;
 	private String material;
 	private String sleeve;
 	private String neck_type;
 	private String size;
 	
-	public Product getProduct_id() {
-		return product_id;
+	public int getProduct_id() {
+		return producttype_id;
 	}
 
-	public void setProduct_id(Product product_id) {
-		this.product_id = product_id;
+	public void setProduct_id(int product_id) {
+		this.producttype_id = product_id;
 	}
 
 	public String getColor() {
@@ -76,10 +75,20 @@ public class ProductType implements Serializable{
 		super();
 	}
 
-	public ProductType(Product product_id, String color, String material, String sleeve, String neck_type,
+	public ProductType(int product_id, String color, String material, String sleeve, String neck_type,
 			String size) {
 		super();
-		this.product_id = product_id;
+		this.producttype_id = product_id;
+		this.color = color;
+		this.material = material;
+		this.sleeve = sleeve;
+		this.neck_type = neck_type;
+		this.size = size;
+	}
+	public ProductType( String color, String material, String sleeve, String neck_type,
+			String size) {
+		super();
+		
 		this.color = color;
 		this.material = material;
 		this.sleeve = sleeve;
