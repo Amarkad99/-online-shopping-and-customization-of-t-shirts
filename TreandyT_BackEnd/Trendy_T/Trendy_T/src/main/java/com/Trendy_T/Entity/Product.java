@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -20,7 +21,12 @@ public class Product {
 	private double price;
 	private int quantity;
 	private int iscustomizable;
-	
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name="producttype_id")
+	private ProductType producttype_id;
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name="productimage_id")
+	private ProductImage productimage_id;
 	@ManyToMany
 	private List<Review> review; 
 	public int getProduct_id() {
