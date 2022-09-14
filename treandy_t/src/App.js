@@ -23,6 +23,10 @@ import MyOrder from "./Component/OrderDetails";
 import Redymade from "./Component/Redymade";
 //import DeliveryDetails from "./Component/DeliveryDetails";
 import Home from "./Component/Home";
+import Login from "./Login";
+import store from "./store/reducer";
+import { Provider } from 'react-redux';
+import Registration2 from "./Registration2";
 
 function App() {
   return (
@@ -39,9 +43,12 @@ function App() {
 
     <ButtonDesign></ButtonDesign>
     <BrowserRouter>
+    <Provider store={store}>
               <Routes>
-                  <Route path="/" element={<Home></Home>}  /> 
-                  {/*<Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>*/}
+              <Route path="/" element={<Login></Login>}  /> 
+              <Route path="Signup" element={<Registration2 />} />
+                  <Route path="Home" element={<Home></Home>}  /> 
+                  <Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>
                   <Route path="profile" element={<Profile></Profile>} />
                   <Route path="order/details" element={<MyOrder></MyOrder>} />
                   <Route path="create/design" element={<Create></Create>} />
@@ -52,7 +59,7 @@ function App() {
                   <Route path="tshirt/details" element={<Tshirt_Details></Tshirt_Details>} />
                  
               </Routes>
-
+              </Provider>
     </BrowserRouter>
     
    </div>
