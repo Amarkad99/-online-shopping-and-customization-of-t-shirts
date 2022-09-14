@@ -15,20 +15,23 @@ import { useDispatch } from "react-redux";
 
     function check_login()
     {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body:JSON.stringify({
-                Emailid:Emailid,
-                password:password})
-            };
-        fetch('http://localhost:8080/', requestOptions)
+      console.log({Emailid})
+      console.log("hi")
+        fetch('http://localhost:8080/Login/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:JSON.stringify({
+            email_id:Emailid,
+            password:password})
+          })
         .then(response => response.json())
         .then(data =>{
-             if(data.result === "OK")
+          
+             if(data.msg === "OK")
              {
-                dispatch({type:"save",payload:{Emailid:Emailid,password:password}})
-                navigate("/home")
+              console.log("hi2")
+              dispatch({type:"save",payload:{Emailid:Emailid,password:password}})
+              navigate("/home") 
              }
              else{
               setMsg("Not Ok")
@@ -82,16 +85,7 @@ return(
               <div className="text-danger"></div>
           </div><br></br>
   
-          <div >
-            <label for="password">Confirm Password:</label><br></br>
-            <input 
-              type="password" 
-              name="confirm_password" 
-              class="form-control" 
-              placeholder="Enter confirm password" 
-              id="confirm_password" required/>
-              <div className="text-danger"></div>
-          </div><br></br>
+          
              
           <Button variant="primary" onClick={check_login}>Login</Button>{' '}
         </form>

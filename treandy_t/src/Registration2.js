@@ -3,6 +3,7 @@ import React from 'react';
   import Button from 'react-bootstrap/Button';
   
   import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navigate } from 'react-router-dom';
   
 class Registration2 extends React.Component {
     constructor() {
@@ -11,7 +12,8 @@ class Registration2 extends React.Component {
       input: {},
       errors: {},
       gender:" ",
-      question:" "
+      question:" ",
+      massage:" "
     };
      
     this.handleChange = this.handleChange.bind(this);
@@ -58,7 +60,6 @@ onChangeSelect(event){
         input["Pincode"] = "";
         input["gender"] = "";
         this.setState({input:input});
-        console.log(input["username"])
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -80,9 +81,13 @@ onChangeSelect(event){
         fetch('http://localhost:8080/user/register', requestOptions)
         .then(response => response.json())
         .then(data =>{
-             if(data.result === "OK")
+             if(data.msg === "succsess")
              {
-               console.log("ok");
+               this.setState({massage:"succsessfully register"})
+               Navigate("/") 
+             }
+             else{
+              this.setState({massage:"Aldredy Register Emailid"})
              }
         } );
     }
@@ -145,7 +150,8 @@ onChangeSelect(event){
   render() {
     return (
       
-      <div class="box2">  
+      <div class="box2"> 
+      <h1>{this.state.massage}</h1> 
       <form>
       <div>
       <ul class="nav nav-tabs" id="myTab" role="tablist">
