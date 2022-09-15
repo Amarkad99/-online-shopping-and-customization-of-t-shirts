@@ -53,6 +53,9 @@ public class UserController {
 			return new Massage ("aldredy register");
 			
 	}
+	
+	
+	
 	@RequestMapping(method = RequestMethod.PUT ,value = "/edit")
 	public User editUser(@RequestBody UserInfo us)
 	{

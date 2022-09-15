@@ -1,12 +1,14 @@
  import React, { useState } from "react";
  import "./Login.css"
  import Tshirt from './image/Tshirt.png';
+ import logo from './image/tredy_t_logo.jpg';
 
  import Button from 'react-bootstrap/Button';
  import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
  export default function Login(){
+  let [status,setStatus] = useState(false)
   let [Emailid,setEmailid] = useState("")
   let [password,setPassword] = useState("")
   let [msg,setMsg] = useState("")
@@ -29,12 +31,14 @@ import { useDispatch } from "react-redux";
           
              if(data.msg === "OK")
              {
+              
               console.log("hi2")
               dispatch({type:"save",payload:{Emailid:Emailid,password:password}})
               navigate("/home") 
              }
              else{
-              setMsg("Not Ok")
+              setStatus(true)
+              setMsg("NOT REGISTER PLEASE LOGIN OR CHECK EMAIL AND PASSWORD")
              }
 
         } );
@@ -54,8 +58,13 @@ return(
     
         <h2><b>SING IN</b></h2>      
         
+        {status && <div classs="container p-5">
+	<div class="alert alert-success" role="alert">
+   <h4 className="alert-heading">{msg}</h4>
+	</div>
+</div>}
         <form >
-           <h2>{msg}</h2>
+        <img className='img2' src={logo} />
           <div class="Input">
             <label for="username">EmailId:</label><br></br>
             <input   class="form-control" 
