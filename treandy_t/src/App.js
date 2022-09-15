@@ -35,14 +35,27 @@ import MyOrder from "./Component/OrderDetails";
 import Redymade from "./Component/Redymade";
 import DeliveryDetails from "./Component/DeliveryDetails";
 import Home from "./Component/Home";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+*/
+
+=======
+>>>>>>> abhijeet_code
 import Login from "./Login";
 import store from "./store/reducer";
 import { Provider } from 'react-redux';
 import Registration2 from "./Registration2";
+<<<<<<< HEAD
 */
 
 
 import Homepage from "./hw";
+=======
+import Homepage from "./hw";
+>>>>>>> developer
+>>>>>>> abhijeet_code
 
 function App() {
   return (
