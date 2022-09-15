@@ -66,7 +66,7 @@ export default function Profile()
 
     return(
              
-        <div className="box">
+        <div className="box2">
             <NavBar></NavBar>
         <img src={Logo} alt="Logo image" width="100" height="100"></img>                     
         <center><h1>Profile</h1></center> 
@@ -106,11 +106,11 @@ export default function Profile()
     <div class="form-group">
         <label for="Pin Code">Pin Code:</label>
         <input type="text" class="form-control" id="pinCode" name="pinCode" onBlur={PinCode}/>
-    </div>
+    </div><br></br><br></br>
 
-    <Button variant="flat" size="xl" onClick={Update}>
+    <center><Button variant="flat" size="xl" onClick={Update}>
         Update
-      </Button> 
+      </Button> </center>
   
     </form>
      </div>
