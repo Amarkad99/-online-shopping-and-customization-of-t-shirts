@@ -13,7 +13,8 @@ class Registration2 extends React.Component {
       errors: {},
       gender:" ",
       question:" ",
-      massage:" "
+      massage:" ",
+      status:false
     };
      
     this.handleChange = this.handleChange.bind(this);
@@ -83,11 +84,13 @@ onChangeSelect(event){
         .then(data =>{
              if(data.msg === "succsess")
              {
-               this.setState({massage:"succsessfully register"})
+              this.setState({status:true})
+               this.setState({massage:"Succsessfully Register!!"})
                Navigate("/") 
              }
              else{
-              this.setState({massage:"Aldredy Register Emailid"})
+              this.setState({status:true})
+              this.setState({massage:"Aldredy Register Emailid!!"})
              }
         } );
     }
@@ -151,7 +154,12 @@ onChangeSelect(event){
     return (
       
       <div class="box2"> 
-      <h1>{this.state.massage}</h1> 
+       {this.state.status && <div classs="container p-5">
+	<div class="alert alert-success" role="alert">
+   <h4 className="alert-heading">{this.state.massage}</h4>
+	</div>
+</div>}
+       
       <form>
       <div>
       <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -175,7 +183,7 @@ onChangeSelect(event){
         </center>
         
         
-        <label for="Firstname">Firstname:</label>
+        <b>  <label for="Firstname">Firstname:</label></b>
              <input  class="form-control form-control-lg"
               type="text" 
               name="Firstname" 
@@ -185,7 +193,7 @@ onChangeSelect(event){
               id="Firstname"
               required />
 
-             <label for="Lastname">Lastname:</label>&nbsp;&nbsp;
+<b> <label for="Lastname">Lastname:</label></b> &nbsp;&nbsp;
              <input  class="form-control form-control-lg"
               type="text" 
               name="Lastname" 
@@ -195,7 +203,7 @@ onChangeSelect(event){
               id="Lastname" required/>
 
           
-            <label for="username"> EmailId:</label>
+<b>  <label for="username"> EmailId:</label></b> 
             <input  class="form-control form-control-lg"
               type="email" 
               name="Emailid" 
@@ -211,7 +219,7 @@ onChangeSelect(event){
         
   
           <div class="Input">
-            <label for="password">Password:</label>
+          <b> <label for="password">Password:</label></b> 
             <input  class="form-control form-control-lg"
               type="password" 
               name="password" 
@@ -224,7 +232,7 @@ onChangeSelect(event){
           </div>
   
           <div class="Input">
-            <label for="password">Confirm Password:</label>
+          <b>  <label for="password">Confirm Password:</label></b> 
             <input  class="form-control form-control-lg"
               type="password" 
               name="confirm_password" 
@@ -236,7 +244,7 @@ onChangeSelect(event){
               <div className="text-danger">{this.state.errors.confirm_password} </div>
           </div>
            
-          <label for="password">Select Security Question:</label>
+          <b><label for="password">Select Security Question:</label></b> 
           <select  value={this.state.question}  onChange={this.onChangeSelect}
               class="form-control form-control-lg">
     <option value="Who is your favourite actor">Who is your favourite actor?</option>
@@ -246,7 +254,7 @@ onChangeSelect(event){
 </select>
 
 <div class="Input" >
-            <label for="password">Answer:</label><br></br>
+<b> <label for="password">Answer:</label><br></br></b> 
             <input type="text" class="form-control form-control-lg"
             name="Answer"
             placeholder="Enter Your Answer" 
@@ -257,7 +265,7 @@ onChangeSelect(event){
       
 
 
-             <label for="Mobileno">Mobileno :</label>
+<b>  <label for="Mobileno">Mobileno :</label></b> 
              <input  class="form-control form-control-lg"
               type="number" 
               value={this.state.input.Mobileno}
@@ -269,7 +277,7 @@ onChangeSelect(event){
               
 
               
-             <label for="Adress">Adress 1St Line :</label>
+              <b> <label for="Adress">Adress 1St Line :</label></b> 
              <textarea class="form-control form-control-lg"
               name="Adress" 
               value={this.state.input.Adress}
@@ -281,7 +289,7 @@ onChangeSelect(event){
               
 
               
-             <label for="Street">Street :</label>
+              <b>  <label for="Street">Street :</label></b> 
              <input   class="form-control form-control-lg"
              type="text" 
              name="Street" 
@@ -293,7 +301,7 @@ onChangeSelect(event){
              
               
               
-             <label for="City">City :</label>
+             <b>  <label for="City">City :</label></b> 
              <input   class="form-control form-control-lg"
              type="text"
               name="City" 
@@ -305,7 +313,7 @@ onChangeSelect(event){
               
 
              
-             <label for="Pincode">Pincode :</label>
+            <b> <label for="Pincode">Pincode :</label></b> 
              <input   class="form-control form-control-lg"
              type="number"
              value={this.state.input.Pincode}
@@ -315,12 +323,12 @@ onChangeSelect(event){
               required /><br></br>
              
               <div onChange={this.onChangeValue}>
-             <label for="Gender">Gender : </label>  
-             Male &nbsp;&nbsp;<input type="radio"   name="Gender" id="male" 
+            <b> <label for="Gender" class="form-check-label">Gender : </label> </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <label for="Gender" class="form-check-label">Male </label>&nbsp;&nbsp;<input type="radio"   name="Gender" id="male" 
              value="male" class="form-check-input"
-              />
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              
-             Female &nbsp;&nbsp;<input type="radio"   name="Gender" id="Female" 
+             <label for="Gender" class="form-check-label">Female </label>   &nbsp;&nbsp;<input type="radio"   name="Gender" id="Female" 
               value="female" class="form-check-input"
               />
             

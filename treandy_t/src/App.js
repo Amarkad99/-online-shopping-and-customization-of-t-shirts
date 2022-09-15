@@ -27,6 +27,7 @@ import Login from "./Login";
 import store from "./store/reducer";
 import { Provider } from 'react-redux';
 import Registration2 from "./Registration2";
+import Homepage from "./hw";
 
 function App() {
   return (
