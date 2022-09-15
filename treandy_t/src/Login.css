@@ -44,6 +44,18 @@ padding: 15px;
 
 }
 
+.img2 {
+  object-fit: fill;
+  width: 100px;
+height: 100px;
+text-align: center;
+padding: 15px;
+position: absolute;
+top: 0px;
+right: 0px;
+
+}
+
 
 
 
