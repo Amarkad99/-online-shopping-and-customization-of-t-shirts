@@ -15,15 +15,19 @@ import Payment from "./Components/Payment"
 import Profile from "./Components/ProfilePage";
 import ButtonDesign from "./Components/ButtonDesign";
 import OrderDetails from "./Components/OrderDetails";
-import Redymade from "./Components/Redymade";
+//import Redymade from "./Components/Redymade";
 import DeliveryDetails from "./Components/DeliveryDetails";
-import HomePage from "./Components/HomePage";
+//import HomePage from "./Components/HomePage";
 import OwnerDashBoard from "./Components/OwnerDashBoard";
 import ProductDashboard from "./Components/ProductDashboard";
 import ProductDetails from "./Components/ProductDetails";
 import ShoppingCart from "./Components/ShoppingCart";
 import Dashboard from "./Components/dashboard/Dashboard";
 import Login from "./Login";
+import store from "./store/reducer";
+import { Provider } from 'react-redux';
+import Registration2 from "./Registration2";
+
 
 /*
 import ButtonDesign from "./Component/ButtonDesign";
@@ -31,10 +35,7 @@ import MyOrder from "./Component/OrderDetails";
 import Redymade from "./Component/Redymade";
 import DeliveryDetails from "./Component/DeliveryDetails";
 import Home from "./Component/Home";
-import Login from "./Login";
-import store from "./store/reducer";
-import { Provider } from 'react-redux';
-import Registration2 from "./Registration2";
+
 */
 
 
@@ -46,12 +47,13 @@ function App() {
     <BrowserRouter>
     
     <HeaderComponent></HeaderComponent>
+    <Provider store={store}>
               <Routes>
-             {/*<Provider store={store}>
+             
               
               <Route path="/" element={<Login></Login>}  /> 
               <Route path="Signup" element={<Registration2 />} />
-                  <Route path="Home" element={<Home></Home>}  />   </Provider>*/ } 
+                   
                   
                   <Route path="/" element={<Login></Login>}  /> 
                   <Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>
@@ -72,8 +74,8 @@ function App() {
                   
               </Routes>
               
-             
-            <FooterComponent></FooterComponent>
+              </Provider>
+            
     </BrowserRouter>
     
    </div>
