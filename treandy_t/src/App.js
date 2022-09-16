@@ -27,7 +27,7 @@ import Login from "./Login";
 import store from "./store/reducer";
 import { Provider } from 'react-redux';
 import Registration2 from "./Registration2";
-
+import Homepage from "./hw";
 
 /*
 import ButtonDesign from "./Component/ButtonDesign";
@@ -41,21 +41,8 @@ import Home from "./Component/Home";
 
 */
 
-=======
->>>>>>> abhijeet_code
-import Login from "./Login";
-import store from "./store/reducer";
-import { Provider } from 'react-redux';
-import Registration2 from "./Registration2";
-<<<<<<< HEAD
-*/
 
 
-import Homepage from "./hw";
-=======
-import Homepage from "./hw";
->>>>>>> developer
->>>>>>> abhijeet_code
 
 function App() {
   return (
