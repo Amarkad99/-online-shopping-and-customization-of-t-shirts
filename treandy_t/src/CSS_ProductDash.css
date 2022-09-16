@@ -1,0 +1,43 @@
+.title
+{
+    color:yellow;
+    background-color: hotpink;
+    border-style: dotted;
+    border-radius:1cm;
+    border-color:blueviolet;
+
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.addButton
+{
+    margin: 0;
+    position:absolute;
+    top: 10%;
+    left: 10%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.subButton
+{
+    margin: 0;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.tablePosition
+{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
