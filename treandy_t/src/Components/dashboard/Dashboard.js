@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import { Component } from "react";
 import Display from "../design/Display";
 import Settings from "../design/Settings";
 //import { storage } from '../../config/firebaseConfig';
 
+=======
+import { toBeVisible } from "@testing-library/jest-dom/dist/matchers";
+import { Component } from "react";
+import Display from "../design/Display";
+import Settings from "../design/Settings";
+>>>>>>> developer
 
 class Dashboard extends Component{
 
@@ -10,7 +17,10 @@ class Dashboard extends Component{
         tshirtColor: 'black',
         upperText: 'This is Upper Text',
         lowerText: 'This is Lower Text',
+<<<<<<< HEAD
         memeImg: '',
+=======
+>>>>>>> developer
         url: '',
         textSize: 38,
         textColor: 'white'
@@ -29,6 +39,7 @@ class Dashboard extends Component{
     }
 
     handleImageUpload = (e) =>{
+<<<<<<< HEAD
        /* if(e.target.files[0]){
             const image = (e.target.files[0]);
             const uploadTask = storage.ref(`images/${image.name}`).put(image);
@@ -68,6 +79,19 @@ class Dashboard extends Component{
             })
           })*/
     }
+=======
+
+        const reader = new FileReader();
+        reader.onload = () =>{
+          if(reader.readyState === 2){
+            this.setState({url: reader.result})
+          }
+        }
+        reader.readAsDataURL(e.target.files[0])
+        
+    }
+    
+>>>>>>> developer
 
     handleTextSize = (e) =>{
         this.setState({textSize: e.target.value})
@@ -88,16 +112,48 @@ class Dashboard extends Component{
         console.log("   T-shirt Color=",this.state.tshirtColor,
         "   Upper Text=",this.state.upperText,
         "   Lower Text=",this.state.lowerText,
+<<<<<<< HEAD
             "   Image=",this.state.memeImg,
+=======
+>>>>>>> developer
             "   Url=",this.state.url,
             "   Text Size=",this.state.textSize,
             "   Text Color=",this.state.textColor);
 
+<<<<<<< HEAD
 
     }
 
 
 
+=======
+            fetch('http://localhost:8080/customization/insert', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:JSON.stringify({
+                     t_shirt_color:this.state.tshirtColor,
+                     front_upper_text:this.state.upperText,
+                     front_lower_text:this.state.lowerText,
+                     front_image_to_insert:this.state.url,
+                     text_size:this.state.textSize,
+                     text_color:this.state.textColor
+
+                     
+                    
+                    /* id:this.state.textSize,
+                     name:this.state.tshirtColor,
+                     cost:this.state.textSize*/
+                    })                    
+                })
+            /*  
+            let pid=this.state.textSize;
+            let pname=this.state.tshirtColor;
+            let pcost=this.state.textSize
+          //  axios.post(`http://localhost:8080/jpaex/add/${pid}/${pname}/${pcost}`)
+           */ 
+    }
+
+>>>>>>> developer
     render(){
         return(
             <div className="container py-5">

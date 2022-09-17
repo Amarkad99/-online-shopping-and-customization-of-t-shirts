@@ -18,7 +18,11 @@ const Display = ({display, textFormat}) =>{
                     <p style={{fontSize: textFormat, color: display.textColor }}>{display.upperText}</p>
                 </div>
                 <img
+<<<<<<< HEAD
                 src={`${display.url}`  || "http://via.placeholder.com/400x300"}
+=======
+                src={`${display.url}` }
+>>>>>>> developer
                 alt="meme-text"
                 />
                 <div className="lowerText">

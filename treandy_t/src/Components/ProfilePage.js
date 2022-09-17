@@ -6,9 +6,21 @@ import Button from 'react-bootstrap/Button';
 import Logo from '../Images/logo.png';
 import NavBar from "./NavBar";
 
+<<<<<<< HEAD
 
 export default function Profile()
 { 
+=======
+import { useSelector } from "react-redux";
+
+export default function Profile()
+{ 
+
+    const Emailid = useSelector((state)=>{return state.Emailid});
+    console.log("Emailid",Emailid);
+
+
+>>>>>>> developer
     let [id,setId]=useState("")
     let [fname,setFname]=useState("")
     let [lname,setLname]=useState("")
@@ -30,7 +42,11 @@ export default function Profile()
 
     const getUserDetails=async()=>{
         console.warn("param=",params)
+<<<<<<< HEAD
         let result=await fetch(`http://localhost:8080/user/profile/1`);
+=======
+        let result=await fetch(`http://localhost:8080/user/profile/${Emailid}`);
+>>>>>>> developer
         result = await result.json();
        console.warn("Result=",result);
 
@@ -96,6 +112,7 @@ export default function Profile()
 
         function Update(event)
         {
+<<<<<<< HEAD
             let users={fname:fname,lname:lname,gender:gender,email:email,mobileno:mobileno,address:address,street:street,city:city,pincode:pincode}
             console.log("user=",users)
            
@@ -116,6 +133,45 @@ export default function Profile()
         <input type="text" defaultValue={id} class="form-control" id="id" name="id" onBlur={Id} />
     </div>
     <div class="form-group">
+=======
+            //let users={fname:fname,lname:lname,gender:gender,email:email,mobileno:mobileno,address:address,street:street,city:city,pincode:pincode}
+            //console.log("user=",users)
+
+            console.log(event.target.value)
+            
+            fetch('http://localhost:8080/user/edit', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body:JSON.stringify({
+                    email_id:Emailid, first_name:fname,gender:gender,last_name:lname,mobile_number:mobileno,address_line:address,city:city,pincode:pincode,street:street})
+                })
+              .then(response => response.json())
+              .then(data =>{
+                setFname(data.first_name);
+                setMobileNo(data.mobile_number);
+                setLname(data.last_name);
+                setGender(data.gender);
+                setAddress(data.address_line)
+                setStreet(data.street);
+                setCity(data.city);
+                setPincode(data.pincode);
+              });
+        }
+
+
+    return(
+
+        <div>
+            <div class="topnav">
+  <a href="http://localhost:3000/home">Home</a>
+  </div>
+             
+        <div className="box">
+            <NavBar></NavBar>                  
+        <center><h1>Profile</h1></center> 
+        <form method="" action="">
+    <div class="form-group">
+>>>>>>> developer
         <label for="First Name">First Name:</label>
         <input type="text" defaultValue={fname} class="form-control" id="firstName" name="firstName" onBlur={FirstName} />
     </div>
@@ -160,6 +216,7 @@ export default function Profile()
   
     </form>
      </div>
+<<<<<<< HEAD
         
     )
 }
@@ -167,3 +224,9 @@ export default function Profile()
 
 
 
+=======
+     </div>
+        
+    )
+}
+>>>>>>> developer

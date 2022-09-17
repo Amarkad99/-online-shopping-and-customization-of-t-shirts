@@ -27,6 +27,10 @@ const Settings = ({color, upperText, lowerText ,uploadImage, textSize, textColor
             <h4>Upload Image</h4>
             <div className="form-group">
                 <input onChange={uploadImage} type="file" className="form-control-file mb-2"/>
+<<<<<<< HEAD
+=======
+               
+>>>>>>> developer
             </div>
             <hr />
             <h4>Text Size</h4>
