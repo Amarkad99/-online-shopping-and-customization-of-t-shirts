@@ -1,3 +1,4 @@
+
 import { toBeVisible } from "@testing-library/jest-dom/dist/matchers";
 import { Component } from "react";
 import Display from "../design/Display";
@@ -69,7 +70,7 @@ class Dashboard extends Component{
                      t_shirt_color:this.state.tshirtColor,
                      front_upper_text:this.state.upperText,
                      front_lower_text:this.state.lowerText,
-                     front_image_to_insert:this.state.url,
+                     //front_image_to_insert:this.state.url,
                      text_size:this.state.textSize,
                      text_color:this.state.textColor
 

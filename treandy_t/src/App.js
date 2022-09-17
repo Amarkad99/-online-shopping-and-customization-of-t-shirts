@@ -28,12 +28,6 @@ import store from "./store/reducer";
 import { Provider } from 'react-redux';
 import Registration2 from "./Registration2";
 
-<<<<<<< HEAD
-import Profile from "./Component/ProfilePage";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-=======
->>>>>>> abhijit_code
 
 /*
 import ButtonDesign from "./Component/ButtonDesign";
@@ -41,17 +35,9 @@ import MyOrder from "./Component/OrderDetails";
 import Redymade from "./Component/Redymade";
 import DeliveryDetails from "./Component/DeliveryDetails";
 import Home from "./Component/Home";
-<<<<<<< HEAD
-import Login from "./Login";
-import store from "./store/reducer";
-import { Provider } from 'react-redux';
-import Registration2 from "./Registration2";
-import HomePage from "./homePage2";
-=======
 
 */
 
->>>>>>> abhijit_code
 
 function App() {
   return (
@@ -67,14 +53,9 @@ function App() {
               
               <Route path="/" element={<Login></Login>}  /> 
               <Route path="Signup" element={<Registration2 />} />
-<<<<<<< HEAD
-                  {/* <Route path="Home" element={<Home></Home>}  />  */}
-                  <Route path="Home" element={<HomePage></HomePage>}  />
-=======
                    
                   
                   <Route path="/" element={<Login></Login>}  /> 
->>>>>>> abhijit_code
                   <Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>
                   <Route path="profile" element={<Profile></Profile>} />
                   <Route path="order/details" element={<OrderDetails></OrderDetails>} />
