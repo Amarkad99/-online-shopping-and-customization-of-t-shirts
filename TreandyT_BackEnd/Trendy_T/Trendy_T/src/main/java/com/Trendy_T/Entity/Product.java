@@ -21,12 +21,16 @@ public class Product {
 	private double price;
 	private int quantity;
 	private int iscustomizable;
+	
 	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="producttype_id")
+	@JoinColumn(name="productype_id")
 	private ProductType producttype_id;
 	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="productimage_id")
 	private ProductImage productimage_id;
+	
+	
+	
 	@ManyToMany
 	private List<Review> review; 
 	public int getProduct_id() {
@@ -64,7 +68,28 @@ public class Product {
 		this.quantity = quantity;
 		this.iscustomizable = iscustomizable;
 	}
-	
+	public Product(int product_id, double price, int quantity, int iscustomizable, ProductType producttype_id,
+			ProductImage productimage_id) {
+		super();
+		this.product_id = product_id;
+		this.price = price;
+		this.quantity = quantity;
+		this.iscustomizable = iscustomizable;
+		this.producttype_id = producttype_id;
+		this.productimage_id = productimage_id;
+	}
+	public ProductType getProducttype_id() {
+		return producttype_id;
+	}
+	public void setProducttype_id(ProductType producttype_id) {
+		this.producttype_id = producttype_id;
+	}
+	public ProductImage getProductimage_id() {
+		return productimage_id;
+	}
+	public void setProductimage_id(ProductImage productimage_id) {
+		this.productimage_id = productimage_id;
+	}
 	
 
 }
