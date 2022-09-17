@@ -13,10 +13,7 @@ import Tshirt_Details from "./Tshirt_Details";
 
 import Profile from "./Component/ProfilePage";
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import Button from 'react-bootstrap/Button';
-//import { Button } from 'react-bootstrap';
-//import '../scss/custom.scss';
-// import Payment from "./Payment";
+
 
 import ButtonDesign from "./Component/ButtonDesign";
 import MyOrder from "./Component/OrderDetails";
@@ -27,7 +24,7 @@ import Login from "./Login";
 import store from "./store/reducer";
 import { Provider } from 'react-redux';
 import Registration2 from "./Registration2";
-import Homepage from "./hw";
+import HomePage from "./homePage2";
 
 function App() {
   return (
@@ -48,7 +45,8 @@ function App() {
               <Routes>
               <Route path="/" element={<Login></Login>}  /> 
               <Route path="Signup" element={<Registration2 />} />
-                  <Route path="Home" element={<Home></Home>}  /> 
+                  {/* <Route path="Home" element={<Home></Home>}  />  */}
+                  <Route path="Home" element={<HomePage></HomePage>}  />
                   <Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>
                   <Route path="profile" element={<Profile></Profile>} />
                   <Route path="order/details" element={<MyOrder></MyOrder>} />
