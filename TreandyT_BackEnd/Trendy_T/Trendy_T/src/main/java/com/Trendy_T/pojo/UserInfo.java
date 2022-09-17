@@ -58,6 +58,19 @@ public class UserInfo {
 	public void setSecurity_question(String security_question) {
 		this.security_question = security_question;
 	}
+	public UserInfo(String first_name, String last_name, String gender, String email_id, long mobile_number,
+			String address_line, String street, String city, String pincode) {
+		super();
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.gender = gender;
+		this.email_id = email_id;
+		this.mobile_number = mobile_number;
+		this.address_line = address_line;
+		this.street = street;
+		this.city = city;
+		this.pincode = pincode;
+	}
 	public String getSecurity_answer() {
 		return security_answer;
 	}

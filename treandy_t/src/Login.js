@@ -41,10 +41,7 @@ import { useDispatch } from "react-redux";
               setMsg("NOT REGISTER PLEASE LOGIN OR CHECK EMAIL AND PASSWORD")
              }
 
-        } );
-                
-        
-        
+        } ); 
         
     }
 
@@ -53,9 +50,10 @@ return(
 
 
     <div>
-    <div class="box">   <a href='http://localhost:3000/Signup'>sign up</a>
+    <div class="box">  
       <center>
     
+      
         <h2><b>SING IN</b></h2>      
         
         {status && <div classs="container p-5">
@@ -63,8 +61,7 @@ return(
    <h4 className="alert-heading">{msg}</h4>
 	</div>
 </div>}
-        <form >
-        <img className='img2' src={logo} />
+        <form > 
           <div class="Input">
             <label for="username">EmailId:</label><br></br>
             <input   class="form-control" 
@@ -99,7 +96,8 @@ return(
           <Button variant="primary" onClick={check_login}>Login</Button>{' '}
         </form>
         
-        <a href=''>Forgot Password?</a>
+        <a href='http://localhost:3000/Question' >Forgot Password?</a><br></br>
+        <a href='http://localhost:3000/Signup'>sign up</a>  
         </center>
       </div>
       <img className='img' src={Tshirt} />

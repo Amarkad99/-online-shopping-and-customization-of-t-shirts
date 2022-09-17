@@ -27,7 +27,7 @@ public class Orders implements Serializable{
 	private Address shipping_address_id;       
 	private String status;                        
 	private double total_price;                   
-	private Date order_date;                    
+	private Date orderdate;                    
 	private Date order_status_changed_datetime;
 	public int getOrder_id() {
 		return order_id;
@@ -60,10 +60,10 @@ public class Orders implements Serializable{
 		this.total_price = total_price;
 	}
 	public Date getOrder_date() {
-		return order_date;
+		return orderdate;
 	}
 	public void setOrder_date(Date order_date) {
-		this.order_date = order_date;
+		this.orderdate = order_date;
 	}
 	public Date getOrder_status_changed_datetime() {
 		return order_status_changed_datetime;
@@ -83,7 +83,7 @@ public class Orders implements Serializable{
 		this.shipping_address_id = shipping_address_id;
 		this.status = status;
 		this.total_price = total_price;
-		this.order_date = order_date;
+		this.orderdate = order_date;
 		this.order_status_changed_datetime = order_status_changed_datetime;
 	}
 	

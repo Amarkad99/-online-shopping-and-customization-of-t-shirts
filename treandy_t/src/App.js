@@ -28,6 +28,12 @@ import store from "./store/reducer";
 import { Provider } from 'react-redux';
 import Registration2 from "./Registration2";
 import Homepage from "./hw";
+import HomePage from "./homepage2";
+import Dashboard from "./Customize";
+import Login1 from "./Login1";
+import Changepassword from "./Login2";
+import Customize from "./Customize";
+import Product from "./Shivani";
 
 function App() {
   return (
@@ -48,16 +54,16 @@ function App() {
               <Routes>
               <Route path="/" element={<Login></Login>}  /> 
               <Route path="Signup" element={<Registration2 />} />
-                  <Route path="Home" element={<Home></Home>}  /> 
-                  <Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>
-                  <Route path="profile" element={<Profile></Profile>} />
-                  <Route path="order/details" element={<MyOrder></MyOrder>} />
-                  <Route path="create/design" element={<Create></Create>} />
-                  <Route path="order/history" element={<Orderhistory></Orderhistory>} />
-                  <Route path="payment" element={<Payment></Payment>} />
-                  <Route path="report" element={<Report></Report>} />
-                  <Route path="shipping/details" element={<ShippingDetails></ShippingDetails>} />
-                  <Route path="tshirt/details" element={<Tshirt_Details></Tshirt_Details>} />
+              <Route path="home" element={<HomePage/>} />
+              <Route path="/Question" element={<Login1></Login1>}  />
+              <Route path="/Changepassword" element={<Changepassword></Changepassword>}  /> 
+              <Route path="profile" element={<Profile></Profile>} />
+              <Route path="payment" element={<Payment></Payment>} />
+              <Route path="Customize" element={<Customize></Customize>} />
+              <Route path="Shivani" element={<Product></Product>} />
+                  
+      
+                  
                  
               </Routes>
               </Provider>

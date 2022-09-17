@@ -13,10 +13,10 @@ public class Address {
 	@GeneratedValue
 	private int address_id;
 	private String address_line;
-	
 	private String street;
 	private String city;
 	private String pincode;
+	
 	public int getAddress_id() {
 		return address_id;
 	}

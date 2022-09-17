@@ -57,6 +57,29 @@ right: 0px;
 }
 
 
+.box3 {
+  height: 700x;
+  width: 500px;
+  margin: 80px;
+  padding: 20px;
+  top: 50%;
+  left: 40%;
+  position:absolute;
+  margin-top: -300px;
+  margin-left: -50px;
+  background-color:whitesmoke;
+  border-width: 5px;
+  box-sizing: border-box;
+  border-style: outset;
+}
 
-
+logo
+{
+  margin: 0;
+  position: absolute;
+  top: 6%;
+  left: 96%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 

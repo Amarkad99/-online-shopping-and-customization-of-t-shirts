@@ -167,6 +167,7 @@ onChangeSelect(event){
     <li class="nav-item">
       <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000" role="tab" aria-controls="Go to Login" aria-selected="false">Go To login</a>
     </li>
+
     
   </ul>
   <div class="tab-content" id="myTabContent">
@@ -277,7 +278,7 @@ onChangeSelect(event){
               
 
               
-              <b> <label for="Adress">Adress 1St Line :</label></b> 
+              <b> <label for="Adress">Adress Line :</label></b> 
              <textarea class="form-control form-control-lg"
               name="Adress" 
               value={this.state.input.Adress}
@@ -340,6 +341,8 @@ onChangeSelect(event){
                   <button type="button"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" onClick={this.handleSubmit}>Register</button>
                 </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                
               
              
 
