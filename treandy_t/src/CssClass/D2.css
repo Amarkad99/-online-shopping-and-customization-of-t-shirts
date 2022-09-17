@@ -1,6 +1,6 @@
-.Box {
-    height: 600px;
-    width: 500px;
+.Box2 {
+    height: 620px;
+    width: 600px;
     margin: 80px;
     padding: 20px;
     top: 50%;
@@ -8,7 +8,7 @@
     position: absolute;
     margin-top: -300px;
     margin-left: -250px;
-    background-color:palegreen;
+    background-color:skyblue;
     border-width: 5px;
     box-sizing: border-box;
     border-style: outset;

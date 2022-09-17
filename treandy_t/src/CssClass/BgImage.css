@@ -1,0 +1,11 @@
+.BgImage {
+    background-image:
+    url(
+    "https://www.google.com/imgres?imgurl=https%3A%2F%2Fassets-1.placeit.net%2Fimage_library%2Fb8fefef950caf63858deb835e45ab68d%2Fimages%2Fmedium.jpg&imgrefurl=https%3A%2F%2Fplaceit.net%2Fc%2Fdesign-templates%2Fstages%2Ft-shirt-design-template-with-witch-graphics-328a&tbnid=OXStF4GY7zb7zM&vet=12ahUKEwiDpOTtnpH6AhV0_DgGHRjKA0IQMygtegUIARD8AQ..i&docid=AY8aa55Q-ad9EM&w=330&h=330&itg=1&q=t%20shirt%20background%20design%20png&hl=en-GB&ved=2ahUKEwiDpOTtnpH6AhV0_DgGHRjKA0IQMygtegUIARD8AQ");
+    background-size: "cover";
+    height: 100vh;
+    margin-top: -70px;
+    font-size:50px;
+    background-repeat:no-repeat;
+    }
+    

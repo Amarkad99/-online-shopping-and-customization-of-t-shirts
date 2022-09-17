@@ -8,18 +8,24 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="product_image_tbl")
+
 public class ProductImage implements Serializable {
 	@Id
 	@GeneratedValue
 	private int productimage_id;
+	@Lob
 	private byte[] image_front;
+	@Lob
 	private byte[] image_back;
+	@Lob
 	private byte[] image_left;
+	@Lob
 	private byte[] image_right;
 	public int getProduct_id() {
 		return productimage_id;
@@ -73,8 +79,6 @@ public class ProductImage implements Serializable {
 		this.image_right = image_right;
 	}
 	
-	
-
 	
 
 }
