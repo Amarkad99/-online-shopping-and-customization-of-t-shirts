@@ -1,9 +1,13 @@
  import React, { useState } from "react";
  import "./Login.css"
+<<<<<<< HEAD
 //  import Tshirt from './image/Tshirt.png';
 import Tshirt from './image/login.jpg'
 import logo from './image/mylogo4.png'
 //  import logo from './image/tredy_t_logo.jpg';
+=======
+ import Tshirt from './image/Tshirt.png';
+>>>>>>> 95ce4f32014b92db108bf86e64c4cde63fb966ca
 
  import Button from 'react-bootstrap/Button';
  import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,7 +15,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Nvabar1 } from "./Orderhistory";
  export default function Login(){
-  let [status,setStatus] = useState(false)
   let [Emailid,setEmailid] = useState("")
   let [password,setPassword] = useState("")
   let [msg,setMsg] = useState("")
@@ -34,14 +37,12 @@ import { Nvabar1 } from "./Orderhistory";
           
              if(data.msg === "OK")
              {
-              
               console.log("hi2")
               dispatch({type:"save",payload:{Emailid:Emailid,password:password}})
               navigate("/home") 
              }
              else{
-              setStatus(true)
-              setMsg("NOT REGISTER PLEASE LOGIN OR CHECK EMAIL AND PASSWORD")
+              setMsg("Not Ok")
              }
 
         } );
@@ -62,13 +63,12 @@ return(
     
         <h2><b>SING IN</b></h2>      
         
-        {status && <div classs="container p-5">
-	<div class="alert alert-success" role="alert">
-   <h4 className="alert-heading">{msg}</h4>
-	</div>
-</div>}
         <form >
+<<<<<<< HEAD
         <img className='mylogo' src={logo}  />
+=======
+           <h2>{msg}</h2>
+>>>>>>> 95ce4f32014b92db108bf86e64c4cde63fb966ca
           <div class="Input">
             <label for="username">EmailId:</label><br></br>
             <input   class="form-control" 

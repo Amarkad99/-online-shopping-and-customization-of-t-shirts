@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .reportbox {
     height: 540px;
     width: 480px;
@@ -12,4 +13,20 @@
     border-width: 5px;
     box-sizing: border-box;
     border-style: outset;
+=======
+.Box {
+    height: 600px;
+    width: 500px;
+    margin: 80px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -300px;
+    margin-left: -250px;
+    background-color:palegreen;
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: outset;
+>>>>>>> 95ce4f32014b92db108bf86e64c4cde63fb966ca
   }
