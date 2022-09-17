@@ -43,10 +43,10 @@ function App() {
     <BrowserRouter>
     <Provider store={store}>
               <Routes>
-              <Route path="/" element={<Login></Login>}  /> 
+              <Route path="login" element={<Login></Login>}  /> 
               <Route path="Signup" element={<Registration2 />} />
                   {/* <Route path="Home" element={<Home></Home>}  />  */}
-                  <Route path="Home" element={<HomePage></HomePage>}  />
+                  <Route path="/" element={<HomePage></HomePage>}  />
                   <Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>
                   <Route path="profile" element={<Profile></Profile>} />
                   <Route path="order/details" element={<MyOrder></MyOrder>} />

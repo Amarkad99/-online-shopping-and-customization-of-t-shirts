@@ -2,6 +2,7 @@ import React ,{useState}from "react";
 import './box.css'
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Nvabar1 } from "./Orderhistory";
 export default function Report()
 {
 
@@ -10,7 +11,10 @@ export default function Report()
 
 
 
-    return(<div className="Box">
+    return(
+        <div>
+            <Nvabar1></Nvabar1>
+    <div className="reportbox">
         <center >
             <formset>
          <Headline></Headline>
@@ -20,13 +24,14 @@ export default function Report()
 
          <Button1></Button1><br></br>
 
-                <br></br>
+          
 
         <GeneratedReport></GeneratedReport>
         
 
 </formset>
 </center>
+</div>
     </div>)
 }
 
@@ -47,7 +52,7 @@ function Dates1()
 function Button1()
 {
 
-    let [data,setData]=useState("default")
+    let [data,setData]=useState("")
 
    function handler1(event)
    {

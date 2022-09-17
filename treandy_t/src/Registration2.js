@@ -4,6 +4,7 @@ import React from 'react';
   
   import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navigate } from 'react-router-dom';
+import { Nvabar1 } from './Orderhistory';
   
 class Registration2 extends React.Component {
     constructor() {
@@ -152,8 +153,9 @@ onChangeSelect(event){
      
   render() {
     return (
-      
-      <div class="box2"> 
+      <div  className=''>
+        <Nvabar1></Nvabar1>
+      <div class="regbox"> 
        {this.state.status && <div classs="container p-5">
 	<div class="alert alert-success" role="alert">
    <h4 className="alert-heading">{this.state.massage}</h4>
@@ -162,13 +164,13 @@ onChangeSelect(event){
        
       <form>
       <div>
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
+      {/* <ul class="nav nav-tabs" id="myTab" role="tablist">
     
     <li class="nav-item">
       <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000" role="tab" aria-controls="Go to Login" aria-selected="false">Go To login</a>
     </li>
     
-  </ul>
+  </ul> */}
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"></div>
@@ -178,11 +180,9 @@ onChangeSelect(event){
        
         
         <center>
-        <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+        <h2 class="text-uppercase text-center">Create an account</h2>
             
         </center>
-        
-        
         <b>  <label for="Firstname">Firstname:</label></b>
              <input  class="form-control form-control-lg"
               type="text" 
@@ -347,6 +347,7 @@ onChangeSelect(event){
              
        
              </form> 
+      </div>
       </div>
     );
   }

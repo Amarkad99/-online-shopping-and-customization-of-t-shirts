@@ -1,8 +1,9 @@
 import React, { useState } from "react"
-import box from "../CssClass/Box.css";
+import  "../CssClass/Box.css";
 import Button from 'react-bootstrap/Button';
-import Logo from './logo.png';
+import Logo from './mylogo4.png';
 import NavBar from "./NavBar";
+import { Nvabar1 } from "../Orderhistory";
 //import CreateDesign from "./Component/CreateDesign";
 
 export default function Profile()
@@ -65,10 +66,11 @@ export default function Profile()
         }
 
     return(
-             
-        <div className="box2">
-            <NavBar></NavBar>
-        <img src={Logo} alt="Logo image" width="100" height="100"></img>                     
+             <div>
+                <Nvabar1></Nvabar1>
+        <div className="profileblock">
+           
+        <img src={Logo}  className="mylogoprofile" alt="Logo image" width="120" height="120"></img>                     
         <center><h1>Profile</h1></center> 
         <form method="" action="">
     <div class="form-group">
@@ -114,7 +116,7 @@ export default function Profile()
   
     </form>
      </div>
-        
+     </div> 
     )
 }
 

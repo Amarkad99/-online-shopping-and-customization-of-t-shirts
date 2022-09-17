@@ -1,12 +1,15 @@
  import React, { useState } from "react";
  import "./Login.css"
- import Tshirt from './image/Tshirt.png';
- import logo from './image/tredy_t_logo.jpg';
+//  import Tshirt from './image/Tshirt.png';
+import Tshirt from './image/login.jpg'
+import logo from './image/mylogo4.png'
+//  import logo from './image/tredy_t_logo.jpg';
 
  import Button from 'react-bootstrap/Button';
  import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { Nvabar1 } from "./Orderhistory";
  export default function Login(){
   let [status,setStatus] = useState(false)
   let [Emailid,setEmailid] = useState("")
@@ -53,6 +56,7 @@ return(
 
 
     <div>
+      <Nvabar1></Nvabar1>
     <div class="box">   <a href='http://localhost:3000/Signup'>sign up</a>
       <center>
     
@@ -64,7 +68,7 @@ return(
 	</div>
 </div>}
         <form >
-        <img className='img2' src={logo} />
+        <img className='mylogo' src={logo}  />
           <div class="Input">
             <label for="username">EmailId:</label><br></br>
             <input   class="form-control" 
@@ -102,7 +106,8 @@ return(
         <a href=''>Forgot Password?</a>
         </center>
       </div>
-      <img className='img' src={Tshirt} />
+      {/* <img className='' src={Tshirt}  height={551} width={693}  /> */}
+      <img className='' src={Tshirt}  height={551} width={608}  />
       </div>
     );
   }

@@ -25,8 +25,11 @@ return(<div>
 
 
 
-return(<div  className="Box3"  >
-   <Nvabar1></Nvabar1>
+return(
+<div>
+<Nvabar1></Nvabar1>
+<div  className="Box3"  >
+
 <center>
   <fieldset > 
 <h1> Payment</h1>
@@ -36,10 +39,10 @@ Amount <input type="number" onBlur={handler} ></input>
 <br></br>
 <br></br> <Button type="submit" >Pay </Button>{' '}<br></br>
 <br></br>
-<p>you have paid {data}{" "} </p>
+<p>{data}{" "} </p>
 </fieldset> 
 </center>
-
+</div>
 </div>)
 
 

@@ -1,14 +1,14 @@
-.Box {
-    height: 600px;
-    width: 500px;
+.reportbox {
+    height: 540px;
+    width: 480px;
     margin: 80px;
     padding: 20px;
     top: 50%;
     left: 50%;
     position: absolute;
-    margin-top: -300px;
+    margin-top: -260px;
     margin-left: -250px;
-    background-color:palegreen;
+    background-color:whitesmoke;
     border-width: 5px;
     box-sizing: border-box;
     border-style: outset;

@@ -3,6 +3,7 @@ import  './D3.css'
 import tshirt from './pic2.jpg'
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Nvabar1 } from "./Orderhistory";
 export default function ShippingDetails()
 {
 
@@ -11,8 +12,9 @@ export default function ShippingDetails()
 
 
     return(<div >
-      <img src={tshirt} height={300} width={300} alt="loading"></img>
-<center className="Box3">
+      {/* <img src={tshirt} height={300} width={300} alt="loading"></img> */}
+      <Nvabar1></Nvabar1>
+<center className="deliverybox">
 <h1 className="font">  Shipping Details </h1>
 
 <form>

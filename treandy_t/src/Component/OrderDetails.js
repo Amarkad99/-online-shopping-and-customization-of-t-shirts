@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import { Nvabar1 } from '../Orderhistory';
 import NavBar from "./NavBar";
  
 export default function MyOrder()
@@ -45,9 +46,10 @@ export default function MyOrder()
 
 
     return(
-        
+        <div>
         <div class="container">
-            <NavBar></NavBar>
+            {/* <NavBar></NavBar> */}
+            <Nvabar1></Nvabar1>
              <center><h1>Order Details</h1></center>
              <a href="">Home_Page</a>    <a href="">Logout</a> <br/> <br/>
 
@@ -57,6 +59,7 @@ export default function MyOrder()
 
       {list}
             
+        </div>
         </div>
         
     )
