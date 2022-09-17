@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-import { Component } from "react";
-import Display from "../design/Display";
-import Settings from "../design/Settings";
-//import { storage } from '../../config/firebaseConfig';
 
-=======
 import { toBeVisible } from "@testing-library/jest-dom/dist/matchers";
 import { Component } from "react";
 import Display from "../design/Display";
 import Settings from "../design/Settings";
->>>>>>> developer
 
 class Dashboard extends Component{
 
@@ -17,10 +10,6 @@ class Dashboard extends Component{
         tshirtColor: 'black',
         upperText: 'This is Upper Text',
         lowerText: 'This is Lower Text',
-<<<<<<< HEAD
-        memeImg: '',
-=======
->>>>>>> developer
         url: '',
         textSize: 38,
         textColor: 'white'
@@ -39,47 +28,6 @@ class Dashboard extends Component{
     }
 
     handleImageUpload = (e) =>{
-<<<<<<< HEAD
-       /* if(e.target.files[0]){
-            const image = (e.target.files[0]);
-            const uploadTask = storage.ref(`images/${image.name}`).put(image);
-            uploadTask.on("state_changed",
-             (snapshot) => {
-                console.log(snapshot);
-             },
-             (error) => {
-                console.log(error);
-             },
-             () => {
-                storage.ref("image").child(image.name).getDownloadUrl().then(url => {
-                   this.setState(url);   
-                })
-             }
-             )
-        }*/
-
-       /* const saveFile = (e) => {
-            setFile(e.target.files[0]);
-            setFileName(e.target.files[0].name);
-          };*/
-
-          console.log(e.target.value)
-          this.setState({url:e.target.value})
-
-          //---------------------------------------
-         /* const files = e.target.value
-          const formData = new FormData();
-          formData.append('img',files[0]);
-          fetch('http://localhost:8080/api/store',{
-            method:"POST",
-            body: formData
-          }).then((resp)=>{
-            resp.json().then((result)=>{
-                console.warn("result",result)
-            })
-          })*/
-    }
-=======
 
         const reader = new FileReader();
         reader.onload = () =>{
@@ -91,7 +39,6 @@ class Dashboard extends Component{
         
     }
     
->>>>>>> developer
 
     handleTextSize = (e) =>{
         this.setState({textSize: e.target.value})
@@ -112,21 +59,10 @@ class Dashboard extends Component{
         console.log("   T-shirt Color=",this.state.tshirtColor,
         "   Upper Text=",this.state.upperText,
         "   Lower Text=",this.state.lowerText,
-<<<<<<< HEAD
-            "   Image=",this.state.memeImg,
-=======
->>>>>>> developer
             "   Url=",this.state.url,
             "   Text Size=",this.state.textSize,
             "   Text Color=",this.state.textColor);
 
-<<<<<<< HEAD
-
-    }
-
-
-
-=======
             fetch('http://localhost:8080/customization/insert', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -134,7 +70,7 @@ class Dashboard extends Component{
                      t_shirt_color:this.state.tshirtColor,
                      front_upper_text:this.state.upperText,
                      front_lower_text:this.state.lowerText,
-                     front_image_to_insert:this.state.url,
+                     //front_image_to_insert:this.state.url,
                      text_size:this.state.textSize,
                      text_color:this.state.textColor
 
@@ -153,7 +89,6 @@ class Dashboard extends Component{
            */ 
     }
 
->>>>>>> developer
     render(){
         return(
             <div className="container py-5">

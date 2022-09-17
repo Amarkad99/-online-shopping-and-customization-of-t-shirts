@@ -6,11 +6,6 @@ import Button from 'react-bootstrap/Button';
 import Logo from '../Images/logo.png';
 import NavBar from "./NavBar";
 
-<<<<<<< HEAD
-
-export default function Profile()
-{ 
-=======
 import { useSelector } from "react-redux";
 
 export default function Profile()
@@ -20,7 +15,6 @@ export default function Profile()
     console.log("Emailid",Emailid);
 
 
->>>>>>> developer
     let [id,setId]=useState("")
     let [fname,setFname]=useState("")
     let [lname,setLname]=useState("")
@@ -42,11 +36,7 @@ export default function Profile()
 
     const getUserDetails=async()=>{
         console.warn("param=",params)
-<<<<<<< HEAD
-        let result=await fetch(`http://localhost:8080/user/profile/1`);
-=======
         let result=await fetch(`http://localhost:8080/user/profile/${Emailid}`);
->>>>>>> developer
         result = await result.json();
        console.warn("Result=",result);
 
@@ -112,28 +102,6 @@ export default function Profile()
 
         function Update(event)
         {
-<<<<<<< HEAD
-            let users={fname:fname,lname:lname,gender:gender,email:email,mobileno:mobileno,address:address,street:street,city:city,pincode:pincode}
-            console.log("user=",users)
-           
-               
-
-
-        }
-
-    return(
-             
-        <div className="box">
-            <NavBar></NavBar>
-        <img src={Logo} alt="Logo image" width="100" height="100"></img>                     
-        <center><h1>Profile</h1></center> 
-        <form method="" action="">
-    <div class="form-group">
-        <label for="User Id">User Id:</label>
-        <input type="text" defaultValue={id} class="form-control" id="id" name="id" onBlur={Id} />
-    </div>
-    <div class="form-group">
-=======
             //let users={fname:fname,lname:lname,gender:gender,email:email,mobileno:mobileno,address:address,street:street,city:city,pincode:pincode}
             //console.log("user=",users)
 
@@ -171,7 +139,6 @@ export default function Profile()
         <center><h1>Profile</h1></center> 
         <form method="" action="">
     <div class="form-group">
->>>>>>> developer
         <label for="First Name">First Name:</label>
         <input type="text" defaultValue={fname} class="form-control" id="firstName" name="firstName" onBlur={FirstName} />
     </div>
@@ -216,17 +183,7 @@ export default function Profile()
   
     </form>
      </div>
-<<<<<<< HEAD
-        
-    )
-}
-
-
-
-
-=======
      </div>
         
     )
 }
->>>>>>> developer
