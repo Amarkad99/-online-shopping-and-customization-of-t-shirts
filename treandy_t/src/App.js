@@ -49,6 +49,12 @@ function App() {
     <HeaderComponent></HeaderComponent>
     <Provider store={store}>
               <Routes>
+<<<<<<< HEAD
+              <Route path="login" element={<Login></Login>}  /> 
+              <Route path="Signup" element={<Registration2 />} />
+                  {/* <Route path="Home" element={<Home></Home>}  />  */}
+                  <Route path="/" element={<HomePage></HomePage>}  />
+=======
              
               
               <Route path="/" element={<Login></Login>}  /> 
@@ -56,6 +62,7 @@ function App() {
                    
                   
                   <Route path="/" element={<Login></Login>}  /> 
+>>>>>>> 95ce4f32014b92db108bf86e64c4cde63fb966ca
                   <Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>
                   <Route path="profile" element={<Profile></Profile>} />
                   <Route path="order/details" element={<OrderDetails></OrderDetails>} />

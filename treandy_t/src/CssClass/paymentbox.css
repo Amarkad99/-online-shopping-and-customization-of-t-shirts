@@ -1,3 +1,19 @@
+<<<<<<< HEAD:treandy_t/src/paymentbox.css
+.Box3 {
+    height: 286px;
+    width: 500px;
+    margin: 80px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -256px;
+    margin-left: -250px;
+    background-color:whitesmoke;
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: outset;
+=======
 .Box3 {
     height: 400px;
     width: 500px;
@@ -12,4 +28,5 @@
     border-width: 5px;
     box-sizing: border-box;
     border-style: outset;
+>>>>>>> 95ce4f32014b92db108bf86e64c4cde63fb966ca:treandy_t/src/CssClass/paymentbox.css
   }

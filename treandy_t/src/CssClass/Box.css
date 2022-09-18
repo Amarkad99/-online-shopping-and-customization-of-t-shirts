@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .box {
     height: 700x;
     width: 500px;
@@ -12,4 +13,52 @@
     border-width: 5px;
     box-sizing: border-box;
     border-style: outset;
+  }
+
+  .profileblock {
+    background-color:whitesmoke;
+    height: 740px;
+    width: 550px;
+    margin: 80px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -257px;
+    margin-left: -280px;
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: groove;
+  }
+
+  .mylogoprofile{
+    object-fit: fill;
+ 
+  text-align: center;
+  padding: 3px;
+  position: absolute;
+  top: 85px;
+  right: 20px;
+  left:0px;
+  margin-top: -105px;
+
+
+
+
+=======
+.box {
+    height: 700x;
+    width: 500px;
+    margin: 80px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    margin-top: -300px;
+    margin-left: -50px;
+    background-color:rgb(114, 208, 208);
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: outset;
+>>>>>>> 95ce4f32014b92db108bf86e64c4cde63fb966ca
   }

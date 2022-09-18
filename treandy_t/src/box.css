@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+.reportbox {
+    height: 540px;
+    width: 480px;
+    margin: 80px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -260px;
+    margin-left: -250px;
+    background-color:whitesmoke;
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: outset;
+=======
 .Box {
     height: 600px;
     width: 500px;
@@ -12,4 +28,5 @@
     border-width: 5px;
     box-sizing: border-box;
     border-style: outset;
+>>>>>>> 95ce4f32014b92db108bf86e64c4cde63fb966ca
   }
