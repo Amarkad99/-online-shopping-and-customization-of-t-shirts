@@ -13,7 +13,7 @@ export default function MyOrder()
 
   const getUserDetails=async()=>{
       
-      let result=await fetch("http://localhost:8080/jpaex/showall");
+      let result=await fetch("http://localhost:8080/order/orderdetails");
       result = await result.json();
      console.warn("Result=",result);
 

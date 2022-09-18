@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class Customization implements Serializable{
 	@Id
 	@GeneratedValue
-	private int Customization_id;
+	private int customizationid;
 	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="product_id")
 	private Product product_id;
@@ -30,10 +30,10 @@ public class Customization implements Serializable{
 	
 	
 	public int getCustomization_id() {
-		return Customization_id;
+		return customizationid;
 	}
-	public void setCustomization_id(int customization_id) {
-		Customization_id = customization_id;
+	public void setCustomization_id(int customizationid) {
+		customizationid = customizationid;
 	}
 	public Product getProduct_id() {
 		return product_id;
