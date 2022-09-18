@@ -3,16 +3,18 @@ import { toBeVisible } from "@testing-library/jest-dom/dist/matchers";
 import { Component } from "react";
 import Display from "../design/Display";
 import Settings from "../design/Settings";
+import { Navigate } from 'react-router-dom';
 
 class Dashboard extends Component{
 
     state = {
-        tshirtColor: 'black',
-        upperText: 'This is Upper Text',
-        lowerText: 'This is Lower Text',
+        tshirtColor: '',
+        upperText: '',
+        lowerText: '',
         url: '',
-        textSize: 38,
-        textColor: 'white'
+        textSize: '',
+        textColor: '',
+        message:''
     }
 
     handleTshirtColor = (e)=>{
@@ -80,7 +82,17 @@ class Dashboard extends Component{
                      name:this.state.tshirtColor,
                      cost:this.state.textSize*/
                     })                    
-                })
+                }).then(response => response.json())
+                .then(data =>{
+                     if(data.msg === "succsess")
+                     {
+                       this.setState({massage:"Customization Details Added Sussesfully..."})
+                       Navigate("/payment") 
+                     }
+                     else{
+                      this.setState({massage:"Customization Details Not Saved... Fill The details.."})
+                     }
+                } );
             /*  
             let pid=this.state.textSize;
             let pname=this.state.tshirtColor;
@@ -92,6 +104,7 @@ class Dashboard extends Component{
     render(){
         return(
             <div className="container py-5">
+                 
                 <div className="row">
                 <div className="col-lg-8">
                     <Display display={this.state}
@@ -100,6 +113,7 @@ class Dashboard extends Component{
                     
                 </div>
                 <div className="col-lg-4">
+                     
                     <Settings color={this.handleTshirtColor}
                               upperText={this.handleUpperText}
                               lowerText={this.handleLowerText}
@@ -108,7 +122,7 @@ class Dashboard extends Component{
                               textColor={this.handleTextColor}
                               saveDetails={this.saveTshirtDetails}
                     ></Settings>
-                    
+                    <h3 text_color="blue">{this.state.massage}</h3>
                 </div>
                 </div>
             </div>

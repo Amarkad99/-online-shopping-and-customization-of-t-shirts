@@ -57,7 +57,9 @@ public class CustomizeInfo {
 		this.text_color = text_color;
 	}
 	
-	
+	public CustomizeInfo() {
+		super();
+	}
 	
 	
 }
