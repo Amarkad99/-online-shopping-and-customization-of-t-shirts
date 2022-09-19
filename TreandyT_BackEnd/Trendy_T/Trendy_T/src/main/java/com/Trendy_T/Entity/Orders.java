@@ -62,6 +62,7 @@ public class Orders implements Serializable{
 	public Date getOrder_date() {
 		return orderdate;
 	}
+
 	public void setOrder_date(Date orderdate) {
 		this.orderdate = orderdate;
 	}
@@ -75,6 +76,7 @@ public class Orders implements Serializable{
 	public Orders() {
 		super();
 	}
+
 	public Orders(int orderid, User userid, Address shipping_address_id, String status, double total_price,
 			Date orderdate, Date order_status_changed_datetime) {
 		super();

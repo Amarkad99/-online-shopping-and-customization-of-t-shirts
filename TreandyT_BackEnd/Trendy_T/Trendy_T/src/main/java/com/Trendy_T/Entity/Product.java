@@ -1,3 +1,4 @@
+
 package com.Trendy_T.Entity;
 
 import java.util.List;
@@ -90,6 +91,16 @@ public class Product {
 	public void setProductimage_id(ProductImage productimage_id) {
 		this.productimage_id = productimage_id;
 	}
+	public Product( double price, int quantity, int iscustomizable, ProductType producttype_id,
+			ProductImage productimage_id) {
+		super();
+		this.price = price;
+		this.quantity = quantity;
+		this.iscustomizable = iscustomizable;
+		this.producttype_id = producttype_id;
+		this.productimage_id = productimage_id;
+	}
 	
 
 }
+

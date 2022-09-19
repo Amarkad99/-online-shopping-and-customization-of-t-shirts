@@ -80,7 +80,6 @@ public class UserController {
 		return u;
 		
 	}
-	
 
 	@GetMapping("/profile/{Emailid}")
 	public UserInfo addUser(@PathVariable String Emailid)
@@ -136,8 +135,6 @@ public class UserController {
 		
 		return us;			
 	}
-	
-	
 		
 }
 
