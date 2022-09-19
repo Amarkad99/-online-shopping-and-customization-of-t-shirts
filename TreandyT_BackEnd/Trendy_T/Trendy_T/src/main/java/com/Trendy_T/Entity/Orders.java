@@ -18,10 +18,10 @@ import javax.persistence.Table;
 public class Orders implements Serializable{
 	@Id
 	@GeneratedValue
-	private int order_id;   
+	private int orderid;   
 	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="user_id")
-	private User user_id; 
+	private User userid; 
 	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="address_id")
 	private Address shipping_address_id;       
@@ -30,16 +30,16 @@ public class Orders implements Serializable{
 	private Date orderdate;                    
 	private Date order_status_changed_datetime;
 	public int getOrder_id() {
-		return order_id;
+		return orderid;
 	}
-	public void setOrder_id(int order_id) {
-		this.order_id = order_id;
+	public void setOrder_id(int orderid) {
+		this.orderid = orderid;
 	}
 	public User getUser_id() {
-		return user_id;
+		return userid;
 	}
-	public void setUser_id(User user_id) {
-		this.user_id = user_id;
+	public void setUser_id(User userid) {
+		this.userid = userid;
 	}
 	public Address getShipping_address_id() {
 		return shipping_address_id;
@@ -62,8 +62,9 @@ public class Orders implements Serializable{
 	public Date getOrder_date() {
 		return orderdate;
 	}
-	public void setOrder_date(Date order_date) {
-		this.orderdate = order_date;
+
+	public void setOrder_date(Date orderdate) {
+		this.orderdate = orderdate;
 	}
 	public Date getOrder_status_changed_datetime() {
 		return order_status_changed_datetime;
@@ -75,11 +76,12 @@ public class Orders implements Serializable{
 	public Orders() {
 		super();
 	}
-	public Orders(int order_id, User user_id, Address shipping_address_id, String status, double total_price,
+
+	public Orders(int orderid, User userid, Address shipping_address_id, String status, double total_price,
 			Date orderdate, Date order_status_changed_datetime) {
 		super();
-		this.order_id = order_id;
-		this.user_id = user_id;
+		this.orderid = orderid;
+		this.userid = userid;
 		this.shipping_address_id = shipping_address_id;
 		this.status = status;
 		this.total_price = total_price;

@@ -1,3 +1,4 @@
+
 package com.Trendy_T.Entity;
 
 import java.io.Serializable;
@@ -102,6 +103,4 @@ public class Customization implements Serializable{
 		this.back_text = back_text;
 	}
 	
-	
-
 }
