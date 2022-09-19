@@ -1,0 +1,50 @@
+
+.box {
+  height: 550px;
+  width: 500px;
+  margin: 80px;
+  padding: 20px;
+  top: 50%;
+  
+  left: 78%;
+  position: absolute;
+  margin-top: -300px;
+  margin-left: -250px;
+  border-width: 5px;
+  box-sizing: border-box;
+  border-style: outset;
+  background-color:whitesmoke;
+}
+.box2 {
+  background-color:whitesmoke;
+  height: 1300px;
+  width: 700px;
+  margin: 80px;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-top: -350px;
+  margin-left: -250px;
+  border-width: 5px;
+  box-sizing: border-box;
+  border-style: groove;
+}
+
+.text-danger{
+  color: red;
+}
+
+.img {
+  object-fit: fill;
+  width: 900px;
+height: 750px;
+text-align: center;
+padding: 15px;
+
+}
+
+
+
+
+
