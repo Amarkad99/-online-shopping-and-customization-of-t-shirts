@@ -13,19 +13,22 @@ import com.Trendy_T.pojo.UserInfo;
 import com.Trendy_T.repositories.UserRepository;
 
 @RestController
-@RequestMapping("/Login")
+@RequestMapping("/forgot")
 @CrossOrigin
-public class LoginController {
+public class ForgotController {
 	
 	@Autowired
 	UserRepository urepo;
-	@RequestMapping(method = RequestMethod.POST ,value = "/login")
+	@RequestMapping(method = RequestMethod.POST ,value = "/login2")
 	public Massage login(@RequestBody UserInfo us)
 	{
-		System.out.println(us.getEmail_id());
 		System.out.println("Here We are");
 		User a=(User)urepo.findByEmail(us.getEmail_id());
-		if( a!=null && a.getPassword().equals(us.getPassword())){
+		System.out.println(a.getEmail());
+		System.out.println(a.getSecurity_answer()+""+us.getSecurity_answer());
+		
+		if( a!=null && a.getSecurity_answer().equals(us.getSecurity_answer())){
+		
 			return new Massage ("OK"); 			
 		}
 		else

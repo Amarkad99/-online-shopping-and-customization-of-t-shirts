@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -13,6 +14,8 @@ import javax.persistence.Table;
 @Table(name="customization_tbl")
 public class Customization implements Serializable{
 	@Id
+	@GeneratedValue
+	private int Customization_id;
 	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="product_id")
 	private Product product_id;
@@ -22,6 +25,13 @@ public class Customization implements Serializable{
 	private byte[] final_image_back;
 	private String front_text;
 	private String back_text;
+	
+	public int getCustomization_id() {
+		return Customization_id;
+	}
+	public void setCustomization_id(int customization_id) {
+		Customization_id = customization_id;
+	}
 	public Product getProduct_id() {
 		return product_id;
 	}
@@ -79,6 +89,19 @@ public class Customization implements Serializable{
 		this.front_text = front_text;
 		this.back_text = back_text;
 	}
+	public Customization(int Customization_id,Product product_id, byte[] front_image_to_insert, byte[] back_image_to_insert,
+			byte[] final_image_front, byte[] final_image_back, String front_text, String back_text) {
+		super();
+		this.Customization_id=Customization_id;
+		this.product_id = product_id;
+		this.front_image_to_insert = front_image_to_insert;
+		this.back_image_to_insert = back_image_to_insert;
+		this.final_image_front = final_image_front;
+		this.final_image_back = final_image_back;
+		this.front_text = front_text;
+		this.back_text = back_text;
+	}
+	
 	
 
 }

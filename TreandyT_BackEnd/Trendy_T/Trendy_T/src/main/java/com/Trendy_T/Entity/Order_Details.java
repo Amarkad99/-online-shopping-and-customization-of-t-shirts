@@ -17,7 +17,7 @@ public class Order_Details implements Serializable {
 	
 	@Id
 	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="user_id")
+	@JoinColumn(name="order_id")
 	private Orders order_id;
 	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="product_id")

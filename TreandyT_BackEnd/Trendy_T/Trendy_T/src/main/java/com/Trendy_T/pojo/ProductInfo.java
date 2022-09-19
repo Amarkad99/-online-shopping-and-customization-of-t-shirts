@@ -111,6 +111,10 @@ public class ProductInfo {
 		this.image_right = image_right;
 		this.iscustomizable = iscustomizable;
 	}
+	public ProductInfo()
+	{
+		super();
+	}
 	
 
 }

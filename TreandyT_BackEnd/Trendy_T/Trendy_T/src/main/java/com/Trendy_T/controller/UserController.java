@@ -50,7 +50,7 @@ public class UserController {
 			return new Massage ("succsess");	
 		}
 		else
-			return new Massage ("aldredy register");
+			return new Massage ("already register");
 			
 	}
 	@RequestMapping(method = RequestMethod.PUT ,value = "/edit")
@@ -62,6 +62,18 @@ public class UserController {
 		u.setLast_name(us.getLast_name());
 		u.setGender(u.getGender());
 		u.setMobile_number(us.getMobile_number());
+		urepo.save(u);
+		return u;
+		
+	}
+	
+	@RequestMapping(method = RequestMethod.PUT ,value = "/edit1")
+	public User editPass(@RequestBody UserInfo us)
+	{
+		
+		User u=(User)urepo.findByEmail(us.getEmail_id());
+		u.setPassword(us.getPassword());
+		
 		urepo.save(u);
 		return u;
 		

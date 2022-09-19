@@ -23,12 +23,12 @@ public class ProductType implements Serializable{
 	private String neck_type;
 	private String size;
 	
-	public int getProduct_id() {
+	public int getproducttype_id() {
 		return producttype_id;
 	}
 
-	public void setProduct_id(int product_id) {
-		this.producttype_id = product_id;
+	public void setproducttype_id(int producttype_id) {
+		this.producttype_id = producttype_id;
 	}
 
 	public String getColor() {
@@ -75,10 +75,10 @@ public class ProductType implements Serializable{
 		super();
 	}
 
-	public ProductType(int product_id, String color, String material, String sleeve, String neck_type,
+	public ProductType(int producttype_id, String color, String material, String sleeve, String neck_type,
 			String size) {
 		super();
-		this.producttype_id = product_id;
+		this.producttype_id = producttype_id;
 		this.color = color;
 		this.material = material;
 		this.sleeve = sleeve;
@@ -88,13 +88,14 @@ public class ProductType implements Serializable{
 	public ProductType( String color, String material, String sleeve, String neck_type,
 			String size) {
 		super();
-		
 		this.color = color;
 		this.material = material;
 		this.sleeve = sleeve;
 		this.neck_type = neck_type;
 		this.size = size;
 	}
+	
+	
 	
 	
 }
