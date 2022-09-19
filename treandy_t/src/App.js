@@ -33,7 +33,7 @@ import Registration2 from "./Registration2";
 import ButtonDesign from "./Component/ButtonDesign";
 import MyOrder from "./Component/OrderDetails";
 import Redymade from "./Component/Redymade";
-import DeliveryDetails from "./Component/DeliveryDetails";
+//import DeliveryDetails from "./Component/DeliveryDetails";
 import Home from "./Component/Home";
 
 */
