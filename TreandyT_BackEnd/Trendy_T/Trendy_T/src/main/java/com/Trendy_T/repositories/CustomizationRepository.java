@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.Trendy_T.Entity.Customization;
 
-
+/*
 @Repository
 public interface CustomizationRepository extends JpaRepository<Customization, Integer> {
 	
@@ -18,3 +18,4 @@ public interface CustomizationRepository extends JpaRepository<Customization, In
 
 	
 }
+*/

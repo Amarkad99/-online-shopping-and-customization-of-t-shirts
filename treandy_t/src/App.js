@@ -56,7 +56,8 @@ function App() {
                   <Route path="payment" element={<Payment></Payment>} />
                   <Route path="report" element={<Report></Report>} />
                   <Route path="shipping/details" element={<ShippingDetails></ShippingDetails>} />
-                  <Route path="tshirt/details" element={<Tshirt_Details></Tshirt_Details>} />
+                  <Route path="tshirt/details" element={<Tshirt_Details></Tshirt_Details>}
+                   />
                  
               </Routes>
               </Provider>
