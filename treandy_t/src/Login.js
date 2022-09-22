@@ -17,6 +17,7 @@ import { useDispatch } from "react-redux";
     {
       console.log({Emailid})
       console.log("hi")
+      console.log("check for gitignore==========================")
         fetch('http://localhost:8080/Login/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
