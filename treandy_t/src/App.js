@@ -9,7 +9,7 @@ import Tshirt_Details from "./Tshirt_Details";
  import ShippingDetails from "./ShippingDetails";
  import Report from "./Report";
  import Payment from "./Payment"
-
+ import { makeStyles, CssBaseline, createTheme, ThemeProvider } from '@material-ui/core';
 
 import Profile from "./Component/ProfilePage";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,8 +27,49 @@ import Login from "./Login";
 import store from "./store/reducer";
 import { Provider } from 'react-redux';
 import Registration2 from "./Registration2";
+import SideMenu  from "./Components/SideMenu";
+import ProductTable from "./ProjectComponents/ProductTable"
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#333996",
+      light: '#3c44b126'
+    },
+    secondary: {
+      main: "#f83245",
+      light: '#f8324526'
+    },
+    background: {
+      default: "#f4f5fd"
+    },
+  },
+  overrides:{
+    MuiAppBar:{
+      root:{
+        transform:'translateZ(0)'
+      }
+    }
+  },
+  props:{
+    MuiIconButton:{
+      disableRipple:true
+    }
+  }
+})
+
+
+const useStyles = makeStyles({
+  appMain: {
+    paddingLeft: '320px',
+    width: '100%'
+  }
+})
 
 function App() {
+  const classes = useStyles();
+
   return (
    <div>
     
@@ -59,9 +100,26 @@ function App() {
                   <Route path="tshirt/details" element={<Tshirt_Details></Tshirt_Details>}
                    />
                  
+                 
+                  
               </Routes>
               </Provider>
     </BrowserRouter>
+
+    <ThemeProvider theme={theme}>
+      <div>
+           
+    <BrowserRouter>
+    <Routes>
+    <Route path="/ownerDashboard" element={<Provider store={store}><SideMenu></SideMenu></Provider>}>
+    <Route path="productTable" element={<ProductTable></ProductTable>}/>
+     
+    </Route>    
+    </Routes></BrowserRouter>
+  
+      </div>
+      <CssBaseline />
+    </ThemeProvider>
     
    </div>
 
