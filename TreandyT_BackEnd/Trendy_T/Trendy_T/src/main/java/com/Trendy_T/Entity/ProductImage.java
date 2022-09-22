@@ -20,66 +20,64 @@ public class ProductImage implements Serializable {
 	@GeneratedValue
 	private int productimage_id;
 	@Lob
-	private byte[] image_front;
+	private String image_front;
 	@Lob
-	private byte[] image_back;
+	private String image_back;
 	@Lob
-	private byte[] image_left;
+	private String image_left;
 	@Lob
-	private byte[] image_right;
-	public int getProduct_id() {
+	private String image_right;
+	
+	
+	public int getProductimage_id() {
 		return productimage_id;
 	}
-	public void setProduct_id(int product_id) {
-		this.productimage_id = product_id;
-	}
-	public byte[] getImage_front() {
-		return image_front;
-	}
-	public void setImage_front(byte[] image_front) {
-		this.image_front = image_front;
-	}
-	public byte[] getImage_back() {
-		return image_back;
-	}
-	public void setImage_back(byte[] image_back) {
-		this.image_back = image_back;
-	}
-	public byte[] getImage_left() {
-		return image_left;
-	}
-	public void setImage_left(byte[] image_left) {
-		this.image_left = image_left;
-	}
-	public byte[] getImage_right() {
-		return image_right;
-	}
-	public void setImage_right(byte[] image_right) {
-		this.image_right = image_right;
+	public void setProductimage_id(int productimage_id) {
+		this.productimage_id = productimage_id;
 	}
 	public ProductImage() {
 		super();
 	}
-	public ProductImage(int product_id, byte[] image_front, byte[] image_back, byte[] image_left,
-			byte[] image_right) {
+	public String getImage_front() {
+		return image_front;
+	}
+	public void setImage_front(String image_front) {
+		this.image_front = image_front;
+	}
+	public String getImage_back() {
+		return image_back;
+	}
+	public void setImage_back(String image_back) {
+		this.image_back = image_back;
+	}
+	public String getImage_left() {
+		return image_left;
+	}
+	public void setImage_left(String image_left) {
+		this.image_left = image_left;
+	}
+	public String getImage_right() {
+		return image_right;
+	}
+	public void setImage_right(String image_right) {
+		this.image_right = image_right;
+	}
+	public ProductImage(String image_front, String image_back, String image_left, String image_right) {
 		super();
-		this.productimage_id = product_id;
 		this.image_front = image_front;
 		this.image_back = image_back;
 		this.image_left = image_left;
 		this.image_right = image_right;
 	}
-	public ProductImage( byte[] image_front, byte[] image_back, byte[] image_left,
-			byte[] image_right) {
+	public ProductImage(int productimage_id, String image_front, String image_back, String image_left,
+			String image_right) {
 		super();
-		
+		this.productimage_id = productimage_id;
 		this.image_front = image_front;
 		this.image_back = image_back;
 		this.image_left = image_left;
 		this.image_right = image_right;
 	}
 	
-	
-
 }
 

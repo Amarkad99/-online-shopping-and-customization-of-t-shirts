@@ -10,10 +10,10 @@ public class ProductInfo {
 	private String sleeve;
 	private String neck_type;
 	private String size;
-	private byte[] image_front;
-	private byte[] image_back;
-	private byte[] image_left;
-	private byte[] image_right;
+	private String image_front;
+	private String image_back;
+	private String image_left;
+	private String image_right;
 	private int iscustomizable;
 	public int getProductid() {
 		return productid;
@@ -63,28 +63,28 @@ public class ProductInfo {
 	public void setSize(String size) {
 		this.size = size;
 	}
-	public byte[] getImage_front() {
+	public String getImage_front() {
 		return image_front;
 	}
-	public void setImage_front(byte[] image_front) {
+	public void setImage_front(String image_front) {
 		this.image_front = image_front;
 	}
-	public byte[] getImage_back() {
+	public String getImage_back() {
 		return image_back;
 	}
-	public void setImage_back(byte[] image_back) {
+	public void setImage_back(String image_back) {
 		this.image_back = image_back;
 	}
-	public byte[] getImage_left() {
+	public String getImage_left() {
 		return image_left;
 	}
-	public void setImage_left(byte[] image_left) {
+	public void setImage_left(String image_left) {
 		this.image_left = image_left;
 	}
-	public byte[] getImage_right() {
+	public String getImage_right() {
 		return image_right;
 	}
-	public void setImage_right(byte[] image_right) {
+	public void setImage_right(String image_right) {
 		this.image_right = image_right;
 	}
 	public int getIscustomizable() {
@@ -94,7 +94,7 @@ public class ProductInfo {
 		this.iscustomizable = iscustomizable;
 	}
 	public ProductInfo(int productid, double price, int quantity, String color, String material, String sleeve,
-			String neck_type, String size, byte[] image_front, byte[] image_back, byte[] image_left, byte[] image_right,
+			String neck_type, String size, String image_front, String image_back, String image_left, String image_right,
 			int iscustomizable) {
 		super();
 		this.productid = productid;

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Trendy_T.Entity.Customization;
 import com.Trendy_T.pojo.CustomizeInfo;
 import com.Trendy_T.pojo.Massage;
-import com.Trendy_T.repositories.CustomizationRepository;
+//import com.Trendy_T.repositories.CustomizationRepository;
 
 
 @CrossOrigin(origins="http://localhost/8080")
@@ -20,7 +20,7 @@ import com.Trendy_T.repositories.CustomizationRepository;
 @RequestMapping("/customization")
 public class CustomizationController {
 	
-	@Autowired
+	/*@Autowired
 	CustomizationRepository crepo;
 	
 	
@@ -57,5 +57,5 @@ public class CustomizationController {
 		cinfo.setText_size(c.getText_size());
 		
 		return cinfo;	
-	}
+	}*/
 }
