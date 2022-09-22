@@ -50,13 +50,14 @@ public class ProductController {
 	@Autowired
 	ProductImageRepository pirepo;
 	@RequestMapping(method = RequestMethod.POST ,value = "/insert")	
-	public Massage addProduct(@RequestBody ProductInfo product )
+	public Massage addProduct(@RequestBody ProductInfo product)
 	{
-			/*ProductImage pi=new ProductImage(p.getImage_front(),p.getImage_back(),p.getImage_left(),p.getImage_right());
-			pirepo.save(pi);*/
+			
+			ProductImage pi=new ProductImage(product.getImage_front(),product.getImage_back(),product.getImage_left(),product.getImage_right());
+			pirepo.save(pi);
 			ProductType pt=new ProductType(product.getColor(),product.getMaterial(),product.getSleeve(),product.getNeck_type(),product.getSize());
 			ptrepo.save(pt);
-			Product pr=new Product(product.getPrice(),product.getQuantity(),product.getIscustomizable(),pt,null);
+			Product pr=new Product(product.getPrice(),product.getQuantity(),product.getIscustomizable(),pt,pi);
 			System.out.println(product.getColor());
 			prepo.save(pr);
 			return new Massage("ok");
@@ -64,7 +65,7 @@ public class ProductController {
 				
 			
 	}
-	@PostMapping(path = "/insertimage")
+	/*@PostMapping(path = "/insertimage")
 	public  Massage addProductImage(@RequestParam(value = "file", required = false) MultipartFile file) throws IOException 
 	{
 		
@@ -83,12 +84,12 @@ public class ProductController {
 		//ra.addFlashAttribute("message", "The file has been Uploaded");
 		
 		return  new Massage("ok");
-	}
+	}*/
 	@RequestMapping(method = RequestMethod.PUT ,value = "/update")	
 	public Massage updateProduct(@RequestBody ProductInfo product )
 	{
-			/*ProductImage pi=new ProductImage(p.getImage_front(),p.getImage_back(),p.getImage_left(),p.getImage_right());
-			pirepo.save(pi);*/
+			ProductImage pi=new ProductImage(product.getImage_front(),product.getImage_back(),product.getImage_left(),product.getImage_right());
+			pirepo.save(pi);
 			Product pr=new Product();
 			pr=prepo.findById(product.getProductid()).orElseThrow();
 			pr.setPrice(product.getPrice());
@@ -112,7 +113,7 @@ public class ProductController {
 	{
 		List<Product> productList=prepo.findAll();
 		List<ProductType> productTyeList=ptrepo.findAll();
-		//List<ProductImage> ProductimageList=pirepo.findAll();
+		List<ProductImage> productImageList=pirepo.findAll();
 		
 		List<ProductInfo> ProdList=new ArrayList<ProductInfo>();
 		for(Product p:productList)
@@ -127,6 +128,12 @@ public class ProductController {
 			produInfoItem.setSleeve(productTypeitem.getSleeve());
 			produInfoItem.setNeck_type(productTypeitem.getNeck_type());
 			produInfoItem.setSize(productTypeitem.getSize());
+			ProductImage productImageitem=productImageList.stream().filter(c-> c.getProductimage_id()==p.getProductimage_id().getProductimage_id()).collect(Collectors.toList()).get(0);
+			produInfoItem.setImage_front(productImageitem.getImage_front());
+			produInfoItem.setImage_back(productImageitem.getImage_back());
+			produInfoItem.setImage_left(productImageitem.getImage_left());
+			produInfoItem.setImage_right(productImageitem.getImage_right());
+			
 			ProdList.add(produInfoItem);
 			
 		}
