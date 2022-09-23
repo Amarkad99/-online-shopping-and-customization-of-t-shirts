@@ -59,7 +59,7 @@ public class DeliveryController {
 		System.out.println("hi");
 		List <Delivery_Details> list=new ArrayList<Delivery_Details>(); 
 		Delivery_Details li=new Delivery_Details();
-		List<Orders> dl=drepo.findByOrderdate(new Date());
+		List<Orders> dl=drepo.findByOrderdate(LocalDate.now());
 	  System.out.println(new Date());
 		
 	

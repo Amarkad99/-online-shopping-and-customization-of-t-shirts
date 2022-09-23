@@ -19,7 +19,7 @@ public class User {
 	
 	@Id
 	@GeneratedValue
-	private int user_id;
+	private int userid;
 	
 	private String first_name;
 	private String last_name;
@@ -42,10 +42,10 @@ public class User {
 	@ManyToMany
 private List<Review> review; 
 	public int getUser_id() {
-		return user_id;
+		return userid;
 	}
 	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+		this.userid = userid;
 	}
 	public String getFirst_name() {
 		return first_name;
@@ -101,7 +101,7 @@ private List<Review> review;
 	public User(int user_id, String first_name, String last_name, String gender, String email_id, long mobile_number,
 			Address address_id, String security_question, String security_answer,String password) {
 		super();
-		this.user_id = user_id;
+		this.userid = user_id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.gender = gender;

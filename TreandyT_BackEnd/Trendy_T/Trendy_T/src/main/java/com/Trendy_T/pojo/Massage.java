@@ -8,6 +8,10 @@ public class Massage {
 		this.msg = msg;
 	}
 
+	public Massage() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getMsg() {
 		return msg;
 	}

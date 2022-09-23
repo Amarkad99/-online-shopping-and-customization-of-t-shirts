@@ -4,7 +4,7 @@ public class ProductInfo {
 	
 	private int productid;
 	private double price;
-	private int quantity;
+	private int quantity=1;
 	private String color;
 	private String material;
 	private String sleeve;
@@ -57,6 +57,17 @@ public class ProductInfo {
 	public void setNeck_type(String neck_type) {
 		this.neck_type = neck_type;
 	}
+	public ProductInfo(double price, String color, String material, String sleeve, String neck_type, String size) {
+		super();
+		this.price = price;
+		this.color = color;
+		this.material = material;
+		this.sleeve = sleeve;
+		this.neck_type = neck_type;
+		this.size = size;
+	}
+	
+	
 	public String getSize() {
 		return size;
 	}

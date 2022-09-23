@@ -21,7 +21,8 @@ import com.Trendy_T.Entity.User;
 public interface DeliveryRepository extends JpaRepository<Orders,Integer>{
   
 	@Query("from Orders o where o.orderdate=:orderdate")
-	List<Orders> findByOrderdate(@Param("orderdate") Date date);
+	List<Orders> findByOrderdate(@Param("orderdate") LocalDate date);
+
 	
 
 }

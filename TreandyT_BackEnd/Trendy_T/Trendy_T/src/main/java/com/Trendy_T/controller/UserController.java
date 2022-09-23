@@ -20,10 +20,9 @@ import com.Trendy_T.pojo.UserInfo;
 import com.Trendy_T.repositories.AddressRepository;
 import com.Trendy_T.repositories.UserRepository;
 
-
-@CrossOrigin(origins="http://localhost/8080")
 @RestController
 @RequestMapping("/user")
+@CrossOrigin
 public class UserController {
 	
 	@Autowired
@@ -55,19 +54,7 @@ public class UserController {
 			return new Massage ("already register");
 			
 	}
-	@RequestMapping(method = RequestMethod.PUT ,value = "/edit2")
-	public User editUser(@RequestBody UserInfo us)
-	{
-		
-		User u=(User)urepo.findByEmail(us.getEmail_id());
-		u.setFirst_name(us.getFirst_name());
-		u.setLast_name(us.getLast_name());
-		u.setGender(u.getGender());
-		u.setMobile_number(us.getMobile_number());
-		urepo.save(u);
-		return u;
-		
-	}
+	
 	
 	@RequestMapping(method = RequestMethod.PUT ,value = "/edit1")
 	public User editPass(@RequestBody UserInfo us)

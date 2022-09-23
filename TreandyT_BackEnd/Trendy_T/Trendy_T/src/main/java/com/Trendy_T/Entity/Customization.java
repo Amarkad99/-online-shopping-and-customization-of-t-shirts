@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
@@ -20,12 +21,14 @@ public class Customization implements Serializable{
 	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="product_id")
 	private Product product_id;
+	@Lob
 	private byte[] front_image_to_insert;
-	private byte[] back_image_to_insert;
-	private byte[] final_image_front;
-	private byte[] final_image_back;
-	private String front_text;
-	private String back_text;
+	private String front_upper_text;
+	private String front_lower_text;
+	private int text_size;
+	private String t_shirt_color;
+	private String text_color;
+	
 	
 	public int getCustomization_id() {
 		return Customization_id;
@@ -45,62 +48,55 @@ public class Customization implements Serializable{
 	public void setFront_image_to_insert(byte[] front_image_to_insert) {
 		this.front_image_to_insert = front_image_to_insert;
 	}
-	public byte[] getBack_image_to_insert() {
-		return back_image_to_insert;
+	public String getFront_upper_text() {
+		return front_upper_text;
 	}
-	public void setBack_image_to_insert(byte[] back_image_to_insert) {
-		this.back_image_to_insert = back_image_to_insert;
+	public void setFront_upper_text(String front_upper_text) {
+		this.front_upper_text = front_upper_text;
 	}
-	public byte[] getFinal_image_front() {
-		return final_image_front;
+	public String getFront_lower_text() {
+		return front_lower_text;
 	}
-	public void setFinal_image_front(byte[] final_image_front) {
-		this.final_image_front = final_image_front;
+	public void setFront_lower_text(String front_lower_text) {
+		this.front_lower_text = front_lower_text;
 	}
-	public byte[] getFinal_image_back() {
-		return final_image_back;
+	public int getText_size() {
+		return text_size;
 	}
-	public void setFinal_image_back(byte[] final_image_back) {
-		this.final_image_back = final_image_back;
+	public void setText_size(int text_size) {
+		this.text_size = text_size;
 	}
-	public String getFront_text() {
-		return front_text;
+	public String getT_shirt_color() {
+		return t_shirt_color;
 	}
-	public void setFront_text(String front_text) {
-		this.front_text = front_text;
+	public void setT_shirt_color(String t_shirt_color) {
+		this.t_shirt_color = t_shirt_color;
 	}
-	public String getBack_text() {
-		return back_text;
+	public String getText_color() {
+		return text_color;
 	}
-	public void setBack_text(String back_text) {
-		this.back_text = back_text;
+	public void setText_color(String text_color) {
+		this.text_color = text_color;
 	}
-	
-	public Customization() {
-		super();
-	}
-	public Customization(Product product_id, byte[] front_image_to_insert, byte[] back_image_to_insert,
-			byte[] final_image_front, byte[] final_image_back, String front_text, String back_text) {
+	public Customization(Product product_id, byte[] front_image_to_insert, String front_upper_text,
+			String front_lower_text, int text_size, String t_shirt_color, String text_color) {
 		super();
 		this.product_id = product_id;
 		this.front_image_to_insert = front_image_to_insert;
-		this.back_image_to_insert = back_image_to_insert;
-		this.final_image_front = final_image_front;
-		this.final_image_back = final_image_back;
-		this.front_text = front_text;
-		this.back_text = back_text;
+		this.front_upper_text = front_upper_text;
+		this.front_lower_text = front_lower_text;
+		this.text_size = text_size;
+		this.t_shirt_color = t_shirt_color;
+		this.text_color = text_color;
 	}
-	public Customization(int Customization_id,Product product_id, byte[] front_image_to_insert, byte[] back_image_to_insert,
-			byte[] final_image_front, byte[] final_image_back, String front_text, String back_text) {
+	public Customization(byte[] front_image_to_insert, String front_upper_text, String front_lower_text, int text_size,
+			String t_shirt_color, String text_color) {
 		super();
-		this.Customization_id=Customization_id;
-		this.product_id = product_id;
 		this.front_image_to_insert = front_image_to_insert;
-		this.back_image_to_insert = back_image_to_insert;
-		this.final_image_front = final_image_front;
-		this.final_image_back = final_image_back;
-		this.front_text = front_text;
-		this.back_text = back_text;
+		this.front_upper_text = front_upper_text;
+		this.front_lower_text = front_lower_text;
+		this.text_size = text_size;
+		this.t_shirt_color = t_shirt_color;
+		this.text_color = text_color;
 	}
-	
 }

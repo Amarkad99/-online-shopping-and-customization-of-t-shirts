@@ -19,7 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Payment from "./Payment";
 
 import ButtonDesign from "./Component/ButtonDesign";
-import MyOrder from "./Component/OrderDetails";
+
 import Redymade from "./Component/Redymade";
 import DeliveryDetails from "./Component/DeliveryDetails";
 import Home from "./Component/Home";
@@ -27,6 +27,13 @@ import Login from "./Login";
 import store from "./store/reducer";
 import { Provider } from 'react-redux';
 import Registration2 from "./Registration2";
+import HomePage from "./homepage2";
+import Login1 from "./Login1";
+import Changepassword from "./Login2";
+import Customize from "./Customize";
+import Cart1 from "./Trailcart";
+import MyOrder from "./OrderDetails";
+import Signout from "./Signout";
 import SideMenu  from "./Components/SideMenu";
 import ProductTable from "./ProjectComponents/ProductTable"
 
@@ -87,14 +94,20 @@ function App() {
     <Provider store={store}>
               <Routes>
               <Route path="/" element={<Login></Login>}  /> 
+              <Route path="signout" element={<Signout></Signout>}  /> 
+              <Route path="/myOrder" element={<MyOrder></MyOrder>}  /> 
+              <Route path="/cart1" element={<Cart1></Cart1>}  /> 
               <Route path="Signup" element={<Registration2 />} />
-                  <Route path="Home" element={<Home></Home>}  /> 
+              <Route path="/home" element={<HomePage/>} />
+              <Route path="/Question" element={<Login1></Login1>}  />
+              <Route path="/Changepassword" element={<Changepassword></Changepassword>}  /> 
                   <Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>
                   <Route path="profile" element={<Profile></Profile>} />
                   <Route path="order/details" element={<MyOrder></MyOrder>} />
                   <Route path="create/design" element={<Create></Create>} />
                   <Route path="order/history" element={<Orderhistory></Orderhistory>} />
                   <Route path="payment" element={<Payment></Payment>} />
+                  <Route path="customize" element={<Customize></Customize>} />
                   <Route path="report" element={<Report></Report>} />
                   <Route path="shipping/details" element={<ShippingDetails></ShippingDetails>} />
                   <Route path="tshirt/details" element={<Tshirt_Details></Tshirt_Details>}
