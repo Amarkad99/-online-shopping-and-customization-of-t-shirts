@@ -25,12 +25,7 @@ export const getColorCollection = () => ([
     { id: '4', title: 'Blue' },
     { id: '5', title: 'Gray' },
 ])
-export const getStatusCollection = () => ([
-    { id: '1', title: 'Dispatched' },
-    { id: '2', title: 'In Transit' },
-    { id: '3', title: 'Out for Delivery' },
-    { id: '4', title: 'Delivered' },
-])
+
 export const getSleeveByID=(id)=>{
     let sleeveTitle='';
     getSleeveTypeCollection().map((item,index)=>{
@@ -86,6 +81,8 @@ export const getSizeByID=(id)=>{
     })
     return sizeTitle;
 }
+
+
 
 export const deleteProduct=(prod)=>{
    
