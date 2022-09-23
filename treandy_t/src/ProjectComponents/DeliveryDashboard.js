@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles, withStyles } from "@material-ui/core";
-import Controls from './controls/Controls';
-import ProductTable from '../ProjectComponents/ProductTable';
+import Controls from "../Components/controls/Controls"
+
 import { Navigate ,Link,Outlet} from 'react-router-dom';
 
 
@@ -36,7 +36,7 @@ const style = {
 const useStyles = makeStyles({
     
   })
-const SideMenu = (props) => {
+const DeliveryDashBoard = (props) => {
     const classes2 = useStyles();
     const { classes } = props;
   
@@ -44,10 +44,10 @@ const SideMenu = (props) => {
         <div>
         <div className={classes.sideMenu} id="SideMenuBar">
                     <Controls.Button
-                        text="Products"
+                        text="Delivery Details"
                         color="primary"
                         className={classes.button}
-                        variant="contained" href="http://localhost:3000/ownerDashboard/productTable"
+                        variant="contained" href="http://localhost:3000/DeliveryDashboard/deliveryTable"
                         />
                         <Controls.Button
                         text="Orders"
@@ -75,4 +75,4 @@ const SideMenu = (props) => {
     )
 }
 
-export default withStyles(style)(SideMenu);
+export default withStyles(style)(DeliveryDashBoard);

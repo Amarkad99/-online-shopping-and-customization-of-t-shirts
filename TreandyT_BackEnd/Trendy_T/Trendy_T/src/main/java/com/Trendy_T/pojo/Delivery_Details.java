@@ -9,6 +9,13 @@ public class Delivery_Details {
 	private String address_line;
 	private String street;
 	private String city;
+	private String status;
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public String getFirst_name() {
 		return first_name;
 	}
@@ -23,7 +30,7 @@ public class Delivery_Details {
 		return last_name;
 	}
 	public Delivery_Details(String first_name, String last_name, long mobile_number, String address_line, String street,
-			String city, String pincode, int price, int order_id) {
+			String city, String pincode, int price, int order_id,String status) {
 		super();
 		this.first_name = first_name;
 		this.last_name = last_name;
@@ -34,6 +41,7 @@ public class Delivery_Details {
 		this.pincode = pincode;
 		Price = price;
 		this.order_id = order_id;
+		this.status=status;
 	}
 	public void setLast_name(String last_name) {
 		this.last_name = last_name;

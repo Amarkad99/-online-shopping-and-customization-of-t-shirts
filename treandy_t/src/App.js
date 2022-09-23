@@ -29,6 +29,8 @@ import { Provider } from 'react-redux';
 import Registration2 from "./Registration2";
 import SideMenu  from "./Components/SideMenu";
 import ProductTable from "./ProjectComponents/ProductTable"
+import DeliveryDashboard from "./ProjectComponents/DeliveryDashboard";
+import DeliveryTable from "./ProjectComponents/DeliveryTable";
 
 
 const theme = createTheme({
@@ -113,6 +115,21 @@ function App() {
     <Routes>
     <Route path="/ownerDashboard" element={<Provider store={store}><SideMenu></SideMenu></Provider>}>
     <Route path="productTable" element={<ProductTable></ProductTable>}/>
+     
+    </Route>    
+    </Routes></BrowserRouter>
+  
+      </div>
+      <CssBaseline />
+    </ThemeProvider>
+
+    <ThemeProvider theme={theme}>
+      <div>
+           
+    <BrowserRouter>
+    <Routes>
+    <Route path="/deliveryDashboard" element={<Provider store={store}><DeliveryDashboard></DeliveryDashboard></Provider>}>
+    <Route path="deliveryTable" element={<DeliveryTable></DeliveryTable>}/>
      
     </Route>    
     </Routes></BrowserRouter>
