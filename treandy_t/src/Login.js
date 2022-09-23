@@ -1,101 +1,139 @@
  import React, { useState } from "react";
  import "./Login.css"
  import Tshirt from './image/Tshirt.png';
+ import logo from './image/tredy_t_logo.jpg';
 
  import Button from 'react-bootstrap/Button';
  import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import axios from "axios";
  export default function Login(){
-  let [Emailid,setEmailid] = useState("")
+  let [status,setStatus] = useState(false)
+  let [email,setEmail] = useState("")
   let [password,setPassword] = useState("")
   let [msg,setMsg] = useState("")
-  const dispatch= useDispatch()
     let navigate = useNavigate() 
 
     function check_login()
     {
-      console.log({Emailid})
-      console.log("hi")
-      console.log("check for gitignore==========================")
-        fetch('http://localhost:8080/Login/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body:JSON.stringify({
-            email_id:Emailid,
-            password:password})
-          })
-        .then(response => response.json())
-        .then(data =>{
-          
-             if(data.msg === "OK")
-             {
-              console.log("hi2")
-              dispatch({type:"save",payload:{Emailid:Emailid,password:password}})
-              navigate("/home") 
-             }
-             else{
-              setMsg("Not Ok")
-             }
+      setPassword([email,password])
+    axios.get(`http://localhost:8080/Login/login/${email}/${password}`,email,password)
+    .then((result)=>
+    {
+      console.log(result);
+      if(result.data !== ""){
+        alert("Login Suceessfull");
+        sessionStorage.setItem('auth',JSON.stringify(result.data));
+        navigate("/home")
+      }
+      else{
+        if(email==="Trendy_t@123gmail.com" && password==="Trendy_t"){
+          let pass={"email":"Trendy_t@123gmail.com","password":"Trendy_t"}
+          sessionStorage.setItem('auth',JSON.stringify(pass));
+          navigate("/home")
+        }
+        else if(email==="Eparsel@123gmail.com" && password==="123456"){
+          let pass={"email":"Eparsel@123gmail.com","password":"123456"}
+          sessionStorage.setItem('auth',JSON.stringify(pass));
+          navigate("/home")
 
-        } );
-                
-        
-        
-        
+        }
+        else{
+        setMsg("Invalid Login");
+        navigate("/")
+      }
     }
+    }).then(
+      navigate("/home")
+    ) 
+  }
 
    
 return(
-
+      
 
     <div>
-    <div class="box">   <a href='http://localhost:3000/Signup'>sign up</a>
-      <center>
-    
-        <h2><b>SING IN</b></h2>      
+      <div>
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+
         
-        <form >
-           <h2>{msg}</h2>
-          <div class="Input">
-            <label for="username">EmailId:</label><br></br>
-            <input   class="form-control" 
-              type="email" 
-              name="EmailId" 
-              placeholder="Enter EmailId" 
-              id="EmailId" 
-              onBlur={(e)=>{setEmailid(e.target.value)}}
-              required/>
-  
-              <div className="text-danger"></div>
-          </div><br></br>
-  
+          <li class="nav-item">
+            <a class="nav-link active" id="contact-tab" data-toggle="tab" href="http://localhost:3000/" role="tab" aria-controls="contact" aria-selected="false">Login</a>
+          </li>
+
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/signup" role="tab" aria-controls="profile" aria-selected="false">signup</a> 
+          </li>
+
+              
+
+
+          <li>
+
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"></div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"></div>
+        </div>
+
+
+
+      </div>
+      <div class="box">  
+        <center>
+      
         
-  
-          <div class="Input">
-            <label for="password">Password:</label><br></br>
-            <input 
-              type="password" 
-              name="password" 
-              class="form-control" 
-              placeholder="Enter password" 
-              id="password" 
-              onBlur={(e)=>{setPassword(e.target.value)}}
-              required/>
-  
-              <div className="text-danger"></div>
-          </div><br></br>
-  
+          <h2><b className= "text-uppercase">SIGN IN</b></h2>      
           
-             
-          <Button variant="primary" onClick={check_login}>Login</Button>{' '}
-        </form>
-        
-        <a href=''>Forgot Password?</a>
-        </center>
+          {status && <div classs="container p-5">
+    <div class="alert alert-success" role="alert">
+    <h4 className="alert-heading">{msg}</h4>
+    </div>
+  </div>}
+          <form > 
+            <div class="Input">
+              <label for="username">EmailId:</label><br></br>
+              <input   class="form-control" 
+                type="email" 
+                name="email" 
+                placeholder="Enter EmailId" 
+                id="EmailId" 
+                onBlur={(e)=>{setEmail(e.target.value)}}
+                required/>
+    
+                <div className="text-danger"></div>
+            </div><br></br>
+    
+          
+    
+            <div class="Input">
+              <label for="password">Password:</label><br></br>
+              <input 
+                type="password" 
+                name="password" 
+                class="form-control" 
+                placeholder="Enter password" 
+                id="password" 
+                onBlur={(e)=>{setPassword(e.target.value)}}
+                required/>
+    
+                <div className="text-danger"></div>
+            </div><br></br>
+    
+            
+              
+            <Button variant="primary" onClick={check_login}>Login</Button>{' '}
+          </form>
+          
+          <a href='http://localhost:3000/Question' >Forgot Password?</a><br></br>
+          <a href='http://localhost:3000/Signup'>sign up</a>  
+          </center>
       </div>
-      <img className='img' src={Tshirt} />
-      </div>
+      <img className="girlimg" src="https://img.freepik.com/premium-vector/online-registration-sign-up-with-man-sitting-near-smartphone_268404-95.jpg?w=2000"></img>
+    </div>
     );
   }
 

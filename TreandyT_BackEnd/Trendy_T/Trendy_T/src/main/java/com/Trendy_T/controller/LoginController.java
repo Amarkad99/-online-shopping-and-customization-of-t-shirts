@@ -2,6 +2,8 @@ package com.Trendy_T.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,17 +21,18 @@ public class LoginController {
 	
 	@Autowired
 	UserRepository urepo;
-	@RequestMapping(method = RequestMethod.POST ,value = "/login")
-	public Massage login(@RequestBody UserInfo us)
+	
+@GetMapping ("login/{email}/{password}")
+	public User checklogin(@PathVariable String email,@PathVariable String password)
 	{
-		System.out.println(us.getEmail_id());
+		
 		System.out.println("Here We are");
-		User a=(User)urepo.findByEmail(us.getEmail_id());
-		if( a!=null && a.getPassword().equals(us.getPassword())){
-			return new Massage ("OK"); 			
+		User a=(User)urepo.findByEmail(email);
+		if( a!=null && a.getEmail().equals(email)){
+			return a; 			
 		}
 		else
-		return new Massage ("not ok");
+		return null;
 	}
 
 }

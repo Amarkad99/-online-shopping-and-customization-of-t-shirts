@@ -20,7 +20,7 @@ public class Orders implements Serializable{
 	@GeneratedValue
 	private int orderid;   
 	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="user_id")
+	@JoinColumn(name="userid")
 	private User userid; 
 	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="address_id")
@@ -32,14 +32,15 @@ public class Orders implements Serializable{
 	public int getOrder_id() {
 		return orderid;
 	}
-	public void setOrder_id(int orderid) {
-		this.orderid = orderid;
+	public void setOrder_id(int order_id) {
+		
+		this.orderid = order_id;
 	}
 	public User getUser_id() {
 		return userid;
 	}
-	public void setUser_id(User userid) {
-		this.userid = userid;
+	public void setUser_id(User user_id) {
+		this.userid = user_id;
 	}
 	public Address getShipping_address_id() {
 		return shipping_address_id;
@@ -51,6 +52,7 @@ public class Orders implements Serializable{
 		return status;
 	}
 	public void setStatus(String status) {
+		
 		this.status = status;
 	}
 	public double getTotal_price() {
@@ -62,9 +64,8 @@ public class Orders implements Serializable{
 	public Date getOrder_date() {
 		return orderdate;
 	}
-
-	public void setOrder_date(Date orderdate) {
-		this.orderdate = orderdate;
+	public void setOrder_date(Date order_date) {
+		this.orderdate = order_date;
 	}
 	public Date getOrder_status_changed_datetime() {
 		return order_status_changed_datetime;
@@ -76,19 +77,16 @@ public class Orders implements Serializable{
 	public Orders() {
 		super();
 	}
-
-	public Orders(int orderid, User userid, Address shipping_address_id, String status, double total_price,
-			Date orderdate, Date order_status_changed_datetime) {
+	public Orders(int order_id, User user_id, Address shipping_address_id, String status, double total_price,
+			Date order_date, Date order_status_changed_datetime) {
 		super();
-		this.orderid = orderid;
-		this.userid = userid;
+		this.orderid = order_id;
+		this.userid = user_id;
 		this.shipping_address_id = shipping_address_id;
 		this.status = status;
 		this.total_price = total_price;
-		this.orderdate = orderdate;
+		this.orderdate = order_date;
 		this.order_status_changed_datetime = order_status_changed_datetime;
 	}
 	
-	
-
 }

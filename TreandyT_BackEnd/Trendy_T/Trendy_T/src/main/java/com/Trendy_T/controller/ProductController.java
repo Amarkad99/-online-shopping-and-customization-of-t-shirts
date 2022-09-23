@@ -31,6 +31,7 @@ import com.Trendy_T.Entity.ProductImage;
 import com.Trendy_T.Entity.ProductType;
 import com.Trendy_T.Entity.User;
 import com.Trendy_T.pojo.Massage;
+import com.Trendy_T.pojo.Delivery_Details;
 import com.Trendy_T.pojo.ProductInfo;
 import com.Trendy_T.pojo.UserInfo;
 import com.Trendy_T.repositories.ProductImageRepository;
