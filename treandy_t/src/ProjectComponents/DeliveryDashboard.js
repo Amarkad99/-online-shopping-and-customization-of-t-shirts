@@ -48,14 +48,9 @@ const DeliveryDashBoard = (props) => {
                         color="primary"
                         className={classes.button}
                         variant="contained" href="http://localhost:3000/DeliveryDashboard/deliveryTable"
-                        />
+                     />
                         <Controls.Button
-                        text="Orders"
-                        color="primary"
-                        className={classes.button}
-                        />
-                        <Controls.Button
-                        text="Order History"
+                        text="Delivery History"
                         color="primary"
                         className={classes.button}
                      />

@@ -146,22 +146,7 @@ export default function ProductForm(props)
                    
                     
                 />
-                <Controls.Input
-                    label="Price"
-                    name="price"
-                    value={values.price}
-                    onChange={handleInputChange}
-                    error={errors.price}
-                    
-                />
-                <Controls.Input
-                    label="Quantity"
-                    name="quantity"
-                    value={values.quantity}
-                    onChange={handleInputChange}
-                    error={errors.quantity}
-                    
-                />
+            
                
                 <Controls.Select
                     label="Sleeve-Type"
