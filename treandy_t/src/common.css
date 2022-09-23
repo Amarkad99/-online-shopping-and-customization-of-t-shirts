@@ -1,0 +1,273 @@
+.homepageimage1{
+
+    height: 600px;
+    width: 700px;
+
+}
+.homepageimage3{
+
+    height: 400px;
+    width: 1530px;
+
+}
+
+.homepageimage2{
+
+    
+    height: 600px;
+    width: 500px;
+}
+
+.nav{
+    position:sticky;
+}
+
+
+
+.box {
+    /* height: 550px; */
+    /* width: 500px; */
+    height: 559px;
+    /* width: 580px; */
+    width: 620px;
+    margin: 80px;
+    padding: 20px;
+    top: 50%;
+    
+    left: 70%;
+    /* left: 73%; */
+    /* left: 78%; */
+    /* position: absolute; */
+    margin-top: -251px;
+    /* margin-top: -300px; */
+    margin-left: -250px;
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: outset;
+    background-color:whitesmoke;
+  }
+
+ 
+
+  
+  
+  .box2 {
+    background-color:whitesmoke;
+    height: 1300px;
+    width: 700px;
+    margin: 80px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -350px;
+    margin-left: -250px;
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: groove;
+  }
+  /* .bgimage{
+  
+    background-image: url('image/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:200vh;
+  
+  } */
+
+  .bg6{
+  
+    background-image: url('./bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:200vh;
+  
+  }
+  .bgcolor{
+  
+   background-color: rgb(208, 226, 242);
+ 
+ 
+  
+  }
+  .regbox {
+    background-color:whitesmoke;
+    height: 1220px;
+    width: 630px;
+    margin: 80px;
+    padding: 20px;
+    top: 65%;
+    left: 50%;
+    position: absolute;
+  
+    margin-top: -400px;
+    margin-left: -310px;
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: groove;
+  }
+  .text-danger{
+    color: red;
+  }
+  
+  .img {
+    object-fit: fill;
+    width: 900px;
+  height: 750px;
+  text-align: center;
+  padding: 10px;
+  
+  }
+  
+  .img2 {
+    object-fit: fill;
+    width: 100px;
+  height: 100px;
+  text-align: center;
+  padding: 15px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  
+  }
+  
+  
+  .mylogo {
+    object-fit: fill;
+    width: 190px;
+  height: 190px;
+  text-align: center;
+  padding: 3px;
+  position: absolute;
+  top: 54px;
+  right: 20px;
+  left:460px;
+  margin-top: -105px;
+  
+  }
+  .girlimg{
+  
+    /* height={551} width={608} */
+  
+    height: 551px;
+    width: 608px;
+  }
+  
+  .page{
+    overflow: hidden;
+  }
+  
+  
+  
+  .reportbox {
+    height: 540px;
+    width: 480px;
+    margin: 80px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -260px;
+    margin-left: -250px;
+    background-color:whitesmoke;
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: outset;
+}
+.Box {
+    height: 600px;
+    width: 500px;
+    margin: 80px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -300px;
+    margin-left: -250px;
+    background-color:palegreen;
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: outset;
+  }
+
+  .Box3 {
+    height: 286px;
+    width: 500px;
+    margin: 80px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -256px;
+    margin-left: -250px;
+    background-color:whitesmoke;
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: outset;
+  }
+
+  .profileblock {
+    background-color:whitesmoke;
+    height: 740px;
+    width: 550px;
+    margin: 80px;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-top: -270px;
+    margin-left: -280px;
+    border-width: 5px;
+    box-sizing: border-box;
+    border-style: groove;
+  }
+
+  .foot{
+
+    color: white;
+  }
+
+  .lefty
+  {
+
+    margin-right: 2px;
+  }
+
+.tablebg
+{
+  background-color:whitesmoke;
+  border-width: 5px;
+  border-style: groove;
+}
+
+
+  
+/* .seven{
+  content: " ";
+  display: block;
+  border-bottom: 1px solid #c50000;
+  border-top: 1px solid #c50000;
+  height: 5px;
+background-color:#f8f8f8;
+}
+
+.eight h1 {
+  text-align:center;
+ 
+  text-transform:uppercase;
+  font-size:26px; letter-spacing:1px;
+  
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 16px 0;
+  grid-gap: 22px;
+}
+
+.eight h1:after,.eight h1:before {
+  content: " ";
+  display: block;
+  border-bottom: 2px solid #ccc;
+  background-color:#f8f8f8;
+} */

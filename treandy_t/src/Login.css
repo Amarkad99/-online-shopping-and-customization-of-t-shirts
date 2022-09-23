@@ -1,12 +1,12 @@
 
 .box {
   height: 550px;
-  width: 500px;
+  width: 580px;
   margin: 80px;
   padding: 20px;
   top: 50%;
   
-  left: 78%;
+  left: 60%;
   position: absolute;
   margin-top: -300px;
   margin-left: -250px;
@@ -44,7 +44,62 @@ padding: 15px;
 
 }
 
+.img2 {
+  object-fit: fill;
+  width: 100px;
+height: 100px;
+text-align: center;
+padding: 15px;
+position: absolute;
+top: 0px;
+right: 0px;
+
+}
 
 
+.box3 {
+  height: 700x;
+  width: 500px;
+  margin: 80px;
+  padding: 20px;
+  top: 50%;
+  left: 40%;
+  position:absolute;
+  margin-top: -300px;
+  margin-left: -50px;
+  background-color:whitesmoke;
+  border-width: 5px;
+  box-sizing: border-box;
+  border-style: outset;
+}
 
+logo
+{
+  margin: 0;
+  position: absolute;
+  top: 6%;
+  left: 96%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 
+.fit{
+  margin:40px
+}
+
+.grid{
+  min-height:100%;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+}
+.grid > div{
+  flex-basis:cal(30% - 60px);
+}
+.girlimg{
+
+  /* height={551} width={608} */
+
+  height: 551px;
+  width: 608px;
+}
