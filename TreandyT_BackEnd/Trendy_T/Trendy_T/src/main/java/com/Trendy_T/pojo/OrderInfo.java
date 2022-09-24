@@ -3,7 +3,7 @@ package com.Trendy_T.pojo;
 import java.util.Date;
 
 public class OrderInfo {
-
+    
 	private double price;
 	private String color;;
 	public OrderInfo(double price, String color, String neck_type, String sleev, String size, int product_quantity,

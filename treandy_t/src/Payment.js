@@ -8,58 +8,48 @@ export default function Payment()
 {
   let[data,setData]=useState("");
   let[status,setStatus]=  useState(false);
-
-   let data1 = sessionStorage.getItem('data')
+  let [pr,setPr]=useState([]);
+  const data3=sessionStorage.getItem('auth')
+  const {email}=JSON.parse(data3);
+   const data1 = sessionStorage.getItem('data')
    let l=JSON.parse(data1);
-   let totalprice= l.map(item => item.price).reduce((total, value) => total + value, 0) 
-    console.log(data1)
-  // const [{price}]=data;
-  
-  //useEffect(()=>{
-//     const requestOptions = {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/json' },
-//       body:JSON.stringify({
-//           l
-             
-//       })
-//       };
-//     fetch('http://localhost:8080/user/register', requestOptions)
-//     .then(response => response.json())
-//     .then(data =>{
-    
-
-    
-//     } );
    
-// },[])
 
-
-
-
-
-
-
-
-
-
-
-
+   let totalprice= l.map(item => item.price).reduce((total, value) => total + value, 0) 
+  useEffect(()=>{
+    
+},[])
 
   function handler(event)
   {
 setStatus(true)
 console.log(event.target.value)
  setData(event.target.value);
+ setPr(l);
+ console.log(pr);
+const myData={
+  "total_price":122,
+  "productList":l
+}
+
+ const requestOptions = {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body:JSON.stringify({
+    "total_price":122,
+    "productList":l
+     })
+  };
+fetch("http://localhost:8080/order/placeorder", requestOptions)
+.then(response => JSON.parse(response))
+.catch(error => console.log(error))
+
 return(<div>
 
 <p>you have entered {data}</p>
   
 </div>)
   }
-
-
-
 
 return(
   <div>
@@ -103,7 +93,7 @@ return(
   <fieldset > 
 <h1> Payment</h1>
 <br></br>
-Amount <input value={totalprice}  ></input>
+<b>Amount </b>&nbsp;&nbsp;<input value={totalprice}  ></input>
 <br></br>
 <br></br>
 <br></br> <Button type="submit" onClick={handler} >Pay </Button>{' '}<br></br>

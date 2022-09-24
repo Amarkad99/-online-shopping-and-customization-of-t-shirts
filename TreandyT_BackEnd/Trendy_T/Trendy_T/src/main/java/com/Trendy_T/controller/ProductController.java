@@ -153,8 +153,32 @@ public class ProductController {
 			ptrepo.delete(pt);
 			prepo.delete(pr);
 			return new Massage("deleted");
-			
 	
+	}
+	
+	// this mrthod for show product on home page
+	
+	@RequestMapping(method = RequestMethod.GET ,value = "/getall")	
+	public List <ProductInfo>  getProduct()
+	{
+		List <ProductInfo> list=new ArrayList<ProductInfo>(); 
+		System.out.println("ok");
+		List <Product> p = prepo.findAll();
+	       for (Product product : p) {
+	    	   ProductInfo pr=new ProductInfo();
+	    	   System.out.println(product.getProduct_id());
+	    	   pr.setImage_front(product.getProductimage_id().getImage_front());
+	    	   pr.setProductid(product.getProduct_id());
+	    	   pr.setMaterial(product.getProducttype_id().getMaterial());
+	    	   pr.setColor(product.getProducttype_id().getColor());
+	    	   pr.setNeck_type(product.getProducttype_id().getNeck_type());
+	    	   pr.setPrice(product.getPrice());
+	    	   pr.setSize(product.getProducttype_id().getSize());
+			   list.add(pr);
+			   System.out.println(pr.getProductid());
+		}	
+			return list;	
+			
 	}
 	
 

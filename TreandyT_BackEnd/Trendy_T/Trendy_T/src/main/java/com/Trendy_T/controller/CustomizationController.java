@@ -22,14 +22,12 @@ public class CustomizationController {
 	@Autowired
 	CustomizationRepository crepo;
 	
-	
-	
 	@RequestMapping(method = RequestMethod.POST ,value = "/insert")	
 	public Customization addUser(@RequestBody CustomizeInfo u)
 	{ 
 		Customization add = new Customization( u.getFront_image_to_insert(), u.getFront_upper_text(), u.getFront_lower_text(), u.getText_size(), u.getT_shirt_color(), u.getText_color());
-		
 		crepo.save(add);
+		//Orders o=new Orders()
 		
 		return add;
 	}

@@ -1,6 +1,8 @@
 package com.Trendy_T.controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,6 +13,8 @@ import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +22,11 @@ import com.Trendy_T.Entity.Order_Details;
 import com.Trendy_T.Entity.Orders;
 import com.Trendy_T.Entity.Product;
 import com.Trendy_T.Entity.User;
+import com.Trendy_T.pojo.Massage;
+import com.Trendy_T.pojo.OrderDTO;
 import com.Trendy_T.pojo.OrderInfo;
+import com.Trendy_T.pojo.Place_order;
+import com.Trendy_T.pojo.ProductInfo;
 import com.Trendy_T.repositories.OrderRepository;
 import com.Trendy_T.repositories.Order_DetailsRepositery;
 //import com.Trendy_T.repositories.OrderdetailRepositery;
@@ -66,22 +74,43 @@ public class OrderController {
 				oinfo.add(oi);
 			}
 		  for ( Order_Details oddd : odd) {
-				 if(oddd.getOrder_id().getOrder_id() == orders.getOrder_id()) {
-					 oi.setColor(oddd.getProduct_id().getProducttype_id().getColor());
-					 System.out.println(oddd.getProduct_id().getProducttype_id().getColor());
-					 oi.setNeck_type(oddd.getProduct_id().getProducttype_id().getNeck_type());
-					 oi.setPrice(oddd.getProduct_id().getPrice());
-					 oi.setSize(oddd.getProduct_id().getProducttype_id().getSize());
-					 oi.setSleev(oddd.getProduct_id().getProducttype_id().getSleeve());
+				 if(oddd.getOrder_id() == orders.getOrder_id()) {
+					 Product p = prepo.findById(oddd.getProduct_id()).orElseThrow();
+					 oi.setColor(p.getProducttype_id().getColor());
+					 oi.setNeck_type(p.getProducttype_id().getNeck_type());
+					 oi.setPrice(p.getPrice());
+					 oi.setSize(p.getProducttype_id().getSize());
+					 oi.setSleev(p.getProducttype_id().getSleeve());
 					 oi.setProduct_quantity(oddd.getProduct_quantity());
-					 oi.setTotal_price(oddd.getOrder_id().getTotal_price());
 					 oinfo.add(oi);
 				 }
 				
-		  }
+	  }
 	}
 		return oinfo;
+}
+	
+	
+	@PostMapping("/placeorder")	
+	public Massage addUser(@RequestBody OrderDTO myData )
+	{ 
+		System.out.println("he bg");
+//		User u=urepo.findByEmail(po.getEmail());
+		Order_Details od=new Order_Details ();
+//	       Orders o=new Orders(u,u.getAddress_id(),"order placed",po.getTotalprice(),new Date(),new Date());
+//	       orepo.save(o);
+//	       System.out.println(po.getOr());
+	      
+//	       for (ProductInfo productInfo : po) {
+//			//od.setOrder_id(o);
+//			od.setProduct_id(prepo.getReferenceById(productInfo.getProductid()));
+//			od.setProduct_quantity(productInfo.getQuantity());
+//			odrepo.save(od);
+//		}   
+			return null;
+	}
+
 	
 	
 }
-}
+

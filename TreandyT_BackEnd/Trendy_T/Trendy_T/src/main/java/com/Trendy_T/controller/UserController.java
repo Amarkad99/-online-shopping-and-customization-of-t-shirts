@@ -37,8 +37,7 @@ public class UserController {
 	}
 	@RequestMapping(method = RequestMethod.POST ,value = "/register")	
 	public Massage addUser(@RequestBody UserInfo u)
-	{ 
-		
+	{ 	
 		User a=(User)urepo.findByEmail(u.getEmail_id());
 
 		if(a == null) 

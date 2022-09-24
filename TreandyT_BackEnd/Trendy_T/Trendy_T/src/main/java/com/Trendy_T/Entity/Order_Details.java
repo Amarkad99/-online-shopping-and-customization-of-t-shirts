@@ -19,27 +19,27 @@ public class Order_Details implements Serializable {
 	@Id
 	@GeneratedValue
 	private int orderdetailid;
-	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="orderid")
-	private Orders orderid;
-	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="productid")
-	private Product productid;
+//	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+//	@JoinColumn(name="orderid")
+	private int orderid;
+//	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+//	@JoinColumn(name="productid")
+	private int productid;
 	private int product_quantity;
 	
-	public Orders getOrder_id() {
+	public int getOrder_id() {
 		return orderid;
 	}
 	public Order_Details() {
 		super();
 	}
-	public void setOrder_id(Orders order_id) {
+	public void setOrder_id(int order_id) {
 		this.orderid = order_id;
 	}
-	public Product getProduct_id() {
+	public int getProduct_id() {
 		return productid;
 	}
-	public void setProduct_id(Product product_id) {
+	public void setProduct_id(int product_id) {
 		this.productid = product_id;
 	}
 	public int getProduct_quantity() {
@@ -48,7 +48,7 @@ public class Order_Details implements Serializable {
 	public void setProduct_quantity(int product_quantity) {
 		this.product_quantity = product_quantity;
 	}
-	public Order_Details(Orders order_id, Product product_id, int product_quantity) {
+	public Order_Details(int order_id, int product_id, int product_quantity) {
 		super();
 		this.orderid = order_id;
 		this.productid = product_id;

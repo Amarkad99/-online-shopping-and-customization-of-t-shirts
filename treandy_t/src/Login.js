@@ -24,13 +24,13 @@ import axios from "axios";
       if(result.data !== ""){
         alert("Login Suceessfull");
         sessionStorage.setItem('auth',JSON.stringify(result.data));
-        navigate("/home")
+        navigate("/")
       }
       else{
         if(email==="Trendy_t@123gmail.com" && password==="Trendy_t"){
           let pass={"email":"Trendy_t@123gmail.com","password":"Trendy_t"}
           sessionStorage.setItem('auth',JSON.stringify(pass));
-          navigate("/home")
+          navigate("/ownerDashboard")
         }
         else if(email==="Eparsel@123gmail.com" && password==="123456"){
           let pass={"email":"Eparsel@123gmail.com","password":"123456"}
@@ -40,11 +40,11 @@ import axios from "axios";
         }
         else{
         setMsg("Invalid Login");
-        navigate("/")
+        navigate("/login")
       }
     }
     }).then(
-      navigate("/home")
+      navigate("/login")
     ) 
   }
 
@@ -58,20 +58,30 @@ return(
         <ul class="nav nav-tabs" id="myTab" role="tablist">
 
         
-          <li class="nav-item">
-            <a class="nav-link active" id="contact-tab" data-toggle="tab" href="http://localhost:3000/" role="tab" aria-controls="contact" aria-selected="false">Login</a>
-          </li>
-
-              <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/signup" role="tab" aria-controls="profile" aria-selected="false">signup</a> 
-          </li>
-
-              
-
-
-          <li>
-
-          </li>
+        <li class="nav-item">
+    <a class="nav-link " id="home-tab" data-toggle="tab" href="http://localhost:3000/" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab"  data-toggle="tab" role="tab" href="http://localhost:3000/profile" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/customize" role="tab" aria-controls="profile" aria-selected="false">Customise</a> 
+</li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="http://localhost:3000/Cart1" role="tab" aria-controls="contact" aria-selected="false">Cart</a>
+  </li>    
+<li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/myOrder" role="tab" aria-controls="profile" aria-selected="false">Ordrs</a> 
+</li>
+<li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/signup" role="tab" aria-controls="profile" aria-selected="false">Create Account</a> 
+</li>
+<li class="nav-item">
+        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="http://localhost:3000/login" role="tab" aria-controls="profile" aria-selected="false">Login</a> 
+</li>
+<li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/signout" role="tab" aria-controls="profile" aria-selected="false">Logout</a> 
+</li>
         </ul>
         <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"></div>

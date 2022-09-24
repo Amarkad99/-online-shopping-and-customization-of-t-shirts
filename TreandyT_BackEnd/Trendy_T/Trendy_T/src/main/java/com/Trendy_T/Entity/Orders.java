@@ -88,5 +88,13 @@ public class Orders implements Serializable{
 		this.orderdate = order_date;
 		this.order_status_changed_datetime = order_status_changed_datetime;
 	}
+	public Orders(User u, Address address_id, String status, double totalprice, Date order_date, Date order_status_changed_datetime) {
+		this.userid = u;
+		this.shipping_address_id = address_id;
+		this.status = status;
+		this.total_price = totalprice;
+		this.orderdate = order_date;
+		this.order_status_changed_datetime = order_status_changed_datetime;
+	}
 	
 }

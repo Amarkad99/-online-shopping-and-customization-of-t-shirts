@@ -94,7 +94,7 @@
   }
   .regbox {
     background-color:whitesmoke;
-    height: 1220px;
+    height: 1050px;
     width: 630px;
     margin: 80px;
     padding: 20px;
@@ -102,7 +102,7 @@
     left: 50%;
     position: absolute;
   
-    margin-top: -400px;
+    margin-top: -350px;
     margin-left: -310px;
     border-width: 5px;
     box-sizing: border-box;
@@ -200,7 +200,7 @@
     top: 50%;
     left: 50%;
     position: absolute;
-    margin-top: -256px;
+    margin-top: -210px;
     margin-left: -250px;
     background-color:whitesmoke;
     border-width: 5px;
@@ -210,14 +210,14 @@
 
   .profileblock {
     background-color:whitesmoke;
-    height: 740px;
+    height: 670px;
     width: 550px;
     margin: 80px;
     padding: 20px;
     top: 50%;
     left: 50%;
     position: absolute;
-    margin-top: -270px;
+    margin-top: -240px;
     margin-left: -280px;
     border-width: 5px;
     box-sizing: border-box;
@@ -271,3 +271,7 @@ background-color:#f8f8f8;
   border-bottom: 2px solid #ccc;
   background-color:#f8f8f8;
 } */
+
+.custh3{
+  color:brown
+}
