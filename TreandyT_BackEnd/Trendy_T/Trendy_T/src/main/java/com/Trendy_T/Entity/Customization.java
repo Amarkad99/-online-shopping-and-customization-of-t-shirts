@@ -19,7 +19,7 @@ public class Customization implements Serializable{
 	@GeneratedValue
 	private int Customization_id;
 	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="product_id")
+	@JoinColumn(name="productid")
 	private Product product_id;
 	@Lob
 	private String front_image_to_insert;
@@ -99,4 +99,9 @@ public class Customization implements Serializable{
 		this.t_shirt_color = t_shirt_color;
 		this.text_color = text_color;
 	}
+	public Customization() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 }

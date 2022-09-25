@@ -13,6 +13,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined'; 
 import Notification from "../Components/Notification"
 import StatusChange from "../ProjectComponents/StatusChange"
+import * as OrderService from "../services/OrderService"
 
 
 
@@ -77,19 +78,23 @@ const handleSearch = e => {
 }
 
 useEffect(()=>{
-    getDeliveryDetails();
+    getAllDeliveryDetails();
 },[])
 
 useEffect(()=>{
-    getDeliveryDetails();
+    getAllDeliveryDetails();
 },[key])
 
-
-const getDeliveryDetails=async()=>{
-    
-    let result=await fetch("http://localhost:8080/Delivery/findall");
-    result = await result.json();
-    console.warn("Result=",result);
+const openInPopup=(item)=>
+{
+    console.log(item.status);
+    setRecordsForEdit(item)
+    setOpenPopup(true)
+}
+const getAllDeliveryDetails=async()=>
+{
+    var result= await OrderService.getDeliveryDetails();
+    console.log(result);
     setRecords(result);
 }
 
@@ -130,12 +135,12 @@ return(
                                     <TableCell>{item.street}</TableCell>
                                     <TableCell>{item.city}</TableCell>
                                     <TableCell>{item.pincode}</TableCell>
-                                    <TableCell>{item.status}</TableCell>
+                                    <TableCell>{OrderService.getStatusByID(item.status)}</TableCell>
                                     <TableCell>
                                         <Controls.ActionButton
                                         color="primary">
                                             <EditOutlinedIcon fontSize="small"
-                                            onClick={()=>{ setOpenPopup(true)}}></EditOutlinedIcon>
+                                            onClick={()=>{ openInPopup(item)}}></EditOutlinedIcon>
                                             
                                         </Controls.ActionButton>
                                         </TableCell>
@@ -151,8 +156,9 @@ return(
                     openPopup={openPopup}
                     setOpenPopup={setOpenPopup }
                     setFlag={flag} 
+                   
                    >
-                   <StatusChange></StatusChange>
+                   <StatusChange records={records} setRecords={setRecords} recordForEdit={recordForEdit} setOpenPopup={setOpenPopup }></StatusChange>
 
             </Popup>
            

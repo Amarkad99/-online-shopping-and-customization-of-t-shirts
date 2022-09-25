@@ -58,5 +58,14 @@ public class CustomizationController {
 		return add;
 	}
 	
+	@GetMapping("/getCusomizedDetail/{productid}")
+	public Customization getCustomization(@PathVariable int productid)
+	{
+		Customization c=new Customization();
+		c=crepo.findById(1).orElseThrow();
+		return c;
+		
+	}
+	
 
 }

@@ -57,9 +57,5 @@ export function Form(props) {
         </form>
     )
 }
-export function Reset()
-{
-    const childref=useRef(null);
-    childref.current.ResetForm();
-}
+
 

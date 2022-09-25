@@ -93,9 +93,6 @@ const getproductDetails=async()=>{
 }
 
 const openInPopup=item=>{ 
-   /*  let frontimg=item.image_front.split(",")[1];
-    console.log(frontimg);
-    item.image_front=`${frontimg}`; */
     console.log(item.image_front);
     setRecordsForEdit(item)
     setOpenPopup(true)
@@ -128,19 +125,7 @@ const addOrEdit=(values,resetForm,selectedFiles1,selectedFiles2,selectedFiles3,s
           "image_right":selectedFiles4, 
           "iscustomizable":0
      }
-//      var reader = new FileReader();
-//      var fileByteArray = [];
-//      reader.readAsArrayBuffer(selectedFiles);
-//      reader.onloadend = function (evt) {
-//          if (evt.target.readyState == FileReader.DONE) {
-//             var arrayBuffer = evt.target.result,
-//                 array = new Uint8Array(arrayBuffer);
-//             for (var i = 0; i < array.length; i++) {
-//                 fileByteArray.push(array[i]);
-//              }
-//          }
-//      }
-// console.log(fileByteArray);
+
 
  if(values.productid===''){
      ProductService.createProduct(bbd);
@@ -148,7 +133,7 @@ const addOrEdit=(values,resetForm,selectedFiles1,selectedFiles2,selectedFiles3,s
  }
  else
  {
-    //setConfirmDialog({...confirmDialog,isOpen:false})
+   
      ProductService.updateProduct(bbd);
       
  }

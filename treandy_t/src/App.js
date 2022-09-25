@@ -36,7 +36,12 @@ import MyOrder from "./OrderDetails";
 import Signout from "./Signout";
 import SideMenu  from "./Components/SideMenu";
 import ProductTable from "./ProjectComponents/ProductTable"
-
+import DeliveryDashboard from "./ProjectComponents/DeliveryDashboard";
+import DeliveryTable from "./ProjectComponents/DeliveryTable";
+import OrderTable from "./Components/OrderTable"
+import UserProductForm from "./ProjectComponents/UserProductForm"
+import OrderHistory  from "./OwnerDashBoard/OrderHistory"
+ 
 
 const theme = createTheme({
   palette: {
@@ -110,7 +115,8 @@ function App() {
                   <Route path="customize" element={<Customize></Customize>} />
                   <Route path="report" element={<Report></Report>} />
                   <Route path="shipping/details" element={<ShippingDetails></ShippingDetails>} />
-                  <Route path="tshirt/details" element={<Tshirt_Details></Tshirt_Details>}
+                  <Route path="tshirt/details" element={<Tshirt_Details></Tshirt_Details>}/>
+                  <Route path="user/product" element={<UserProductForm></UserProductForm>}
                    />
                  
                  
@@ -126,6 +132,23 @@ function App() {
     <Routes>
     <Route path="/ownerDashboard" element={<Provider store={store}><SideMenu></SideMenu></Provider>}>
     <Route path="productTable" element={<ProductTable></ProductTable>}/>
+    <Route path="orderTable" element={<OrderTable></OrderTable>}/>
+    <Route path="orderHistory" element={<OrderHistory></OrderHistory>}/>
+    </Route>    
+    </Routes></BrowserRouter>
+  
+      </div>
+      <CssBaseline />
+    </ThemeProvider>
+
+    <ThemeProvider theme={theme}>
+      <div>
+           
+    <BrowserRouter>
+    <Routes>
+    <Route path="/deliveryDashboard" element={<Provider store={store}><DeliveryDashboard></DeliveryDashboard></Provider>}>
+    <Route path="deliveryTable" element={<DeliveryTable></DeliveryTable>}/>
+    <Route path="deliveryHistory" element={<DeliveryTable></DeliveryTable>}/>
      
     </Route>    
     </Routes></BrowserRouter>

@@ -19,6 +19,9 @@ public class Order_Details implements Serializable {
 	@Id
 	@GeneratedValue
 	private int orderdetailid;
+
+	
+
 //	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 //	@JoinColumn(name="orderid")
 	private int orderid;
@@ -30,9 +33,16 @@ public class Order_Details implements Serializable {
 	public int getOrder_id() {
 		return orderid;
 	}
-	public Order_Details() {
-		super();
+  public int getOrderdetailid() {
+		return orderdetailid;
+    }
+	public void setOrderdetailid(int orderdetailid) {
+		this.orderdetailid = orderdetailid;
 	}
+	public int getOrderid() {
+		return orderid;
+	}
+
 	public void setOrder_id(int order_id) {
 		this.orderid = order_id;
 	}
@@ -48,12 +58,22 @@ public class Order_Details implements Serializable {
 	public void setProduct_quantity(int product_quantity) {
 		this.product_quantity = product_quantity;
 	}
-	public Order_Details(int order_id, int product_id, int product_quantity) {
+
+	public Order_Details() {
 		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Order_Details(int order_id, int product_id, int product_quantity) {
+
+		super();
+		
 		this.orderid = order_id;
 		this.productid = product_id;
 		this.product_quantity = product_quantity;
 	}
+	
+
 	
 	
 	

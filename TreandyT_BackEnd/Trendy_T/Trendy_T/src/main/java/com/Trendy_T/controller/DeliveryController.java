@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Trendy_T.Entity.Orders;
 import com.Trendy_T.pojo.Delivery_Details;
+import com.Trendy_T.pojo.Massage;
 import com.Trendy_T.repositories.DeliveryRepository;
 
 
@@ -48,6 +49,7 @@ public class DeliveryController {
 			li.setCity(orders.getShipping_address_id().getCity());
 			li.setPincode(orders.getShipping_address_id().getPincode());
 			li.setStreet(orders.getShipping_address_id().getStreet());
+			li.setStatus(orders.getStatus());
 			list.add(li);	
 		}
 		return list;
@@ -80,17 +82,19 @@ public class DeliveryController {
 	}
 	
 	
-	@PutMapping("/changesatus/{Order_id}")
-	public void changestatus(@PathVariable int Order_id) {
+	@PutMapping("/changestatus")
+	public Massage changestatus(@RequestBody Delivery_Details d ) {
 		
 		List<Orders> list=drepo.findAll();
 		for (Orders orders : list) {
-			if(orders.getOrder_id()== Order_id) {
-				orders.setStatus("Delivered");
+			if(orders.getOrder_id()== d.getOrder_id()) {
+				orders.setStatus(d.getStatus());
+				
 				orders.setOrder_status_changed_datetime(new Date());
 			}
 			drepo.save(orders);
 		}
+		return new Massage("ok");
 		
 		
 		
