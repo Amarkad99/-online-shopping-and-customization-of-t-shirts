@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react"
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
+import * as productservice from "./services/ProductServices"
 
  
 export default function MyOrder()
 {    let navigate=useNavigate();
     let [order,setOrder]=useState([]);
-    let[res,setRes]=useState([]);
+    let[record,setRecord]=useState([]);
     const data=sessionStorage.getItem('auth')
      const {email,password,first_name}=JSON.parse(data);
       console.log(email);
@@ -22,7 +23,7 @@ export default function MyOrder()
       result = await result.json();
      console.warn("Result=",result);
 
-     setRes(result);
+     setRecord(result);
 
   }
   
@@ -76,13 +77,12 @@ export default function MyOrder()
         <tbody>
        
   {
-            res.map(
+            record.map(
              result=>
             <tr>
           
             {/* <td>{result.Sleev}&nbsp;&nbsp;{result.color}&nbsp;&nbsp;{result.neck_type}&nbsp;&nbsp;{result.Size}</td> */}
-            <td>{result.sleev}&nbsp;&nbsp;{result.neck_type}&nbsp;{result.size}&nbsp;{result.color}
-            </td>
+            <td><center>{productservice.getNeckTypeByID(result.neck_type)}&nbsp;&nbsp;{productservice.getMaterialByID(result.material)}&nbsp;{productservice.getSleeveByID(result.Sleeve)}&nbsp; {productservice.getSizeByID(result.Size)}</center></td>            
             <td>{result.orderdate}</td>
             <td>{result.price * result.product_quantity}</ td>
             <td>{result.status}</td>

@@ -22,7 +22,7 @@ public class Customization implements Serializable{
 	@JoinColumn(name="product_id")
 	private Product product_id;
 	@Lob
-	private byte[] front_image_to_insert;
+	private String front_image_to_insert;
 	private String front_upper_text;
 	private String front_lower_text;
 	private int text_size;
@@ -42,10 +42,10 @@ public class Customization implements Serializable{
 	public void setProduct_id(Product product_id) {
 		this.product_id = product_id;
 	}
-	public byte[] getFront_image_to_insert() {
+	public String getFront_image_to_insert() {
 		return front_image_to_insert;
 	}
-	public void setFront_image_to_insert(byte[] front_image_to_insert) {
+	public void setFront_image_to_insert(String front_image_to_insert) {
 		this.front_image_to_insert = front_image_to_insert;
 	}
 	public String getFront_upper_text() {
@@ -78,7 +78,7 @@ public class Customization implements Serializable{
 	public void setText_color(String text_color) {
 		this.text_color = text_color;
 	}
-	public Customization(Product product_id, byte[] front_image_to_insert, String front_upper_text,
+	public Customization(Product product_id, String front_image_to_insert, String front_upper_text,
 			String front_lower_text, int text_size, String t_shirt_color, String text_color) {
 		super();
 		this.product_id = product_id;
@@ -89,7 +89,7 @@ public class Customization implements Serializable{
 		this.t_shirt_color = t_shirt_color;
 		this.text_color = text_color;
 	}
-	public Customization(byte[] front_image_to_insert, String front_upper_text, String front_lower_text, int text_size,
+	public Customization(String front_image_to_insert, String front_upper_text, String front_lower_text, int text_size,
 			String t_shirt_color, String text_color) {
 		super();
 		this.front_image_to_insert = front_image_to_insert;

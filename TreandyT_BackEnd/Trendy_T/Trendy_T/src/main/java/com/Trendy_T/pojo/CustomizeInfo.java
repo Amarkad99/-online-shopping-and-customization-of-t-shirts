@@ -2,18 +2,38 @@ package com.Trendy_T.pojo;
 
 public class CustomizeInfo {
 
-	private byte[] front_image_to_insert;
+	private String front_image_to_insert;
 	private String front_upper_text;
 	private String front_lower_text;
 	private int text_size;
 	private String t_shirt_color;
+	public CustomizeInfo(String front_image_to_insert, String front_upper_text, String front_lower_text, int text_size,
+			String t_shirt_color, String text_color, String email) {
+		super();
+		this.front_image_to_insert = front_image_to_insert;
+		this.front_upper_text = front_upper_text;
+		this.front_lower_text = front_lower_text;
+		this.text_size = text_size;
+		this.t_shirt_color = t_shirt_color;
+		this.text_color = text_color;
+		this.email = email;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	private String text_color;
+	private String email;
 	
 	
-	public byte[] getFront_image_to_insert() {
+	public String getFront_image_to_insert() {
 		return front_image_to_insert;
 	}
-	public void setFront_image_to_insert(byte[] front_image_to_insert) {
+	public void setFront_image_to_insert(String front_image_to_insert) {
 		this.front_image_to_insert = front_image_to_insert;
 	}
 	public String getFront_upper_text() {
@@ -46,7 +66,7 @@ public class CustomizeInfo {
 	public void setText_color(String text_color) {
 		this.text_color = text_color;
 	}
-	public CustomizeInfo(byte[] front_image_to_insert, String front_upper_text, String front_lower_text, int text_size,
+	public CustomizeInfo(String front_image_to_insert, String front_upper_text, String front_lower_text, int text_size,
 			String t_shirt_color, String text_color) {
 		super();
 		this.front_image_to_insert = front_image_to_insert;

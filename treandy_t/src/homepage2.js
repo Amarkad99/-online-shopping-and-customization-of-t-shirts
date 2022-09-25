@@ -4,7 +4,7 @@ import "./common.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
  import {Card} from "react-bootstrap"
 import Button from 'react-bootstrap/Button';
-import { useNavigate } from "react-router-dom";
+
 import * as productservice from "./services/ProductServices"
 
 
@@ -32,7 +32,6 @@ import * as productservice from "./services/ProductServices"
       console.log(result);
   }
     const renderCard =(card,index)=>{
-      //document.getElementById("img1").setAttribute("src",card.image_front)
       console.log(card.image_front)
       return(
              <div> 
@@ -46,15 +45,18 @@ import * as productservice from "./services/ProductServices"
           neck:{productservice.getNeckTypeByID(card.neck_type)}&nbsp; size:{productservice.getSizeByID(card.size)}&nbsp;
           Material:{productservice.getMaterialByID(card.material)}&nbsp;&nbsp;
           Quantity:<select onChange={(ele)=>{
+            card.quantity=1
           let val=card.quantity+ele.target.value
           card.price=card.price*val
+          console.log(card.price)
+          console.log(card.quantity)
           card.quantity=ele.target.value
           }}>
            
             <option value="1">1</option>
-            <option value="2">2</option>
+            {/* <option value="2">2</option>
             <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="4">4</option> */}
           </select>
           
          

@@ -57,6 +57,7 @@ public class OrderController {
 	@GetMapping("/orderdetails/{email}")
 	public List <OrderInfo> orderdetails(@PathVariable String email)
 	{
+		System.out.println("order");
 		
 		List <OrderInfo> oinfo = new ArrayList<OrderInfo>();
 		List<Order_Details> odd=odrepo.findAll();
@@ -95,8 +96,25 @@ public class OrderController {
 	public Massage addUser(@RequestBody OrderDTO myData )
 	{ 
 		System.out.println("he bg");
-//		User u=urepo.findByEmail(po.getEmail());
-		Order_Details od=new Order_Details ();
+		System.out.println("okkkkkkk");
+		User u=urepo.findByEmail(myData.getEmail());
+		List<Order_Details> od=new ArrayList<Order_Details>();	
+		Orders o=new Orders(u,u.getAddress_id(),"order placed",myData.getTotal_price(),new Date(),new Date());
+		orepo.save(o);
+		myData.getProductList().forEach(p->{
+			od.add(new Order_Details(
+					o.getOrder_id(),
+					p.getProductid(),
+					p.getQuantity()
+					));
+			
+			Product product= (Product) prepo.findById(p.getProductid()).orElseThrow();
+			 product.setQuantity(product.getQuantity()-p.getQuantity());
+		});
+		odrepo.saveAll(od);
+		
+		
+		
 //	       Orders o=new Orders(u,u.getAddress_id(),"order placed",po.getTotalprice(),new Date(),new Date());
 //	       orepo.save(o);
 //	       System.out.println(po.getOr());

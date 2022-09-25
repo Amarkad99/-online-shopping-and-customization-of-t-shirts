@@ -8,7 +8,12 @@ import Button from 'react-bootstrap/Button';
 import { Navigate } from "react-router-dom";
 
 class Customize extends Component{
-
+    constructor(){
+      super();
+     
+    }
+      
+   
    
     state = {
         tshirtColor: 'white',
@@ -18,7 +23,10 @@ class Customize extends Component{
         textSize: 30,
         textColor: '',
         message:'',
-        data:''
+        data:'',
+       email:"amar12@gmail.com"
+    
+        
     }
 
    
@@ -63,25 +71,27 @@ class Customize extends Component{
     }
 
     saveTshirtDetails = (e) =>{
+      this.state.data=sessionStorage.getItem('auth');
+      this.setState({email:JSON.parse(this.state.data)});
         console.log("T-shirt Details");
-
         console.log("   T-shirt Color=",this.state.tshirtColor,
         "   Upper Text=",this.state.upperText,
         "   Lower Text=",this.state.lowerText,
             "   Url=",this.state.url,
             "   Text Size=",this.state.textSize,
-            "   Text Color=",this.state.textColor);
-
+            "   Text Color=",this.state.textColor,
+                  this.state.email);
             fetch('http://localhost:8080/customization/insert', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body:JSON.stringify({
                      t_shirt_color:this.state.tshirtColor,
                      front_upper_text:this.state.upperText,
-                    // front_lower_text:this.state.lowerText,
-                    // front_image_to_insert:this.state.url,
+                     front_lower_text:this.state.lowerText,
+                     front_image_to_insert:this.state.url,
                      text_size:this.state.textSize,
-                     text_color:this.state.textColor
+                     text_color:this.state.textColor,
+                     email:this.state.email
 
                      
                     

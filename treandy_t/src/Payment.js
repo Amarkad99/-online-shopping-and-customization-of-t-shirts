@@ -16,9 +16,6 @@ export default function Payment()
    
 
    let totalprice= l.map(item => item.price).reduce((total, value) => total + value, 0) 
-  useEffect(()=>{
-    
-},[])
 
   function handler(event)
   {
@@ -27,17 +24,15 @@ console.log(event.target.value)
  setData(event.target.value);
  setPr(l);
  console.log(pr);
-const myData={
-  "total_price":122,
-  "productList":l
-}
+
 
  const requestOptions = {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body:JSON.stringify({
-    "total_price":122,
-    "productList":l
+    "total_price":totalprice,
+    "productList":l,
+     "email":email
      })
   };
 fetch("http://localhost:8080/order/placeorder", requestOptions)
@@ -58,16 +53,6 @@ return(
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="http://localhost:3000" role="tab" aria-controls="home" aria-selected="true">Home</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab"  data-toggle="tab" role="tab" href="http://localhost:3000/profile" aria-controls="profile" aria-selected="false">profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="http://localhost:3000/login" role="tab" aria-controls="contact" aria-selected="false">Login</a>
-  </li>
-
-      <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/signup" role="tab" aria-controls="profile" aria-selected="false">signup</a> 
-</li>
 <li>
 <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/payment" role="tab" aria-controls="profile" aria-selected="false">Payment</a>
       </li>

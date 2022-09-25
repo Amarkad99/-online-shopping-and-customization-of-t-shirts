@@ -6,18 +6,21 @@ import "./common.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
+import * as productservice from "./services/ProductServices"
 
  export default function Cart1(item)
 { 
   let navigate=useNavigate();
   let arr;
    let data = sessionStorage.getItem('data')
-  const [{productid,price,material}]=data;
-  
+  const [{productid,price,material,quantity}]=data;
+  //console.log(price)
+
+
   let [Quantity,setquantity]=useState(1);
     let l=JSON.parse(data);
-    l.map((ele)=>{console.log(ele.productid)})
-
+    l.map((ele)=>{console.log(ele.price,ele.quantity)})
+    l.map((ele)=>{console.log(ele.price)})
     useEffect(()=>{
     let d=sessionStorage.getItem('auth');
     if(d === null){
@@ -83,7 +86,7 @@ return(<div>
               (result ,index) => {
                return(
             <tr >
-            <td><center>{result.neck_type}&nbsp;{result.neck_type}&nbsp;{result.size}&nbsp;{result.material}&nbsp;{result.sleeve}</center></td>
+            <td><center>{productservice.getNeckTypeByID(result.neck_type)}&nbsp;&nbsp;{productservice.getMaterialByID(result.material)}&nbsp;{productservice.getSleeveByID(result.Sleeve)}&nbsp; {productservice.getSizeByID(result.Size)}</center></td>
             <td>{result.quantity}</td>
             <td>{result.price * Quantity} &#8377;</td> 
             <td><button class="btn" onClick={()=>{arr = l.filter((it)=>{return it !==result})

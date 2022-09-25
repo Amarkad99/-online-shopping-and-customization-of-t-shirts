@@ -39,7 +39,7 @@ import axios from "axios";
 
         }
         else{
-        setMsg("Invalid Login");
+        alert("Invalid Login");
         navigate("/login")
       }
     }
