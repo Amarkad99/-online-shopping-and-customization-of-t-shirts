@@ -190,7 +190,7 @@ public class OrderController {
 		listOrder_Detail=odrepo.findByOrderid(orderid);
 		List<ProductInfo> prodList=new ArrayList<ProductInfo>();
 		listOrder_Detail.forEach(i->{
-			Product p= prepo.findById(i.getProductid()).orElseThrow();
+			Product p= prepo.findById(i.getProduct_id()).orElseThrow();
 			ProductType pt=ptrepo.findById(p.getProducttype_id().getproducttype_id()).orElseThrow();
 			ProductImage pi=pirepo.findById(p.getProductimage_id().getProductimage_id()).orElseThrow();
 			
