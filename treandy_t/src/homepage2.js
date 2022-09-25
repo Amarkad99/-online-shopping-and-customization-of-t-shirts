@@ -4,15 +4,16 @@ import "./common.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
  import {Card} from "react-bootstrap"
 import Button from 'react-bootstrap/Button';
-import { useNavigate } from "react-router-dom";
+
+import * as productservice from "./services/ProductServices"
 
 
     const HomePage=()=> {
     
    
-     const data=sessionStorage.getItem('auth')
-     const {email,password,first_name}=JSON.parse(data);
-      console.log(data);
+    //  const data=sessionStorage.getItem('auth')
+    //  const {email,password,first_name}=JSON.parse(data);
+    //   console.log(data);
 
     let[images,setImages]=useState([])
     let[list, SetList]=useState([]);
@@ -31,29 +32,31 @@ import { useNavigate } from "react-router-dom";
       console.log(result);
   }
     const renderCard =(card,index)=>{
-      // document.getElementById('img1').setAttribute("src",card.image_front);
+      console.log(card.image_front)
       return(
-         <div> 
+             <div> 
           <form >
-                    <Card style={{ width: '18rem' }} key={card.productid} className="fit">
-        <Card.Img variant="top" id='img1' src="https://www.tshirt-supplier.com/Uploads/5a4ddccec4826.jpg" />
+                    <Card style={{ width: '16rem'}} key={card.productid} className="fit">
+        <Card.Img variant="top" id="img1" src={card.image_front} />
         <Card.Body>
           <Card.Title>Price : &#8377;{card.price}</Card.Title>
           <Card.Text>
-          colour:{card.color}&nbsp;<br></br>
-          productid={card.productid}
-          Material:{card.material}&nbsp;&nbsp;
+          color:{productservice.getColorByID(card.color)}&nbsp;<br></br>
+          neck:{productservice.getNeckTypeByID(card.neck_type)}&nbsp; size:{productservice.getSizeByID(card.size)}&nbsp;
+          Material:{productservice.getMaterialByID(card.material)}&nbsp;&nbsp;
           Quantity:<select onChange={(ele)=>{
-          cart.quantity=1;
+            card.quantity=1
           let val=card.quantity+ele.target.value
           card.price=card.price*val
+          console.log(card.price)
+          console.log(card.quantity)
           card.quantity=ele.target.value
           }}>
            
             <option value="1">1</option>
-            <option value="2">2</option>
+            {/* <option value="2">2</option>
             <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="4">4</option> */}
           </select>
           
          
@@ -80,22 +83,28 @@ import { useNavigate } from "react-router-dom";
       
       <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="http://localhost:3000/home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="http://localhost:3000/" role="tab" aria-controls="home" aria-selected="true">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab"  data-toggle="tab" role="tab" href="http://localhost:3000/profile" aria-controls="profile" aria-selected="false">profile</a>
+    <a class="nav-link" id="profile-tab"  data-toggle="tab" role="tab" href="http://localhost:3000/profile" aria-controls="profile" aria-selected="false">Profile</a>
   </li>
   <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/customize" role="tab" aria-controls="profile" aria-selected="false">costomize</a> 
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/customize" role="tab" aria-controls="profile" aria-selected="false">Customise</a> 
 </li>
   <li class="nav-item">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="http://localhost:3000/Cart1" role="tab" aria-controls="contact" aria-selected="false">Cart</a>
   </li>    
 <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/myOrder" role="tab" aria-controls="profile" aria-selected="false">Ordrs</a> 
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/myOrder" role="tab" aria-controls="profile" aria-selected="false">Orders</a> 
 </li>
 <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/signout" role="tab" aria-controls="profile" aria-selected="false">Signout</a> 
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/signup" role="tab" aria-controls="profile" aria-selected="false">Create Account</a> 
+</li>
+<li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/login" role="tab" aria-controls="profile" aria-selected="false">Login</a> 
+</li>
+<li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/signout" role="tab" aria-controls="profile" aria-selected="false">Logout</a> 
 </li>
 
 
@@ -106,9 +115,7 @@ import { useNavigate } from "react-router-dom";
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
   </li>
-  <li><center><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;welcome&nbsp;&nbsp;{first_name} !!</h5></center></li>
+  <li><center></center></li>
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"></div>

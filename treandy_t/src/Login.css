@@ -1,15 +1,15 @@
 
 .box {
-  height: 550px;
-  width: 580px;
+  height: 500px;
+  width: 550px;
   margin: 80px;
   padding: 20px;
   top: 50%;
   
   left: 60%;
   position: absolute;
-  margin-top: -300px;
-  margin-left: -250px;
+  margin-top: -240px;
+  margin-left: -120px;
   border-width: 5px;
   box-sizing: border-box;
   border-style: outset;
@@ -100,6 +100,6 @@ logo
 
   /* height={551} width={608} */
 
-  height: 551px;
-  width: 608px;
+  height: 610px;
+  width: 700px;
 }

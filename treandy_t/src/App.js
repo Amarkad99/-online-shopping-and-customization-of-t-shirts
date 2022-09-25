@@ -98,12 +98,12 @@ function App() {
     <BrowserRouter>
     <Provider store={store}>
               <Routes>
-              <Route path="/" element={<Login></Login>}  /> 
+              <Route path="/login" element={<Login></Login>}  /> 
               <Route path="signout" element={<Signout></Signout>}  /> 
               <Route path="/myOrder" element={<MyOrder></MyOrder>}  /> 
-              <Route path="/cart1" element={<Cart1></Cart1>}  /> 
+              <Route path="/Cart1" element={<Cart1></Cart1>}  /> 
               <Route path="Signup" element={<Registration2 />} />
-              <Route path="/home" element={<HomePage/>} />
+              <Route path="/" element={<HomePage/>} />
               <Route path="/Question" element={<Login1></Login1>}  />
               <Route path="/Changepassword" element={<Changepassword></Changepassword>}  /> 
                   <Route path="delivery/details" element={<DeliveryDetails></DeliveryDetails>}></Route>

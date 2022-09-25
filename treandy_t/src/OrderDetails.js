@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react"
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
+import * as productservice from "./services/ProductServices"
 
  
 export default function MyOrder()
-{    
+{    let navigate=useNavigate();
     let [order,setOrder]=useState([]);
-    let[res,setRes]=useState([]);
+    let[record,setRecord]=useState([]);
     const data=sessionStorage.getItem('auth')
      const {email,password,first_name}=JSON.parse(data);
       console.log(email);
 
 
     useEffect(()=>{
-        
       getUserDetails();
   },[])
 
@@ -22,7 +23,7 @@ export default function MyOrder()
       result = await result.json();
      console.warn("Result=",result);
 
-     setRes(result);
+     setRecord(result);
 
   }
   
@@ -30,19 +31,30 @@ export default function MyOrder()
     return(
       <div>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="http://localhost:3000" role="tab" aria-controls="home" aria-selected="true">Home</a>
+            <li class="nav-item">
+    <a class="nav-link " id="home-tab" data-toggle="tab" href="http://localhost:3000/" role="tab" aria-controls="home" aria-selected="true">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab"  data-toggle="tab" role="tab" href="http://localhost:3000/" aria-controls="profile" aria-selected="false">profile</a>
+    <a class="nav-link " id="profile-tab"  data-toggle="tab" role="tab" href="http://localhost:3000/profile" aria-controls="profile" aria-selected="false">Profile</a>
   </li>
   <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/MyOrder" role="tab" aria-controls="profile" aria-selected="false">MyOrder</a> 
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/customize" role="tab" aria-controls="profile" aria-selected="false">Customise</a> 
 </li>
-
-
-  <li>
-  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="http://localhost:3000/Cart1" role="tab" aria-controls="contact" aria-selected="false">Cart</a>
+  </li>    
+<li class="nav-item">
+        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="http://localhost:3000/myOrder" role="tab" aria-controls="profile" aria-selected="false">Orders</a> 
+</li>
+<li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/signup" role="tab" aria-controls="profile" aria-selected="false">Create Account</a> 
+</li>
+<li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/login" role="tab" aria-controls="profile" aria-selected="false">Login</a> 
+</li>
+<li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://localhost:3000/signout" role="tab" aria-controls="profile" aria-selected="false">Logout</a> 
+</li>
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
@@ -65,19 +77,18 @@ export default function MyOrder()
         <tbody>
        
   {
-            res.map(
-              res => 
+            record.map(
+             result=>
             <tr>
           
             {/* <td>{result.Sleev}&nbsp;&nbsp;{result.color}&nbsp;&nbsp;{result.neck_type}&nbsp;&nbsp;{result.Size}</td> */}
-            <td>{res.sleev}&nbsp;&nbsp;{res.neck_type}&nbsp;{res.size}&nbsp;{res.color}
-            </td>
-            <td>{res.orderdate}</td>
-            <td>{res.total_price }</ td>
-            <td>{res.status}</td>
+            <td><center>{productservice.getNeckTypeByID(result.neck_type)}&nbsp;&nbsp;{productservice.getMaterialByID(result.material)}&nbsp;{productservice.getSleeveByID(result.Sleeve)}&nbsp; {productservice.getSizeByID(result.Size)}</center></td>            
+            <td>{result.orderdate}</td>
+            <td>{result.price * result.product_quantity}</ td>
+            <td>{result.status}</td>
            
           </tr>
-)}
+             )}
        
         </tbody>
       </table>

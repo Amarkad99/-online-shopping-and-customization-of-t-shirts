@@ -29,7 +29,11 @@ public class LoginController {
 		System.out.println("Here We are");
 		User a=(User)urepo.findByEmail(email);
 		if( a!=null && a.getEmail().equals(email)){
-			return a; 			
+			if(a.getPassword().equals(password)) {
+			return a; 		
+			}
+			else
+				return null;
 		}
 		else
 		return null;

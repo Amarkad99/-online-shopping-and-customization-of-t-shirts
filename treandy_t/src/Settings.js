@@ -1,5 +1,6 @@
 import React from "react";
-
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Display.css'
 
 const urlImgBase = 'https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/'
@@ -44,7 +45,7 @@ const Settings = ({color, upperText, lowerText ,uploadImage, textSize, textColor
                 <option>Orange</option>
             </select>
             <hr />
-            <button onClick={saveDetails} className="btn- btn-primary btn-sm mb-4">Addtocart</button>
+            <Button onClick={saveDetails} className="btn- btn-primary btn-sm mb-4">Order</Button>
         </div>
         
     )

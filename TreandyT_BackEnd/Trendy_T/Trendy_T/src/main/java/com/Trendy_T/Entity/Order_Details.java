@@ -19,30 +19,38 @@ public class Order_Details implements Serializable {
 	@Id
 	@GeneratedValue
 	private int orderdetailid;
-	//@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	//@JoinColumn(name="orderid")
+
+	
+
+//	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+//	@JoinColumn(name="orderid")
 	private int orderid;
-	//@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	//@JoinColumn(name="productid")
+//	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+//	@JoinColumn(name="productid")
 	private int productid;
 	private int product_quantity;
-	public int getOrderdetailid() {
-		return orderdetailid;
+	
+	public int getOrder_id() {
+		return orderid;
 	}
+  public int getOrderdetailid() {
+		return orderdetailid;
+    }
 	public void setOrderdetailid(int orderdetailid) {
 		this.orderdetailid = orderdetailid;
 	}
 	public int getOrderid() {
 		return orderid;
 	}
-	public void setOrderid(int orderid) {
-		this.orderid = orderid;
+
+	public void setOrder_id(int order_id) {
+		this.orderid = order_id;
 	}
-	public int getProductid() {
+	public int getProduct_id() {
 		return productid;
 	}
-	public void setProductid(int productid) {
-		this.productid = productid;
+	public void setProduct_id(int product_id) {
+		this.productid = product_id;
 	}
 	public int getProduct_quantity() {
 		return product_quantity;
@@ -50,15 +58,18 @@ public class Order_Details implements Serializable {
 	public void setProduct_quantity(int product_quantity) {
 		this.product_quantity = product_quantity;
 	}
+
 	public Order_Details() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Order_Details(int orderdetailid, int orderid, int productid, int product_quantity) {
+	
+	public Order_Details(int order_id, int product_id, int product_quantity) {
+
 		super();
-		this.orderdetailid = orderdetailid;
-		this.orderid = orderid;
-		this.productid = productid;
+		
+		this.orderid = order_id;
+		this.productid = product_id;
 		this.product_quantity = product_quantity;
 	}
 	
