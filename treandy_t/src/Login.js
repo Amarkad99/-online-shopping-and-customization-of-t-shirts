@@ -35,7 +35,7 @@ import axios from "axios";
         else if(email==="Eparsel@123gmail.com" && password==="123456"){
           let pass={"email":"Eparsel@123gmail.com","password":"123456"}
           sessionStorage.setItem('auth',JSON.stringify(pass));
-          navigate("/home")
+          navigate("/deliveryDashboard")
 
         }
         else{

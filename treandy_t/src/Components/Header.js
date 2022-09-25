@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Grid, InputBase, IconButton, Badge, makeStyles,Typogra
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import SearchIcon from '@material-ui/icons/Search';
-
+import * as Signout from "../Signout";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -42,7 +42,7 @@ export default function Header() {
                     <Grid item>
                        
                         <IconButton>
-                            <PowerSettingsNewIcon fontSize="small" />
+                            <PowerSettingsNewIcon fontSize="small" onClick={Signout}/>
                         </IconButton>
                     </Grid>
                 </Grid>
