@@ -2,19 +2,20 @@ import { Paper, makeStyles, TableBody, TableRow, TableCell, Toolbar, InputAdornm
 import useTable from "../Components/useTable";
 import React, { useEffect, useState,useReducer } from 'react'
 import Controls from "../Components/controls/Controls";
-import { AirlineSeatFlatAngled, EditOutlined, Search } from "@material-ui/icons";
+import { Search } from "@material-ui/icons";
 import PageHeader from "../Components/PageHeader"
 import PeopleOutlineTwoTone from '@material-ui/icons/PeopleOutlineTwoTone';
 import AddIcon from '@material-ui/icons/Add'
 import Popup from "../Components/Popup";
+import Products from "./Products"; 
+import ProductForm from "./ProductForm";
 import CloseIcon from '@material-ui/icons/Close'
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined'; 
 import Notification from "../Components/Notification"
-import StatusChange from "../ProjectComponents/StatusChange";
-import * as OrderService from "../services/OrderService"
-import OrderProduct from '../ProjectComponents/OrderProduct';
-
-
+import * as ProductService from '../services/ProductServices'
+import ConfirmDialog from '../Components/ConfirmDialog';
+import * as OrderService from '../services/OrderService'
+import Customization from '../OwnerDashBoard/Customization';
 
 
 const useStyles = makeStyles(theme => ({
@@ -27,37 +28,35 @@ const useStyles = makeStyles(theme => ({
     },
     newButton:{
         position:'absolute',
-        right:'10px',
-        size:'small'
+        right:'10px'
     }
 }))
 const headCells = [
-    { id: 'Customer Name', label: 'Customer  Name' },
-    { id: 'Order Status', label: 'Order Status' },
-    { id: 'Total Amount', label: 'Total Amount' },
-    { id: 'Shipping Address', label: 'Shipping Address'},
-    { id: 'Order Date', label: 'Order Date' }, 
-    { id: 'Order Status Changed DateTime', label: 'Order Status Changed DateTime' },
-    { id: 'Action', label: 'Action' }
-
+    { id: 'productid', label: 'Product id' },
+    { id: 'color', label: 'Color' },
+    { id: 'material', label: 'Material' },
+    { id: 'Price', label: 'Price'},
+    { id: 'Quantity', label: 'Quantity' },
+    { id: 'Size', label: 'Size' }, 
+    { id: 'neck_type', label: 'Neck-type' }, 
+    { id: 'Sleeve_type', label: 'Sleeve-type' },
+    { id: 'Cusomizable', label: 'Customizable' },
+     { id: 'Image', label: 'Image' },
+    
 ]
 
-
-export default function OrderTable() 
+export default function OrderProduct(props) 
 {
     const classes = useStyles();
-    const [recordForEdit, setRecordsForEdit] = useState(null)
-    const [records, setRecords] = useState([])
+    const [recordForEdit, setRecordsForEdit] = useState(null);
+    const [records, setRecords] = useState([]);
     const [filterFn, setFilterFn] = useState({ fn: items => { return items; } })
     const [openPopup,setOpenPopup]=useState(false);
-    const [title,setTitle]=useState("Products");
+    const [title,setTitle]=useState("");
     const [flag,setFlag]=useState(false);
-    const [notify,setNotify]=useState({isOpen:false,message:'',type:''});
+    const[orderid,setOrderid]=useState(props);
+    const[productid,setproductid]=useState(props);
     const [key,setKey]=useState(0);
-    let [orderid,setOrderid]=useState();
-    const [productrecords, setProductRecords] = useState([])
-   
-
 const {
     TblContainer,
     TblHead,
@@ -72,43 +71,31 @@ const handleSearch = e => {
             if (target.value == "")
                 return items;
             else
-                return items.filter(x => x.first_name.includes(target.value))
+                return items.filter(x => x.price==target.value)
         }
     })
 }
 
+
 useEffect(()=>{
-    getDeliveryDetails();
+   
+    getAllOrderDetails();
 },[])
 
-useEffect(()=>{
-    getDeliveryDetails();
-},[key])
-
-
-const getDeliveryDetails=async()=>{
-    
-    let result=await fetch("http://localhost:8080/order/getAllOrderDetails");
-    result = await result.json();
-    setRecords(result);
-    console.log("Order:",result);
-
-}
-
-const openProductOrderTable=async(orderid)=>
+const getAllOrderDetails=async()=>
 {
-    setOrderid(orderid);
+    var result= await OrderService.getAllProductOrderDetails(orderid)
+    console.log(result);
+    setRecords(result);
+}
+const openCustomOrderTable=async(productid)=>
+{
+    setproductid(productid);
     setOpenPopup(true);
    
 }
-
 return(
 <>
-<PageHeader
-        title="Order DashBoard"
-        subTitle=""
-       
-    />
 <Paper className={classes.pageContent}>
             
                 <Toolbar>
@@ -122,7 +109,6 @@ return(
                         }}
                         onChange={handleSearch}
                     />
-                    
                 </Toolbar>
             <TblContainer>
                     <TblHead />
@@ -131,23 +117,28 @@ return(
                            
                            
                            recordsAfterPagingAndSorting().map(item=>(
-                            <TableRow key={item.orderid}>
-                                <TableCell>{item.userid.first_name}</TableCell>
-                                <TableCell>{OrderService.getStatusByID(item.status)}</TableCell>
-                                    <TableCell>{item.totalprice}</TableCell>
-                                    <TableCell>{item.address.address_line},{item.address.street},{item.address.city},{item.address.pincode}</TableCell>
-                                    <TableCell></TableCell>
-                                    <TableCell>{item.orderdate}</TableCell>
-                                    <TableCell>{item.orderStatusChangedDate}</TableCell>
-                                    <TableCell>
-                                        <Controls.ActionButton
+                          
+                            <TableRow key={item.productid}>
+                                <TableCell>{item.productid}</TableCell>
+                                <TableCell>{ProductService.getColorByID(item.color)}</TableCell>
+                                <TableCell>{ProductService.getMaterialByID(item.material)}</TableCell>
+                                    <TableCell>{item.price}</TableCell>
+                                    <TableCell>{item.quantity}</TableCell>
+                                    <TableCell>{ProductService.getSizeByID(item.size)}</TableCell>
+                                    <TableCell>{ProductService.getNeckTypeByID(item.neck_type)}</TableCell>
+                                    <TableCell>{ProductService.getSleeveByID(item.sleeve)}</TableCell>
+                                    <TableCell>{item.iscustomizable}<Controls.ActionButton
                                         color="primary">
                                             <EditOutlinedIcon fontSize="small"
-                                            onClick={()=>{  openProductOrderTable(item.orderid)}}></EditOutlinedIcon> 
+                                            onClick={()=>{  openCustomOrderTable(item.productid)}}></EditOutlinedIcon> 
                                         </Controls.ActionButton>
                                         </TableCell>
+                                    <TableCell><img src={item.image_front} id="img" height="50" width="50"/></TableCell>
+                                    <TableCell>
+                                    </TableCell>
                                 </TableRow>)
-                                )       
+                                )     
+                                
                         }
                     </TableBody>
                 </TblContainer>
@@ -160,11 +151,9 @@ return(
                     setFlag={flag} 
                    >
 
-                        <OrderProduct  orderid={orderid} ></OrderProduct>
+                        <Customization  productid={productid} ></Customization>
             </Popup>
-           
-
-           
+        
             
         
 </>)

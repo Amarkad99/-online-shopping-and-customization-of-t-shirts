@@ -88,7 +88,7 @@ useEffect(()=>{
 
 const getDeliveryDetails=async()=>{
     
-    let result=await fetch("http://localhost:8080/order/getAllOrderDetails");
+    let result=await fetch("http://localhost:8080/order/getAllOrderHistoryDetails");
     result = await result.json();
     setRecords(result);
     console.log("Order:",result);
@@ -105,7 +105,7 @@ const openProductOrderTable=async(orderid)=>
 return(
 <>
 <PageHeader
-        title="Order DashBoard"
+        title="Order History DashBoard"
         subTitle=""
        
     />
@@ -159,7 +159,6 @@ return(
                     setOpenPopup={setOpenPopup }
                     setFlag={flag} 
                    >
-
                         <OrderProduct  orderid={orderid} ></OrderProduct>
             </Popup>
            

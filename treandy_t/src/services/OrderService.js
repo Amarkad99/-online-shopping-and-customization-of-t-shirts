@@ -49,4 +49,19 @@ export const UpdateStatus=item=>
 
 
 }
+export const getAllProductOrderDetails=async(orderid)=>{
+     
+let result=await fetch(`http://localhost:8080/order/getAllProductOrderDetails/${orderid.orderid}`);
+result= await result.json();
+console.log("Order1:",result);
+return result;
+}
 
+export const getAllCustomOrderDetails=async(productid)=>{
+     
+    let result=await fetch(`http://localhost:8080/customization/getCusomizedDetail/${productid.productid}`);
+    result= await result.json();
+    console.log("Order1:",result);
+    return result;
+    }
+    

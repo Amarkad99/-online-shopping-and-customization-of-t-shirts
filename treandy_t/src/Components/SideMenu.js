@@ -3,6 +3,7 @@ import { makeStyles, withStyles } from "@material-ui/core";
 import Controls from './controls/Controls';
 import ProductTable from '../ProjectComponents/ProductTable';
 import { Navigate ,Link,Outlet} from 'react-router-dom';
+import Header from "../Components/Header"
 
 
 // withStyles & makeStyles
@@ -53,11 +54,13 @@ const SideMenu = (props) => {
                         text="Orders"
                         color="primary"
                         className={classes.button}
+                        href="http://localhost:3000/ownerDashboard/orderTable"
                         />
                         <Controls.Button
                         text="Order History"
                         color="primary"
                         className={classes.button}
+                        href="http://localhost:3000/ownerDashboard/orderHistory"
                      />
                     
            
@@ -66,6 +69,7 @@ const SideMenu = (props) => {
 
         
          <div id="SideMenuBarBody" className={classes.appMain}>
+            <Header></Header>
             <Outlet >
 
             </Outlet>

@@ -45,7 +45,7 @@ private List<Review> review;
 		return userid;
 	}
 	public void setUser_id(int user_id) {
-		this.userid = userid;
+		this.userid = user_id;
 	}
 	public String getFirst_name() {
 		return first_name;

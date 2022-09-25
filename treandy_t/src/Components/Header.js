@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Toolbar, Grid, InputBase, IconButton, Badge, makeStyles } from '@material-ui/core'
+import { AppBar, Toolbar, Grid, InputBase, IconButton, Badge, makeStyles,Typography} from '@material-ui/core'
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import SearchIcon from '@material-ui/icons/Search';
@@ -33,20 +33,14 @@ export default function Header() {
                 <Grid container
                     alignItems="center">
                     <Grid item>
-                        <InputBase
-                            placeholder="Search topics"
-                            className={classes.searchInput}
-                            startAdornment={<SearchIcon fontSize="small" />}
-                        />
+                    <Typography
+                        variant="h6"
+                    >
+                        Trendy-T</Typography>
                     </Grid>
                     <Grid item sm></Grid>
                     <Grid item>
                        
-                        <IconButton>
-                            <Badge badgeContent={3} color="primary">
-                                <ChatBubbleOutlineIcon fontSize="small" />
-                            </Badge>
-                        </IconButton>
                         <IconButton>
                             <PowerSettingsNewIcon fontSize="small" />
                         </IconButton>

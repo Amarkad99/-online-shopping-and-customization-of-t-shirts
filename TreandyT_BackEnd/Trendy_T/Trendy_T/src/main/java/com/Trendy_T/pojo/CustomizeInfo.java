@@ -2,7 +2,7 @@ package com.Trendy_T.pojo;
 
 public class CustomizeInfo {
 
-	private byte[] front_image_to_insert;
+	private String front_image_to_insert;
 	private String front_upper_text;
 	private String front_lower_text;
 	private int text_size;
@@ -10,10 +10,10 @@ public class CustomizeInfo {
 	private String text_color;
 	
 	
-	public byte[] getFront_image_to_insert() {
+	public String getFront_image_to_insert() {
 		return front_image_to_insert;
 	}
-	public void setFront_image_to_insert(byte[] front_image_to_insert) {
+	public void setFront_image_to_insert(String front_image_to_insert) {
 		this.front_image_to_insert = front_image_to_insert;
 	}
 	public String getFront_upper_text() {
@@ -46,7 +46,7 @@ public class CustomizeInfo {
 	public void setText_color(String text_color) {
 		this.text_color = text_color;
 	}
-	public CustomizeInfo(byte[] front_image_to_insert, String front_upper_text, String front_lower_text, int text_size,
+	public CustomizeInfo(String front_image_to_insert, String front_upper_text, String front_lower_text, int text_size,
 			String t_shirt_color, String text_color) {
 		super();
 		this.front_image_to_insert = front_image_to_insert;
