@@ -1,4 +1,4 @@
-# project-14
+# project-14/Online T-Shirt Customization selling and Purchase System(Trendy-T)
 
 How To run the Application
 •	To run React Front_End application install React-Scripts by Executing following command.
