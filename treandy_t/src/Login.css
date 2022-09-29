@@ -1,0 +1,105 @@
+
+.box {
+  height: 500px;
+  width: 550px;
+  margin: 80px;
+  padding: 20px;
+  top: 50%;
+  
+  left: 60%;
+  position: absolute;
+  margin-top: -240px;
+  margin-left: -120px;
+  border-width: 5px;
+  box-sizing: border-box;
+  border-style: outset;
+  background-color:whitesmoke;
+}
+.box2 {
+  background-color:whitesmoke;
+  height: 1300px;
+  width: 700px;
+  margin: 80px;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-top: -350px;
+  margin-left: -250px;
+  border-width: 5px;
+  box-sizing: border-box;
+  border-style: groove;
+}
+
+.text-danger{
+  color: red;
+}
+
+.img {
+  object-fit: fill;
+  width: 900px;
+height: 750px;
+text-align: center;
+padding: 15px;
+
+}
+
+.img2 {
+  object-fit: fill;
+  width: 100px;
+height: 100px;
+text-align: center;
+padding: 15px;
+position: absolute;
+top: 0px;
+right: 0px;
+
+}
+
+
+.box3 {
+  height: 700x;
+  width: 500px;
+  margin: 80px;
+  padding: 20px;
+  top: 50%;
+  left: 40%;
+  position:absolute;
+  margin-top: -300px;
+  margin-left: -50px;
+  background-color:whitesmoke;
+  border-width: 5px;
+  box-sizing: border-box;
+  border-style: outset;
+}
+
+logo
+{
+  margin: 0;
+  position: absolute;
+  top: 6%;
+  left: 96%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.fit{
+  margin:40px
+}
+
+.grid{
+  min-height:100%;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+}
+.grid > div{
+  flex-basis:cal(30% - 60px);
+}
+.girlimg{
+
+  /* height={551} width={608} */
+
+  height: 610px;
+  width: 700px;
+}
