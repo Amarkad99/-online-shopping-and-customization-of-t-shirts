@@ -1,6 +1,6 @@
 export const getStatusCollection = () => ([
-    { id: '1', title: 'Processing' },
-    { id: '2', title: 'Ready For Packing' },
+    { id: '1', title: 'Order Placed'},
+    { id: '2', title: 'Processing' },
     { id: '3', title: 'Ready To Deliver' },
     { id: '4', title: 'Dispatch' },
     { id: '5', title: 'In Transit' },

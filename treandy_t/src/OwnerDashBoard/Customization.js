@@ -64,7 +64,7 @@ const handleSearch = e => {
             if (target.value == "")
                 return items;
             else
-                return items.filter(x => x.price==target.value)
+                return items.filter(x => x.text_size==target.value)
         }
     })
 }
@@ -77,9 +77,10 @@ useEffect(()=>{
 
 const getAllOrderDetails=async()=>
 {
-    var result= await OrderService.getAllCustomOrderDetails(productid)
-    console.log(result);
-    setRecords(result);
+    let res= await OrderService.getAllCustomOrderDetails(productid)
+    console.log(res);
+    setRecords(res);
+    console.log(records);
 }
 return(
 <>
@@ -103,7 +104,7 @@ return(
                         {
                            
                            
-                           records.map(item=>(
+                          recordsAfterPagingAndSorting().map(item=>(
                           
                             <TableRow key={item.productid}>
                                 <TableCell>{item.productid}</TableCell>

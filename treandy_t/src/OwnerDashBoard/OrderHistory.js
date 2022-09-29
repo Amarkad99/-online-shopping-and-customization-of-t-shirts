@@ -72,7 +72,7 @@ const handleSearch = e => {
             if (target.value == "")
                 return items;
             else
-                return items.filter(x => x.first_name.includes(target.value))
+                return items.filter(x => x.totalprice==target.value)
         }
     })
 }
