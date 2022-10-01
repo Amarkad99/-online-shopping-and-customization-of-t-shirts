@@ -20,3 +20,5 @@ o	Password=Trendy_t
 o	Username =Eparsel@123gmail.com
 
 o	Password=123456
+
+If Home Page Is Not Responding First Time Of Login Please Do Refresh
